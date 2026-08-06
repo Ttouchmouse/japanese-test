@@ -1,4 +1,5 @@
 import type {
+  ConfusionMarks,
   LearningProgress,
   QuizCategory,
   QuizCount,
@@ -7,15 +8,20 @@ import type {
   QuizSession,
 } from "../types";
 
-const STORAGE_KEY = "nihongo-review-session-v3";
-const PREVIOUS_STORAGE_KEY = "nihongo-review-session-v2";
-const LEGACY_STORAGE_KEY = "nihongo-review-session-v1";
+const STORAGE_KEY = "nihongo-review-session-v5";
+const PREVIOUS_STORAGE_KEYS = [
+  "nihongo-review-session-v4",
+  "nihongo-review-session-v3",
+  "nihongo-review-session-v2",
+  "nihongo-review-session-v1",
+];
 const MODE_STORAGE_KEY = "nihongo-review-mode-v2";
 const LEGACY_MODE_STORAGE_KEY = "nihongo-review-mode-v1";
 const CATEGORY_STORAGE_KEY = "nihongo-review-category-v1";
 const QUESTION_COUNT_STORAGE_KEY = "nihongo-review-question-count-v2";
 const LEGACY_QUESTION_COUNT_STORAGE_KEY = "nihongo-review-question-count-v1";
 const PROGRESS_STORAGE_KEY = "nihongo-review-progress-v1";
+const CONFUSION_STORAGE_KEY = "nihongo-review-confusions-v1";
 
 const QUIZ_COUNTS: QuizCount[] = [10, 20, 30];
 
@@ -25,9 +31,9 @@ export function loadSession(): QuizSession | null {
     if (!raw) return null;
     const stored = JSON.parse(raw) as QuizSession;
     const valid =
-      stored.version === 3 &&
+      stored.version === 5 &&
       Array.isArray(stored.selectedLessonIds) &&
-      (stored.mode === "quick" || stored.mode === "write") &&
+      (stored.mode === "quick" || stored.mode === "write" || stored.mode === "recall") &&
       (stored.category === "all" || stored.category === "vocabulary" || stored.category === "sentence") &&
       (stored.countOption === "all" || QUIZ_COUNTS.includes(stored.countOption)) &&
       Number.isInteger(stored.questionCount) &&
@@ -40,12 +46,16 @@ export function loadSession(): QuizSession | null {
           typeof question.correctAnswer === "string" &&
           Array.isArray(question.acceptedAnswers) &&
           question.acceptedAnswers.length > 0 &&
-          (question.answerKind === "choice" || question.answerKind === "text") &&
+          (question.answerKind === "choice" ||
+            question.answerKind === "text" ||
+            question.answerKind === "self") &&
           Array.isArray(question.options) &&
           (question.answerKind === "choice"
             ? question.options.length === 5
             : question.options.length === 0),
       ) &&
+      Array.isArray(stored.confusedSourceItemIds) &&
+      stored.confusedSourceItemIds.every((id) => typeof id === "string") &&
       (stored.status === "quiz" || stored.status === "result");
     if (!valid) throw new Error("Invalid session");
     return stored;
@@ -57,21 +67,19 @@ export function loadSession(): QuizSession | null {
 
 export function saveSession(session: QuizSession): void {
   window.localStorage.setItem(STORAGE_KEY, JSON.stringify(session));
-  window.localStorage.removeItem(PREVIOUS_STORAGE_KEY);
-  window.localStorage.removeItem(LEGACY_STORAGE_KEY);
+  PREVIOUS_STORAGE_KEYS.forEach((key) => window.localStorage.removeItem(key));
 }
 
 export function clearSession(): void {
   window.localStorage.removeItem(STORAGE_KEY);
-  window.localStorage.removeItem(PREVIOUS_STORAGE_KEY);
-  window.localStorage.removeItem(LEGACY_STORAGE_KEY);
+  PREVIOUS_STORAGE_KEYS.forEach((key) => window.localStorage.removeItem(key));
 }
 
 export function loadMode(): QuizMode {
   const stored =
     window.localStorage.getItem(MODE_STORAGE_KEY) ??
     window.localStorage.getItem(LEGACY_MODE_STORAGE_KEY);
-  return stored === "quick" ? "quick" : "write";
+  return stored === "quick" || stored === "recall" ? stored : "write";
 }
 
 export function saveMode(mode: QuizMode): void {
@@ -114,4 +122,27 @@ export function loadLearningProgress(): LearningProgress {
 
 export function saveLearningProgress(progress: LearningProgress): void {
   window.localStorage.setItem(PROGRESS_STORAGE_KEY, JSON.stringify(progress));
+}
+
+export function loadConfusionMarks(): ConfusionMarks {
+  try {
+    const raw = window.localStorage.getItem(CONFUSION_STORAGE_KEY);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw) as ConfusionMarks;
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return {};
+    return Object.fromEntries(
+      Object.entries(parsed).filter(
+        ([sourceItemId, markedAt]) =>
+          sourceItemId.length > 0 &&
+          typeof markedAt === "string" &&
+          Number.isFinite(Date.parse(markedAt)),
+      ),
+    );
+  } catch {
+    return {};
+  }
+}
+
+export function saveConfusionMarks(marks: ConfusionMarks): void {
+  window.localStorage.setItem(CONFUSION_STORAGE_KEY, JSON.stringify(marks));
 }

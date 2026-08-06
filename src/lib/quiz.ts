@@ -112,9 +112,10 @@ export function availableQuestionCount(
   mode: QuizMode = "quick",
   category: QuizCategory = "all",
 ): number {
-  const effectiveCategory = mode === "write" ? "vocabulary" : category;
+  const effectiveCategory =
+    mode === "write" ? "vocabulary" : mode === "recall" ? "sentence" : category;
   const items = selectedItems(bank, selectedLessonIds, effectiveCategory);
-  if (mode === "write") return items.length;
+  if (mode === "write" || mode === "recall") return items.length;
 
   const pools: Record<QuestionType, StudyItem[]> = {
     vocabulary: items.filter((item) => item.type === "vocabulary"),
@@ -330,7 +331,8 @@ export function generateQuiz(
   mode: QuizMode = "quick",
   category: QuizCategory = "all",
 ): QuizQuestion[] {
-  const effectiveCategory = mode === "write" ? "vocabulary" : category;
+  const effectiveCategory =
+    mode === "write" ? "vocabulary" : mode === "recall" ? "sentence" : category;
   const items = selectedItems(bank, selectedLessonIds, effectiveCategory);
 
   if (mode === "write") {
@@ -350,6 +352,28 @@ export function generateQuiz(
         (answer, index, answers) => answer && answers.indexOf(answer) === index,
       ),
       answerKind: "text",
+      options: [],
+      japanese: item.japanese,
+      korean: item.korean,
+      reading: item.reading,
+    }));
+  }
+
+  if (mode === "recall") {
+    const sources = chooseWriteSources(items, quizSize, random, progress, now);
+    if (sources.length < quizSize) {
+      throw new QuizGenerationError(`선택한 과에는 문장이 ${sources.length}개 있습니다.`);
+    }
+    return sources.map((item) => ({
+      id: `${item.id}-ko-ja-recall`,
+      sourceItemId: item.id,
+      lessonId: item.lessonId,
+      type: item.type,
+      direction: "ko-ja",
+      prompt: item.korean,
+      correctAnswer: item.japanese,
+      acceptedAnswers: [item.japanese],
+      answerKind: "self",
       options: [],
       japanese: item.japanese,
       korean: item.korean,

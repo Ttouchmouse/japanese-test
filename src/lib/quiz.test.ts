@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import questionBankData from "../data/question-bank.json";
 import type { LearningProgress, QuestionBank, QuizCount, StudyItem } from "../types";
-import { isAnswerCorrect } from "./answer";
+import { isAnswerCorrect, RECALL_REMEMBERED } from "./answer";
 import {
   availableQuestionCount,
   generateQuiz,
@@ -120,6 +120,28 @@ describe("generateQuiz", () => {
     expect(sentences.every((question) => question.type !== "vocabulary")).toBe(true);
   });
 
+  it("creates Korean-to-Japanese self-assessed sentence recall questions", () => {
+    expect(availableQuestionCount(bank, [1], "recall", "sentence")).toBe(32);
+
+    const questions = generateQuiz(
+      bank,
+      [1],
+      seededRandom(22),
+      {},
+      new Date(0),
+      10,
+      "recall",
+      "sentence",
+    );
+
+    expect(questions).toHaveLength(10);
+    expect(questions.every((question) => question.answerKind === "self")).toBe(true);
+    expect(questions.every((question) => question.direction === "ko-ja")).toBe(true);
+    expect(questions.every((question) => question.type !== "vocabulary")).toBe(true);
+    expect(questions.every((question) => question.options.length === 0)).toBe(true);
+    expect(new Set(questions.map((question) => question.sourceItemId)).size).toBe(10);
+  });
+
   it("prefers plausible distractors from the same lesson", () => {
     const lesson = bank.lessons.find((item) => item.id === 4)!;
     const source = lesson.items.find((item) => item.type === "pattern")!;
@@ -151,6 +173,7 @@ describe("generateQuiz", () => {
           attempts: 1,
           correctAttempts: 0,
           streak: 0,
+          confused: false,
           lastResult: "incorrect" as const,
           lastReviewedAt: reviewedAt,
           dueAt: reviewedAt,
@@ -178,5 +201,23 @@ describe("scoreQuiz", () => {
       questions.map((question, index) => [question.id, index < 12 ? question.correctAnswer : "오답"]),
     );
     expect(scoreQuiz(questions, answers)).toBe(12);
+  });
+
+  it("counts a revealed sentence recall question as completed", () => {
+    const questions = generateQuiz(
+      bank,
+      [1],
+      seededRandom(23),
+      {},
+      new Date(0),
+      10,
+      "recall",
+      "sentence",
+    );
+    const answers = Object.fromEntries(
+      questions.map((question) => [question.id, RECALL_REMEMBERED]),
+    );
+
+    expect(scoreQuiz(questions, answers)).toBe(10);
   });
 });

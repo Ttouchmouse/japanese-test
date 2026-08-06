@@ -1,13 +1,15 @@
 import { useEffect, useState, type FormEvent } from "react";
-import { isAnswerCorrect } from "../lib/answer";
+import { isAnswerCorrect, RECALL_REMEMBERED } from "../lib/answer";
 import { DIRECTION_LABELS, TYPE_LABELS } from "../lib/quiz";
 import type { QuizAnswers, QuizQuestion } from "../types";
 
 interface QuizProps {
   questions: QuizQuestion[];
   answers: QuizAnswers;
+  confusedSourceItemIds: string[];
   currentIndex: number;
   onAnswer: (answer: string) => void;
+  onToggleConfusion: (sourceItemId: string) => void;
   onNavigate: (index: number) => void;
   onFinish: () => void;
   onExit: () => void;
@@ -15,11 +17,34 @@ interface QuizProps {
 
 const OPTION_LABELS = ["A", "B", "C", "D", "E"];
 
+interface ConfusionToggleProps {
+  selected: boolean;
+  onToggle: () => void;
+}
+
+function ConfusionToggle({ selected, onToggle }: ConfusionToggleProps) {
+  return (
+    <button
+      className={`confusion-toggle${selected ? " is-selected" : ""}`}
+      type="button"
+      aria-pressed={selected}
+      onClick={onToggle}
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6 21V4m0 1h10.3c.9 0 1.4 1 .9 1.7L15.8 9l1.4 2.3c.5.7 0 1.7-.9 1.7H6" />
+      </svg>
+      <span>헷갈려요</span>
+    </button>
+  );
+}
+
 export function Quiz({
   questions,
   answers,
+  confusedSourceItemIds,
   currentIndex,
   onAnswer,
+  onToggleConfusion,
   onNavigate,
   onFinish,
   onExit,
@@ -27,13 +52,16 @@ export function Quiz({
   const question = questions[currentIndex];
   const selectedAnswer = answers[question.id];
   const [draftAnswer, setDraftAnswer] = useState(selectedAnswer ?? "");
+  const [recallRevealed, setRecallRevealed] = useState(selectedAnswer !== undefined);
   const answered = selectedAnswer !== undefined;
   const isCorrect = isAnswerCorrect(question, selectedAnswer);
+  const isConfused = confusedSourceItemIds.includes(question.sourceItemId);
   const allAnswered = questions.every((item) => answers[item.id] !== undefined);
   const isLast = currentIndex === questions.length - 1;
 
   useEffect(() => {
     setDraftAnswer(answers[question.id] ?? "");
+    setRecallRevealed(answers[question.id] !== undefined);
   }, [answers, question.id]);
 
   const optionClass = (option: string) => {
@@ -70,7 +98,9 @@ export function Quiz({
 
         <div className="prompt-block">
           <p>
-            {question.answerKind === "text"
+            {question.answerKind === "self"
+              ? "일본어 문장을 떠올려 말해 보세요."
+              : question.answerKind === "text"
               ? "일본어로 입력해 보세요."
               : question.direction === "ja-ko"
                 ? "뜻이 맞는 것을 고르세요."
@@ -104,7 +134,7 @@ export function Quiz({
               </button>
             ))}
           </div>
-        ) : (
+        ) : question.answerKind === "text" ? (
           <form className="text-answer-stage" onSubmit={submitTextAnswer}>
             <label htmlFor="text-answer">일본어 답</label>
             <input
@@ -136,9 +166,41 @@ export function Quiz({
               정답 확인
             </button>
           </form>
+        ) : (
+          <div
+            className={`recall-stage${recallRevealed ? " is-revealed" : ""}`}
+            aria-live="polite"
+          >
+            {!recallRevealed ? (
+              <>
+                <span className="recall-step">생각하고 말하기</span>
+                <strong>소리 내어 문장을 완성해 보세요.</strong>
+                <p>말한 뒤에 확인할수록 기억에 오래 남아요.</p>
+                <button
+                  className="primary-button"
+                  type="button"
+                  onClick={() => {
+                    setRecallRevealed(true);
+                    onAnswer(RECALL_REMEMBERED);
+                  }}
+                >
+                  정답 확인
+                </button>
+              </>
+            ) : (
+              <>
+                <span className="recall-step">책의 표현</span>
+                <strong className="recall-answer" lang="ja">{question.japanese}</strong>
+                {question.reading && (
+                  <span className="recall-answer-reading" lang="ja">{question.reading}</span>
+                )}
+                <p className="recall-meaning">{question.korean}</p>
+              </>
+            )}
+          </div>
         )}
 
-        {answered && (
+        {answered && question.answerKind !== "self" && (
           <div className="feedback" aria-live="polite">
             <strong className={isCorrect ? "correct-text" : "wrong-text"}>
               {isCorrect ? "정답이에요." : "아쉬워요. 정답을 확인해 보세요."}
@@ -149,6 +211,15 @@ export function Quiz({
               <i aria-hidden="true">·</i>
               <span>{question.korean}</span>
             </p>
+          </div>
+        )}
+
+        {answered && (
+          <div className="confusion-row">
+            <ConfusionToggle
+              selected={isConfused}
+              onToggle={() => onToggleConfusion(question.sourceItemId)}
+            />
           </div>
         )}
 

@@ -44,7 +44,8 @@ export function LessonSelection({
     availableQuestionCount !== null &&
     (availableQuestionCount === 0 ||
       (countOption !== "all" && countOption > availableQuestionCount));
-  const modeLabel = mode === "write" ? "직접 입력" : "빠른 복습";
+  const modeLabel =
+    mode === "write" ? "직접 입력" : mode === "recall" ? "생각하고 풀기" : "빠른 복습";
 
   return (
     <main className="selection-page">
@@ -69,8 +70,20 @@ export function LessonSelection({
             >
               <span className="mode-check" aria-hidden="true">{mode === "write" ? "✓" : ""}</span>
               <span>
-                <strong>직접 입력 <small>추천</small></strong>
-                <em>답을 직접 입력한 뒤 확인합니다.</em>
+                <strong>직접 입력 <small>단어</small></strong>
+                <em>한국어를 보고 일본어를 직접 입력합니다.</em>
+              </span>
+            </button>
+            <button
+              className={`mode-option${mode === "recall" ? " is-selected" : ""}`}
+              type="button"
+              aria-pressed={mode === "recall"}
+              onClick={() => onModeChange("recall")}
+            >
+              <span className="mode-check" aria-hidden="true">{mode === "recall" ? "✓" : ""}</span>
+              <span>
+                <strong>생각하고 풀기 <small>문장</small></strong>
+                <em>문장을 말한 뒤 정답과 비교합니다.</em>
               </span>
             </button>
             <button
@@ -81,7 +94,7 @@ export function LessonSelection({
             >
               <span className="mode-check" aria-hidden="true">{mode === "quick" ? "✓" : ""}</span>
               <span>
-                <strong>빠른 복습</strong>
+                <strong>빠른 복습 <small>전체</small></strong>
                 <em>선택지를 보고 바로 풉니다.</em>
               </span>
             </button>

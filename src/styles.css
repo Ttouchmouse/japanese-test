@@ -92,6 +92,31 @@ button:focus-visible {
   font-size: 13px;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-confusion-button {
+  min-height: 34px;
+  padding: 7px 12px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--blue);
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+
+.header-confusion-button:hover,
+.header-confusion-button.is-active {
+  background: var(--blue-hover);
+  color: white;
+}
+
 .selection-page,
 .result-page {
   padding-bottom: 132px;
@@ -220,7 +245,7 @@ button:focus-visible {
 
 .mode-options {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 }
 
@@ -618,6 +643,11 @@ button:disabled {
   background: var(--parchment);
 }
 
+.review-meta .review-confusion {
+  background: #f2f8ff;
+  color: var(--blue);
+}
+
 .prompt-block {
   min-height: 174px;
   padding: 40px 6px 32px;
@@ -726,32 +756,100 @@ button:disabled {
   text-align: center;
 }
 
-.recall-icon {
-  display: grid;
-  width: 52px;
-  height: 52px;
-  margin-bottom: 18px;
-  border-radius: 999px;
-  background: #e8f3ff;
+.recall-step {
+  margin-bottom: 14px;
   color: var(--blue);
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  place-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.15px;
 }
 
-.recall-stage strong {
+.recall-stage > strong {
+  max-width: 430px;
   font-size: 22px;
   font-weight: 600;
+  line-height: 1.4;
   letter-spacing: -0.5px;
 }
 
-.recall-stage p {
+.recall-stage > p {
   max-width: 300px;
   margin: 10px 0 24px;
   color: var(--muted);
   font-size: 14px;
   line-height: 1.55;
+}
+
+.recall-stage.is-revealed {
+  align-items: stretch;
+  text-align: left;
+}
+
+.recall-stage.is-revealed .recall-step {
+  margin-bottom: 10px;
+}
+
+.recall-stage .recall-answer {
+  max-width: none;
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+  font-size: 28px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.recall-answer-reading {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.recall-stage > .recall-meaning {
+  max-width: none;
+  margin: 13px 0 26px;
+  font-size: 15px;
+}
+
+.confusion-row {
+  display: flex;
+  padding-top: 16px;
+  justify-content: flex-start;
+}
+
+.confusion-toggle {
+  display: inline-flex;
+  min-height: 48px;
+  padding: 10px 16px;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  background: var(--canvas);
+  color: var(--muted);
+  cursor: pointer;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: border-color 140ms ease, background-color 140ms ease, color 140ms ease;
+}
+
+.confusion-toggle svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.confusion-toggle:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.confusion-toggle.is-selected {
+  border-color: var(--blue);
+  background: #f2f8ff;
+  color: var(--blue);
 }
 
 .answer-option {
@@ -972,6 +1070,10 @@ button:disabled {
   border-left-color: var(--red);
 }
 
+.review-item.is-review {
+  border-left-color: var(--blue);
+}
+
 .review-number {
   display: flex;
   align-items: center;
@@ -1001,6 +1103,10 @@ button:disabled {
 
 .is-wrong .review-number i {
   background: var(--red);
+}
+
+.is-review .review-number i {
+  background: var(--blue);
 }
 
 .review-content h3 {
@@ -1041,6 +1147,186 @@ button:disabled {
   font-size: 12px;
 }
 
+.confusion-page {
+  width: min(920px, calc(100% - 40px));
+  min-height: calc(100vh - 52px);
+  margin: 0 auto;
+  padding: 66px 0 110px;
+}
+
+.confusion-page-heading {
+  margin-bottom: 42px;
+}
+
+.confusion-page-heading .text-button {
+  margin-bottom: 44px;
+}
+
+.confusion-page-heading h1 {
+  max-width: 680px;
+  margin: 0;
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+  font-size: clamp(38px, 5vw, 52px);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -1.8px;
+}
+
+.confusion-page-heading > p:last-child {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.confusion-sections {
+  display: grid;
+  gap: 30px;
+}
+
+.confusion-section {
+  padding: 34px;
+  border-radius: 24px;
+  background: var(--canvas);
+}
+
+.confusion-section-heading {
+  display: flex;
+  margin-bottom: 22px;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.confusion-section-heading h2 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.8px;
+}
+
+.confusion-section-heading > span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.confusion-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 10px;
+}
+
+.confusion-item {
+  padding: 22px 24px;
+  border: 1px solid #e5e5e8;
+  border-radius: 18px;
+  background: var(--pearl);
+}
+
+.confusion-item-heading {
+  display: flex;
+  margin-bottom: 16px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.confusion-item-meta {
+  display: flex;
+  color: var(--muted);
+  flex-wrap: wrap;
+  font-size: 12px;
+  gap: 6px;
+}
+
+.confusion-item-meta span {
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: var(--canvas);
+}
+
+.confusion-remove {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--blue);
+  border-radius: 999px;
+  background: #f2f8ff;
+  color: var(--blue);
+  cursor: pointer;
+  flex: 0 0 auto;
+  place-items: center;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+
+.confusion-remove:hover {
+  background: var(--blue);
+  color: white;
+}
+
+.confusion-remove svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.confusion-item > strong {
+  display: block;
+  margin: 0;
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.confusion-reading {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.confusion-item > p {
+  margin: 11px 0 0;
+  color: #515154;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.confusion-empty {
+  display: flex;
+  min-height: 360px;
+  padding: 46px 24px;
+  border-radius: 24px;
+  background: var(--canvas);
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.confusion-empty > span {
+  color: var(--blue);
+  font-size: 34px;
+}
+
+.confusion-empty h2 {
+  margin: 20px 0 0;
+  font-size: 25px;
+}
+
+.confusion-empty p {
+  margin: 10px 0 26px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
 .site-footer {
   padding: 34px 20px 40px;
   color: #86868b;
@@ -1075,6 +1361,16 @@ button:disabled {
 
   .header-status {
     display: none;
+  }
+
+  .header-actions {
+    gap: 0;
+  }
+
+  .header-confusion-button {
+    padding-right: 8px;
+    padding-left: 8px;
+    font-size: 12px;
   }
 
   .selection-hero,
@@ -1215,6 +1511,37 @@ button:disabled {
     grid-template-columns: 38px 1fr;
     gap: 9px;
   }
+
+  .confusion-page {
+    width: calc(100% - 24px);
+    padding: 38px 0 76px;
+  }
+
+  .confusion-page-heading {
+    padding: 0 4px;
+  }
+
+  .confusion-page-heading .text-button {
+    margin-bottom: 34px;
+  }
+
+  .confusion-page-heading h1 {
+    font-size: 36px;
+    letter-spacing: -1.4px;
+  }
+
+  .confusion-section {
+    padding: 22px 14px;
+    border-radius: 20px;
+  }
+
+  .confusion-item {
+    padding: 18px 16px;
+  }
+
+  .confusion-item > strong {
+    font-size: 23px;
+  }
 }
 
 /* Touch tablets: larger controls in portrait, space-efficient two-column quiz in landscape. */
@@ -1275,6 +1602,7 @@ button:disabled {
       "meta meta"
       "prompt answers"
       "feedback answers"
+      "confusion answers"
       "actions actions";
     grid-template-columns: minmax(310px, 0.82fr) minmax(540px, 1.28fr);
   }
@@ -1337,6 +1665,11 @@ button:disabled {
     grid-area: feedback;
   }
 
+  .confusion-row {
+    align-self: start;
+    grid-area: confusion;
+  }
+
   .quiz-actions {
     grid-area: actions;
   }
@@ -1376,6 +1709,7 @@ button:disabled {
       "meta meta"
       "prompt answers"
       "feedback answers"
+      "confusion answers"
       "actions actions";
     grid-template-columns: minmax(440px, 0.88fr) minmax(720px, 1.2fr);
   }
@@ -1467,6 +1801,11 @@ button:disabled {
     padding: 22px 24px;
     align-self: start;
     grid-area: feedback;
+  }
+
+  .confusion-row {
+    align-self: start;
+    grid-area: confusion;
   }
 
   .feedback strong {

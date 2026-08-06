@@ -8,15 +8,19 @@ export function updateLearningProgress(
   current: LearningProgress,
   questions: QuizQuestion[],
   answers: QuizAnswers,
+  confusedSourceItemIds: readonly string[] = [],
   reviewedAt = new Date(),
 ): LearningProgress {
   const next = { ...current };
+  const confusedIds = new Set(confusedSourceItemIds);
 
   for (const question of questions) {
     const previous = current[question.sourceItemId];
     const isCorrect = isAnswerCorrect(question, answers[question.id]);
-    const streak = isCorrect ? (previous?.streak ?? 0) + 1 : 0;
-    const intervalDays = isCorrect
+    const confused = confusedIds.has(question.sourceItemId);
+    const remembered = isCorrect && !confused;
+    const streak = remembered ? (previous?.streak ?? 0) + 1 : 0;
+    const intervalDays = remembered
       ? REVIEW_INTERVAL_DAYS[Math.min(streak - 1, REVIEW_INTERVAL_DAYS.length - 1)]
       : 0;
 
@@ -25,6 +29,7 @@ export function updateLearningProgress(
       attempts: (previous?.attempts ?? 0) + 1,
       correctAttempts: (previous?.correctAttempts ?? 0) + (isCorrect ? 1 : 0),
       streak,
+      confused,
       lastResult: isCorrect ? "correct" : "incorrect",
       lastReviewedAt: reviewedAt.toISOString(),
       dueAt: new Date(reviewedAt.getTime() + intervalDays * DAY_MS).toISOString(),
@@ -49,6 +54,7 @@ export function progressPriority(
   );
 
   if (item.lastResult === "incorrect") return 100 + Math.min(daysSinceReview, 30);
+  if (item.confused) return 90 + Math.min(daysSinceReview, 30);
   if (due) return 50 + Math.min(daysSinceReview, 30);
   return 0;
 }

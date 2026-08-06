@@ -1,6 +1,6 @@
 export type QuestionType = "vocabulary" | "pattern" | "conversation";
 export type QuestionDirection = "ja-ko" | "ko-ja";
-export type QuizMode = "quick" | "write";
+export type QuizMode = "quick" | "write" | "recall";
 export type QuizCategory = "all" | "vocabulary" | "sentence";
 export type QuizCount = 10 | 20 | 30;
 export type QuizCountOption = QuizCount | "all";
@@ -39,7 +39,7 @@ export interface QuizQuestion {
   prompt: string;
   correctAnswer: string;
   acceptedAnswers: string[];
-  answerKind: "choice" | "text";
+  answerKind: "choice" | "text" | "self";
   options: string[];
   japanese: string;
   korean: string;
@@ -53,15 +53,17 @@ export interface ItemProgress {
   attempts: number;
   correctAttempts: number;
   streak: number;
+  confused: boolean;
   lastResult: "correct" | "incorrect";
   lastReviewedAt: string;
   dueAt: string;
 }
 
 export type LearningProgress = Record<string, ItemProgress>;
+export type ConfusionMarks = Record<string, string>;
 
 export interface QuizSession {
-  version: 3;
+  version: 5;
   selectedLessonIds: number[];
   mode: QuizMode;
   category: QuizCategory;
@@ -69,6 +71,7 @@ export interface QuizSession {
   questionCount: number;
   questions: QuizQuestion[];
   answers: QuizAnswers;
+  confusedSourceItemIds: string[];
   currentIndex: number;
   status: "quiz" | "result";
   startedAt: string;

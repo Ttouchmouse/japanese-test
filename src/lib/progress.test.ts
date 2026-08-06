@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { QuizQuestion } from "../types";
+import { RECALL_REMEMBERED } from "./answer";
 import { progressPriority, updateLearningProgress } from "./progress";
 
 const questions: QuizQuestion[] = [
@@ -40,6 +41,7 @@ describe("learning progress", () => {
       {},
       questions,
       { "one-ja-ko": "책", "two-ko-ja": "本" },
+      [],
       reviewedAt,
     );
 
@@ -54,11 +56,64 @@ describe("learning progress", () => {
 
   it("extends the interval after another correct answer", () => {
     const firstDate = new Date("2026-08-01T00:00:00.000Z");
-    const first = updateLearningProgress({}, [questions[0]], { "one-ja-ko": "책" }, firstDate);
+    const first = updateLearningProgress({}, [questions[0]], { "one-ja-ko": "책" }, [], firstDate);
     const secondDate = new Date("2026-08-02T00:00:00.000Z");
-    const second = updateLearningProgress(first, [questions[0]], { "one-ja-ko": "책" }, secondDate);
+    const second = updateLearningProgress(first, [questions[0]], { "one-ja-ko": "책" }, [], secondDate);
 
     expect(second.one.streak).toBe(2);
     expect(second.one.dueAt).toBe("2026-08-05T00:00:00.000Z");
+  });
+
+  it("stores confusion separately from correctness and makes it due immediately", () => {
+    const recallQuestions: QuizQuestion[] = [
+      {
+        id: "sentence-one-recall",
+        sourceItemId: "sentence-one",
+        lessonId: 1,
+        type: "pattern",
+        direction: "ko-ja",
+        prompt: "여자 친구가 아니야?",
+        correctAnswer: "彼女じゃない?",
+        acceptedAnswers: ["彼女じゃない?"],
+        answerKind: "self",
+        options: [],
+        japanese: "彼女じゃない?",
+        korean: "여자 친구가 아니야?",
+      },
+      {
+        id: "sentence-two-recall",
+        sourceItemId: "sentence-two",
+        lessonId: 1,
+        type: "conversation",
+        direction: "ko-ja",
+        prompt: "응, 여자 친구야.",
+        correctAnswer: "うん、彼女。",
+        acceptedAnswers: ["うん、彼女。"],
+        answerKind: "self",
+        options: [],
+        japanese: "うん、彼女。",
+        korean: "응, 여자 친구야.",
+      },
+    ];
+    const reviewedAt = new Date("2026-08-01T00:00:00.000Z");
+    const progress = updateLearningProgress(
+      {},
+      recallQuestions,
+      {
+        "sentence-one-recall": RECALL_REMEMBERED,
+        "sentence-two-recall": RECALL_REMEMBERED,
+      },
+      ["sentence-two"],
+      reviewedAt,
+    );
+
+    expect(progress["sentence-one"].lastResult).toBe("correct");
+    expect(progress["sentence-one"].confused).toBe(false);
+    expect(progress["sentence-one"].dueAt).toBe("2026-08-02T00:00:00.000Z");
+    expect(progress["sentence-two"].lastResult).toBe("correct");
+    expect(progress["sentence-two"].confused).toBe(true);
+    expect(progress["sentence-two"].streak).toBe(0);
+    expect(progress["sentence-two"].dueAt).toBe(reviewedAt.toISOString());
+    expect(progressPriority("sentence-two", progress, reviewedAt)).toBeGreaterThan(0);
   });
 });
