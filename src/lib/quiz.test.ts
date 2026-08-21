@@ -20,6 +20,26 @@ function seededRandom(seed: number): () => number {
 }
 
 describe("generateQuiz", () => {
+  it("keeps complete proper names and rejects malformed pattern fragments", () => {
+    const patterns = bank.lessons.flatMap((lesson) =>
+      lesson.items.filter((item) => item.type === "pattern"),
+    );
+    const nakano = patterns.find(
+      (item) => item.japanese === "中野さんのお父さんはそれほどまじめじゃありません。",
+    );
+    const shun = patterns.find(
+      (item) => item.japanese === "駿は英語がそんなに下手な人じゃなかった。",
+    );
+
+    expect(nakano?.korean).toBe("나카노 씨의 아버지는 그렇게 성실하지 않아요.");
+    expect(nakano?.reading).toBe("中野(なかの)");
+    expect(shun?.korean).toBe("슌은 영어를 그렇게 잘 못하는 사람이 아니었어.");
+    expect(shun?.reading).toBe("駿(しゅん)");
+    expect(patterns.some((item) => /[ぁ-んァ-ヶ]/u.test(item.korean))).toBe(false);
+    expect(patterns.some((item) => /^(씨|은|는|의)(?:\s|$)/u.test(item.korean))).toBe(false);
+    expect(patterns.some((item) => ["ない", "ます", "た"].includes(item.japanese))).toBe(false);
+  });
+
   it("creates valid 10- and 20-question quizzes from every individual lesson", () => {
     for (const lesson of bank.lessons) {
       for (const count of [10, 20] as QuizCount[]) {
@@ -70,7 +90,7 @@ describe("generateQuiz", () => {
   });
 
   it("reports the unique capacity of the selected lesson range", () => {
-    expect(availableQuestionCount(bank, [58])).toBe(26);
+    expect(availableQuestionCount(bank, [58])).toBe(37);
     expect(availableQuestionCount(bank, [1, 58])).toBeGreaterThan(30);
   });
 

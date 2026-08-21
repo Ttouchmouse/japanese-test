@@ -7,6 +7,7 @@ import type {
   QuizMode,
   QuizSession,
 } from "../types";
+import { ITEM_ID_MIGRATIONS } from "./item-id-migrations";
 
 const STORAGE_KEY = "nihongo-review-session-v5";
 const PREVIOUS_STORAGE_KEYS = [
@@ -25,7 +26,7 @@ const CONFUSION_STORAGE_KEY = "nihongo-review-confusions-v1";
 
 const QUIZ_COUNTS: QuizCount[] = [10, 20, 30];
 
-export function loadSession(): QuizSession | null {
+export function loadSession(validSourceItemIds?: ReadonlySet<string>): QuizSession | null {
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
     if (!raw) return null;
@@ -52,7 +53,8 @@ export function loadSession(): QuizSession | null {
           Array.isArray(question.options) &&
           (question.answerKind === "choice"
             ? question.options.length === 5
-            : question.options.length === 0),
+            : question.options.length === 0) &&
+          (!validSourceItemIds || validSourceItemIds.has(question.sourceItemId)),
       ) &&
       Array.isArray(stored.confusedSourceItemIds) &&
       stored.confusedSourceItemIds.every((id) => typeof id === "string") &&
@@ -108,29 +110,80 @@ export function saveQuestionCount(count: QuizCountOption): void {
   window.localStorage.setItem(QUESTION_COUNT_STORAGE_KEY, String(count));
 }
 
-export function loadLearningProgress(): LearningProgress {
+export function loadLearningProgress(
+  validSourceItemIds?: ReadonlySet<string>,
+): LearningProgress {
   try {
     const raw = window.localStorage.getItem(PROGRESS_STORAGE_KEY);
     if (!raw) return {};
     const parsed = JSON.parse(raw) as LearningProgress;
     if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return {};
-    return parsed;
+    return migrateLearningProgress(parsed, validSourceItemIds);
   } catch {
     return {};
   }
+}
+
+export function migrateLearningProgress(
+  parsed: LearningProgress,
+  validSourceItemIds?: ReadonlySet<string>,
+): LearningProgress {
+  if (!validSourceItemIds) return parsed;
+
+  const migrated = Object.fromEntries(
+    Object.entries(parsed).filter(([sourceItemId]) => validSourceItemIds.has(sourceItemId)),
+  ) as LearningProgress;
+
+  for (const [storedId, item] of Object.entries(parsed)) {
+    const sourceItemId = ITEM_ID_MIGRATIONS[storedId];
+    if (!sourceItemId || !validSourceItemIds.has(sourceItemId) || !item.confused) continue;
+    const existing = migrated[sourceItemId];
+    migrated[sourceItemId] = existing
+      ? { ...existing, confused: true }
+      : {
+          sourceItemId,
+          attempts: 0,
+          correctAttempts: 0,
+          streak: 0,
+          confused: true,
+          lastResult: "correct",
+          lastReviewedAt: item.lastReviewedAt,
+          dueAt: item.lastReviewedAt,
+        };
+  }
+
+  return migrated;
 }
 
 export function saveLearningProgress(progress: LearningProgress): void {
   window.localStorage.setItem(PROGRESS_STORAGE_KEY, JSON.stringify(progress));
 }
 
-export function loadConfusionMarks(): ConfusionMarks {
+export function migrateConfusionMarks(
+  parsed: ConfusionMarks,
+  validSourceItemIds?: ReadonlySet<string>,
+): ConfusionMarks {
+  const migrated: ConfusionMarks = {};
+  for (const [storedId, markedAt] of Object.entries(parsed)) {
+    const sourceItemId = ITEM_ID_MIGRATIONS[storedId] ?? storedId;
+    if (validSourceItemIds && !validSourceItemIds.has(sourceItemId)) continue;
+    const existing = migrated[sourceItemId];
+    if (!existing || Date.parse(markedAt) > Date.parse(existing)) {
+      migrated[sourceItemId] = markedAt;
+    }
+  }
+  return migrated;
+}
+
+export function loadConfusionMarks(
+  validSourceItemIds?: ReadonlySet<string>,
+): ConfusionMarks {
   try {
     const raw = window.localStorage.getItem(CONFUSION_STORAGE_KEY);
     if (!raw) return {};
     const parsed = JSON.parse(raw) as ConfusionMarks;
     if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return {};
-    return Object.fromEntries(
+    const validMarks = Object.fromEntries(
       Object.entries(parsed).filter(
         ([sourceItemId, markedAt]) =>
           sourceItemId.length > 0 &&
@@ -138,6 +191,7 @@ export function loadConfusionMarks(): ConfusionMarks {
           Number.isFinite(Date.parse(markedAt)),
       ),
     );
+    return migrateConfusionMarks(validMarks, validSourceItemIds);
   } catch {
     return {};
   }

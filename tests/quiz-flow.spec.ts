@@ -142,3 +142,33 @@ test("sentence recall reveals the book answer and records self-assessment", asyn
   await expect(page.locator(".review-item.is-review")).toHaveCount(1);
   expect(browserErrors).toEqual([]);
 });
+
+test("lesson 12 reveals and plays the matched book audio", async ({ page }) => {
+  const browserErrors: string[] = [];
+  page.on("console", (message) => {
+    if (message.type() === "error") browserErrors.push(message.text());
+  });
+  page.on("pageerror", (error) => browserErrors.push(error.message));
+
+  await page.goto("/");
+  await page.getByRole("button", { name: /생각하고 풀기/ }).click();
+  await page.locator(".lesson-card").nth(11).click();
+  await page.getByRole("button", { name: "10 문제" }).click();
+  await page.getByRole("button", { name: "복습 시작" }).click();
+
+  await expect(page.getByRole("button", { name: "일본어 음성 재생" })).toHaveCount(0);
+  await page.getByRole("button", { name: "정답 확인" }).click();
+
+  const audioButton = page.getByRole("button", { name: "일본어 음성 재생" });
+  await expect(audioButton).toBeVisible();
+  const audioResponse = page.waitForResponse(
+    (response) => response.url().includes("/audio/lesson-12/") && response.request().method() === "GET",
+  );
+  await audioButton.click();
+  const response = await audioResponse;
+
+  expect([200, 206]).toContain(response.status());
+  expect(response.headers()["content-type"]).toContain("audio/mpeg");
+  await expect(page.getByRole("button", { name: "일본어 음성 정지" })).toContainText("재생 중");
+  expect(browserErrors).toEqual([]);
+});

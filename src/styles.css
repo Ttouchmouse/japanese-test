@@ -677,6 +677,65 @@ button:disabled {
   font-size: 16px;
 }
 
+.prompt-audio {
+  display: flex;
+  margin-top: 18px;
+  justify-content: center;
+}
+
+.audio-button {
+  display: inline-flex;
+  min-height: 42px;
+  padding: 8px 14px;
+  border: 1px solid rgba(0, 102, 204, 0.3);
+  border-radius: 999px;
+  background: #f2f8ff;
+  color: var(--blue);
+  cursor: pointer;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 140ms ease, border-color 140ms ease, transform 140ms ease;
+}
+
+.audio-button:hover {
+  border-color: rgba(0, 102, 204, 0.5);
+  background: #e8f3ff;
+}
+
+.audio-button:active {
+  transform: scale(0.97);
+}
+
+.audio-button svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.audio-button .audio-wave {
+  fill: none;
+  transform-origin: center;
+}
+
+.audio-button.is-playing .audio-wave-one {
+  animation: audio-wave 850ms ease-in-out infinite alternate;
+}
+
+.audio-button.is-playing .audio-wave-two {
+  animation: audio-wave 850ms 160ms ease-in-out infinite alternate;
+}
+
+@keyframes audio-wave {
+  from { opacity: 0.25; }
+  to { opacity: 1; }
+}
+
 .answer-list {
   display: grid;
   gap: 10px;
@@ -807,6 +866,11 @@ button:disabled {
   max-width: none;
   margin: 13px 0 26px;
   font-size: 15px;
+}
+
+.recall-audio {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .confusion-row {
@@ -948,8 +1012,27 @@ button:disabled {
 }
 
 .feedback strong {
-  margin-bottom: 7px;
   font-size: 15px;
+}
+
+.feedback-heading {
+  display: flex;
+  margin-bottom: 7px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.feedback-heading .audio-button {
+  min-height: 36px;
+  padding: 6px 11px;
+  flex: 0 0 auto;
+  font-size: 13px;
+}
+
+.feedback-heading .audio-button svg {
+  width: 18px;
+  height: 18px;
 }
 
 .correct-text {

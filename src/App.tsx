@@ -32,12 +32,15 @@ import type {
 } from "./types";
 
 const questionBank = questionBankData as QuestionBank;
+const sourceItemIds = new Set(
+  questionBank.lessons.flatMap((lesson) => lesson.items.map((item) => item.id)),
+);
 
 function mergeStoredConfusions(
   session: QuizSession | null,
   progress: LearningProgress,
 ): ConfusionMarks {
-  const marks = loadConfusionMarks();
+  const marks = loadConfusionMarks(sourceItemIds);
 
   for (const item of Object.values(progress)) {
     if (!item.confused || marks[item.sourceItemId]) continue;
@@ -125,7 +128,9 @@ function createSession(
 }
 
 export default function App() {
-  const [session, setSession] = useState<QuizSession | null>(() => loadSession());
+  const [session, setSession] = useState<QuizSession | null>(() =>
+    loadSession(sourceItemIds),
+  );
   const [mode, setMode] = useState<QuizMode>(() => session?.mode ?? loadMode());
   const [category, setCategory] = useState<QuizCategory>(
     () =>
@@ -136,7 +141,7 @@ export default function App() {
     () => session?.countOption ?? loadQuestionCount(),
   );
   const [learningProgress, setLearningProgress] = useState<LearningProgress>(() =>
-    loadLearningProgress(),
+    loadLearningProgress(sourceItemIds),
   );
   const [confusionMarks, setConfusionMarks] = useState<ConfusionMarks>(() =>
     mergeStoredConfusions(session, learningProgress),

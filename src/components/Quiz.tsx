@@ -1,5 +1,7 @@
 import { useEffect, useState, type FormEvent } from "react";
+import { AudioButton } from "./AudioButton";
 import { isAnswerCorrect, RECALL_REMEMBERED } from "../lib/answer";
+import { audioCueFor } from "../lib/audio";
 import { DIRECTION_LABELS, TYPE_LABELS } from "../lib/quiz";
 import type { QuizAnswers, QuizQuestion } from "../types";
 
@@ -56,6 +58,7 @@ export function Quiz({
   const answered = selectedAnswer !== undefined;
   const isCorrect = isAnswerCorrect(question, selectedAnswer);
   const isConfused = confusedSourceItemIds.includes(question.sourceItemId);
+  const audioCue = audioCueFor(question.sourceItemId);
   const allAnswered = questions.every((item) => answers[item.id] !== undefined);
   const isLast = currentIndex === questions.length - 1;
 
@@ -111,6 +114,11 @@ export function Quiz({
           </h1>
           {question.direction === "ja-ko" && question.reading && (
             <span className="reading" lang="ja">{question.reading}</span>
+          )}
+          {question.direction === "ja-ko" && audioCue && (
+            <div className="prompt-audio">
+              <AudioButton src={audioCue.src} />
+            </div>
           )}
         </div>
 
@@ -195,6 +203,11 @@ export function Quiz({
                   <span className="recall-answer-reading" lang="ja">{question.reading}</span>
                 )}
                 <p className="recall-meaning">{question.korean}</p>
+                {audioCue && (
+                  <div className="recall-audio">
+                    <AudioButton src={audioCue.src} />
+                  </div>
+                )}
               </>
             )}
           </div>
@@ -202,9 +215,14 @@ export function Quiz({
 
         {answered && question.answerKind !== "self" && (
           <div className="feedback" aria-live="polite">
-            <strong className={isCorrect ? "correct-text" : "wrong-text"}>
-              {isCorrect ? "정답이에요." : "아쉬워요. 정답을 확인해 보세요."}
-            </strong>
+            <div className="feedback-heading">
+              <strong className={isCorrect ? "correct-text" : "wrong-text"}>
+                {isCorrect ? "정답이에요." : "아쉬워요. 정답을 확인해 보세요."}
+              </strong>
+              {question.direction === "ko-ja" && audioCue && (
+                <AudioButton src={audioCue.src} />
+              )}
+            </div>
             <p>
               <span lang="ja">{question.japanese}</span>
               {question.reading && <span className="feedback-reading" lang="ja">{question.reading}</span>}

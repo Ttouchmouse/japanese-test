@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "title": "일본어 무작정 따라하기 완전판",
   "lessons": [
     {
@@ -443,12 +443,13 @@
           "sourcePage": 6
         },
         {
-          "id": "l02-p-47049d8b2fe9",
+          "id": "l02-p-9d5d125991f6",
           "lessonId": 2,
           "type": "pattern",
           "japanese": "佐藤さんは大学生です。",
-          "korean": "씨는 대학생입니다.",
-          "sourcePage": 6
+          "korean": "사토 씨는 대학생입니다.",
+          "sourcePage": 6,
+          "reading": "佐藤(さとう)"
         },
         {
           "id": "l02-p-2f0a868bf46c",
@@ -459,12 +460,13 @@
           "sourcePage": 6
         },
         {
-          "id": "l02-p-fb117a002d76",
+          "id": "l02-p-bfb0a4f78bc5",
           "lessonId": 2,
           "type": "pattern",
           "japanese": "鈴木さんは中学生です。",
-          "korean": "씨는 중학생이에요.",
-          "sourcePage": 6
+          "korean": "스즈키 씨는 중학생이에요.",
+          "sourcePage": 6,
+          "reading": "鈴木(すずき)"
         },
         {
           "id": "l02-p-e1895b332dd4",
@@ -507,12 +509,13 @@
           "sourcePage": 6
         },
         {
-          "id": "l02-p-a2864db9c291",
+          "id": "l02-p-c6e1a0c87e14",
           "lessonId": 2,
           "type": "pattern",
           "japanese": "佐藤さんは中学生ですか。",
-          "korean": "씨는 중학생입니까?",
-          "sourcePage": 7
+          "korean": "사토 씨는 중학생입니까?",
+          "sourcePage": 7,
+          "reading": "佐藤(さとう)"
         },
         {
           "id": "l02-p-28ee9c05cbe7",
@@ -523,12 +526,13 @@
           "sourcePage": 7
         },
         {
-          "id": "l02-p-26f2449efb05",
+          "id": "l02-p-51f7f8918e72",
           "lessonId": 2,
           "type": "pattern",
           "japanese": "鈴木さんは大学生ですか。",
-          "korean": "씨는 대학생이에요?",
-          "sourcePage": 7
+          "korean": "스즈키 씨는 대학생이에요?",
+          "sourcePage": 7,
+          "reading": "鈴木(すずき)"
         },
         {
           "id": "l02-p-ca7d2c3fae05",
@@ -563,12 +567,13 @@
           "sourcePage": 7
         },
         {
-          "id": "l02-p-11755244b2f5",
+          "id": "l02-p-7081f3367c9e",
           "lessonId": 2,
           "type": "pattern",
           "japanese": "佐藤さんは高校生じゃありませんか。",
-          "korean": "씨는 고등학생이 아닙니까?",
-          "sourcePage": 7
+          "korean": "사토 씨는 고등학생이 아닙니까?",
+          "sourcePage": 7,
+          "reading": "佐藤(さとう)"
         },
         {
           "id": "l02-p-613fba1a3008",
@@ -587,12 +592,13 @@
           "sourcePage": 7
         },
         {
-          "id": "l02-p-49511932fb80",
+          "id": "l02-p-cc37694997a0",
           "lessonId": 2,
           "type": "pattern",
           "japanese": "鈴木さんは日本人じゃありませんか。",
-          "korean": "씨는 일본 사람이 아니에요?",
-          "sourcePage": 7
+          "korean": "스즈키 씨는 일본 사람이 아니에요?",
+          "sourcePage": 7,
+          "reading": "鈴木(すずき)"
         },
         {
           "id": "l02-p-baca4ac67706",
@@ -845,20 +851,22 @@
           "sourcePage": 9
         },
         {
-          "id": "l03-p-4bebd5a80618",
+          "id": "l03-p-ba0b49319efd",
           "lessonId": 3,
           "type": "pattern",
           "japanese": "恵の帽子?",
-          "korean": "(의) 모자야?",
-          "sourcePage": 10
+          "korean": "메구미의 모자야?",
+          "sourcePage": 10,
+          "reading": "恵(めぐみ)"
         },
         {
-          "id": "l03-p-bb1b23506983",
+          "id": "l03-p-57694ff22578",
           "lessonId": 3,
           "type": "pattern",
           "japanese": "学の傘?",
-          "korean": "(의) 우산이야?",
-          "sourcePage": 10
+          "korean": "마나부의 우산이야?",
+          "sourcePage": 10,
+          "reading": "学(まなぶ)"
         },
         {
           "id": "l03-p-590f9f4840ed",
@@ -877,6 +885,24 @@
           "sourcePage": 10
         },
         {
+          "id": "l03-p-af5d3af5ba41",
+          "lessonId": 3,
+          "type": "pattern",
+          "japanese": "うん、恵の。",
+          "korean": "응, 메구미의 꺼야.",
+          "sourcePage": 10,
+          "reading": "恵(めぐみ)"
+        },
+        {
+          "id": "l03-p-3edbb34577e6",
+          "lessonId": 3,
+          "type": "pattern",
+          "japanese": "うん、学の。",
+          "korean": "응, 마나부의 꺼야.",
+          "sourcePage": 10,
+          "reading": "学(まなぶ)"
+        },
+        {
           "id": "l03-p-c1549a9c24ec",
           "lessonId": 3,
           "type": "pattern",
@@ -891,6 +917,24 @@
           "japanese": "うん、俺の。",
           "korean": "응, 내 꺼야.",
           "sourcePage": 10
+        },
+        {
+          "id": "l03-p-6fcabf14aa9f",
+          "lessonId": 3,
+          "type": "pattern",
+          "japanese": "ううん、恵のじゃない。",
+          "korean": "아니, 메구미의 꺼가 아니야.",
+          "sourcePage": 10,
+          "reading": "恵(めぐみ)"
+        },
+        {
+          "id": "l03-p-6cd257b5fc37",
+          "lessonId": 3,
+          "type": "pattern",
+          "japanese": "ううん、学のじゃない。",
+          "korean": "아니, 마나부의 꺼가 아니야.",
+          "sourcePage": 10,
+          "reading": "学(まなぶ)"
         },
         {
           "id": "l03-p-7fb28af20ae2",
@@ -1142,20 +1186,22 @@
           "sourcePage": 12
         },
         {
-          "id": "l04-p-68c8669b0c2d",
+          "id": "l04-p-18b7875e9728",
           "lessonId": 4,
           "type": "pattern",
           "japanese": "佐藤さんのお金ですか。",
-          "korean": "씨(의) 돈입니까?",
-          "sourcePage": 12
+          "korean": "사토 씨의 돈입니까?",
+          "sourcePage": 12,
+          "reading": "佐藤(さとう)"
         },
         {
-          "id": "l04-p-435cfae013ac",
+          "id": "l04-p-8f334c4488d3",
           "lessonId": 4,
           "type": "pattern",
           "japanese": "鈴木さんの靴ですか。",
-          "korean": "씨(의) 신발입니까?",
-          "sourcePage": 13
+          "korean": "스즈키 씨의 신발입니까?",
+          "sourcePage": 13,
+          "reading": "鈴木(すずき)"
         },
         {
           "id": "l04-p-437dfc281f65",
@@ -1174,6 +1220,24 @@
           "sourcePage": 13
         },
         {
+          "id": "l04-p-87a73be58d0b",
+          "lessonId": 4,
+          "type": "pattern",
+          "japanese": "はい、佐藤さんのです。",
+          "korean": "네, 사토 씨의 것입니다.",
+          "sourcePage": 13,
+          "reading": "佐藤(さとう)"
+        },
+        {
+          "id": "l04-p-2ef00c0c52ec",
+          "lessonId": 4,
+          "type": "pattern",
+          "japanese": "はい、鈴木さんのです。",
+          "korean": "네, 스즈키 씨의 것입니다.",
+          "sourcePage": 13,
+          "reading": "鈴木(すずき)"
+        },
+        {
           "id": "l04-p-02adaae84fcd",
           "lessonId": 4,
           "type": "pattern",
@@ -1188,6 +1252,24 @@
           "japanese": "はい、私のです。",
           "korean": "네, 제 것이에요.",
           "sourcePage": 13
+        },
+        {
+          "id": "l04-p-a8dde0f7ba35",
+          "lessonId": 4,
+          "type": "pattern",
+          "japanese": "いいえ、佐藤さんのじゃありません。",
+          "korean": "아니요, 사토 씨의 것이 아닙니다.",
+          "sourcePage": 13,
+          "reading": "佐藤(さとう)"
+        },
+        {
+          "id": "l04-p-b56db2bfd6ee",
+          "lessonId": 4,
+          "type": "pattern",
+          "japanese": "いいえ、鈴木さんのじゃありません。",
+          "korean": "아니요, 스즈키 씨의 것이 아닙니다.",
+          "sourcePage": 13,
+          "reading": "鈴木(すずき)"
         },
         {
           "id": "l04-p-4f1d0f6e72f2",
@@ -2630,20 +2712,22 @@
           "sourcePage": 25
         },
         {
-          "id": "l08-p-b814706a49e3",
+          "id": "l08-p-a2df61865be0",
           "lessonId": 8,
           "type": "pattern",
           "japanese": "橋本さんの帽子はどちらですか。",
-          "korean": "씨(의) 모자는 어떤 것입니까?",
-          "sourcePage": 25
+          "korean": "하시모토 씨의 모자는 어떤 것입니까?",
+          "sourcePage": 25,
+          "reading": "橋本(はしもと)"
         },
         {
-          "id": "l08-p-dba51ac826be",
+          "id": "l08-p-cdf1c2258906",
           "lessonId": 8,
           "type": "pattern",
           "japanese": "中村さんの傘はどちらですか。",
-          "korean": "씨(의) 우산은 어떤 것입니까?",
-          "sourcePage": 25
+          "korean": "나카무라 씨의 우산은 어떤 것입니까?",
+          "sourcePage": 25,
+          "reading": "中村(なかむら)"
         },
         {
           "id": "l08-p-cde92cfb26f6",
@@ -3249,6 +3333,14 @@
           "sourcePage": 31
         },
         {
+          "id": "l10-p-c01812d9db0c",
+          "lessonId": 10,
+          "type": "pattern",
+          "japanese": "昨日は曇りじゃありませんでした。",
+          "korean": "어제는 흐린 날씨가 아니었습니다(흐림이 아니었습니다).",
+          "sourcePage": 31
+        },
+        {
           "id": "l10-p-14654d67fe55",
           "lessonId": 10,
           "type": "pattern",
@@ -3655,6 +3747,14 @@
           "sourcePage": 35
         },
         {
+          "id": "l11-p-60b9d617c038",
+          "lessonId": 11,
+          "type": "pattern",
+          "japanese": "あの人の奥さんはそんなにきれいじゃない。",
+          "korean": "저 사람의 아내 분은 그렇게 예쁘지 않아.",
+          "sourcePage": 35
+        },
+        {
           "id": "l11-p-ea3f649d045e",
           "lessonId": 11,
           "type": "pattern",
@@ -3980,6 +4080,15 @@
           "sourcePage": 37
         },
         {
+          "id": "l12-p-f0e0156103b8",
+          "lessonId": 12,
+          "type": "pattern",
+          "japanese": "私は田村さんがとても好きです。",
+          "korean": "저는 다무라 씨를 아주 좋아합니다.",
+          "sourcePage": 38,
+          "reading": "田村(たむら)"
+        },
+        {
           "id": "l12-p-9c73e750adac",
           "lessonId": 12,
           "type": "pattern",
@@ -4012,6 +4121,15 @@
           "sourcePage": 38
         },
         {
+          "id": "l12-p-29e658c9cfd9",
+          "lessonId": 12,
+          "type": "pattern",
+          "japanese": "私は田村さんが嫌いじゃありません。",
+          "korean": "저는 다무라 씨를 안 싫어합니다.",
+          "sourcePage": 38,
+          "reading": "田村(たむら)"
+        },
+        {
           "id": "l12-p-f015f3e342d9",
           "lessonId": 12,
           "type": "pattern",
@@ -4020,12 +4138,13 @@
           "sourcePage": 38
         },
         {
-          "id": "l12-p-2d808a5b32a1",
+          "id": "l12-p-fac4bb66491d",
           "lessonId": 12,
           "type": "pattern",
-          "japanese": "なかの",
-          "korean": "씨의 아버지는 그렇게 성실하지 않아요.",
-          "sourcePage": 38
+          "japanese": "中野さんのお父さんはそれほどまじめじゃありません。",
+          "korean": "나카노 씨의 아버지는 그렇게 성실하지 않아요.",
+          "sourcePage": 38,
+          "reading": "中野(なかの)"
         },
         {
           "id": "l12-p-da6d71d2f9ab",
@@ -4263,28 +4382,39 @@
           "sourcePage": 40
         },
         {
-          "id": "l13-p-eef6cb495f1f",
+          "id": "l13-p-f58f348c6e4d",
           "lessonId": 13,
           "type": "pattern",
-          "japanese": "はらだ",
-          "korean": "씨의 어머니는 이상한 사람이 아니었어.",
+          "japanese": "原田さんのお母さんは変な人じゃなかった。",
+          "korean": "하라다 씨의 어머니는 이상한 사람이 아니었어.",
+          "sourcePage": 40,
+          "reading": "原田(はらだ)"
+        },
+        {
+          "id": "l13-p-03193223463f",
+          "lessonId": 13,
+          "type": "pattern",
+          "japanese": "ヒョンジンは日本語が上手な人じゃなかった。",
+          "korean": "현진이는 일본어를 잘하는 사람이 아니었어.",
           "sourcePage": 40
         },
         {
-          "id": "l13-p-abf587c0a1ff",
+          "id": "l13-p-b4c6ff750bed",
           "lessonId": 13,
           "type": "pattern",
-          "japanese": "しゅん",
-          "korean": "은 영어를 그렇게 잘 못하는 사람이 아니었어.",
-          "sourcePage": 40
+          "japanese": "駿は英語がそんなに下手な人じゃなかった。",
+          "korean": "슌은 영어를 그렇게 잘 못하는 사람이 아니었어.",
+          "sourcePage": 40,
+          "reading": "駿(しゅん)"
         },
         {
-          "id": "l13-p-c2e6289d59d7",
+          "id": "l13-p-d2232002e7fc",
           "lessonId": 13,
           "type": "pattern",
           "japanese": "優奈は韓国語が得意だった。",
-          "korean": "는 한국어를 잘했어.",
-          "sourcePage": 41
+          "korean": "유나는 한국어를 잘했어.",
+          "sourcePage": 41,
+          "reading": "優奈(ゆうな)"
         },
         {
           "id": "l13-p-f01c54294d0e",
@@ -4303,20 +4433,30 @@
           "sourcePage": 41
         },
         {
-          "id": "l13-p-fb169be908ba",
+          "id": "l13-p-528c42f353f3",
           "lessonId": 13,
           "type": "pattern",
           "japanese": "和田さんのお母さんはすごく変だった。",
-          "korean": "씨의 어머니는 되게 이상했어.",
+          "korean": "와다 씨의 어머니는 되게 이상했어.",
+          "sourcePage": 41,
+          "reading": "和田(わだ)"
+        },
+        {
+          "id": "l13-p-e9f3d90de474",
+          "lessonId": 13,
+          "type": "pattern",
+          "japanese": "ヒョンジンは日本語がそんなに上手じゃなかった。",
+          "korean": "현진이는 일본어를 그렇게 잘하지 않았어.",
           "sourcePage": 41
         },
         {
-          "id": "l13-p-7f1b33e65367",
+          "id": "l13-p-498f1ca1a3fb",
           "lessonId": 13,
           "type": "pattern",
           "japanese": "駿は英語が下手じゃなかった。",
-          "korean": "은 영어를 잘 못하지 않았어.",
-          "sourcePage": 41
+          "korean": "슌은 영어를 잘 못하지 않았어.",
+          "sourcePage": 41,
+          "reading": "駿(しゅん)"
         },
         {
           "id": "l13-p-04db8e23e90c",
@@ -4327,12 +4467,13 @@
           "sourcePage": 41
         },
         {
-          "id": "l13-p-105216b29c88",
+          "id": "l13-p-8e7195def9bf",
           "lessonId": 13,
           "type": "pattern",
           "japanese": "優奈は韓国語が苦手じゃなかった。",
-          "korean": "는 한국어를 잘 못하지 않았어.",
-          "sourcePage": 41
+          "korean": "유나는 한국어를 잘 못하지 않았어.",
+          "sourcePage": 41,
+          "reading": "優奈(ゆうな)"
         },
         {
           "id": "l13-p-d56eddd953fa",
@@ -4351,12 +4492,13 @@
           "sourcePage": 41
         },
         {
-          "id": "l13-p-07b94f9696c3",
+          "id": "l13-p-adb9dde8cddd",
           "lessonId": 13,
           "type": "pattern",
           "japanese": "駿の英語はどうだった?",
-          "korean": "의 영어는 어땠어?",
-          "sourcePage": 41
+          "korean": "슌의 영어는 어땠어?",
+          "sourcePage": 41,
+          "reading": "駿(しゅん)"
         },
         {
           "id": "l13-p-64894ab9bf5c",
@@ -4708,11 +4850,27 @@
           "sourcePage": 44
         },
         {
+          "id": "l14-p-3e357e0314cd",
+          "lessonId": 14,
+          "type": "pattern",
+          "japanese": "このサイトはそれほど便利じゃありませんでした。",
+          "korean": "이 사이트는 그렇게 편리하지 않았습니다.",
+          "sourcePage": 44
+        },
+        {
           "id": "l14-p-a3e3383c08b0",
           "lessonId": 14,
           "type": "pattern",
           "japanese": "そこはそんなに不便じゃありませんでした。",
           "korean": "거기는 그렇게 안 불편했습니다.",
+          "sourcePage": 44
+        },
+        {
+          "id": "l14-p-98c0edc1c676",
+          "lessonId": 14,
+          "type": "pattern",
+          "japanese": "お祭りはそれほど賑やかじゃありませんでした。",
+          "korean": "축제는 그다지 성황이 아니었어요.",
           "sourcePage": 44
         },
         {
@@ -5477,12 +5635,13 @@
           "sourcePage": 50
         },
         {
-          "id": "l16-p-82549fd748a2",
+          "id": "l16-p-d1049f92846f",
           "lessonId": 16,
           "type": "pattern",
           "japanese": "東京の冬は寒くないです。",
-          "korean": "의 겨울은 안 추워요.",
-          "sourcePage": 50
+          "korean": "도쿄의 겨울은 안 추워요.",
+          "sourcePage": 50,
+          "reading": "東京(とうきょう)"
         },
         {
           "id": "l16-p-79310e1daf81",
@@ -5501,12 +5660,22 @@
           "sourcePage": 50
         },
         {
-          "id": "l16-p-b6270cb11e4c",
+          "id": "l16-p-cd4d993dbe93",
           "lessonId": 16,
           "type": "pattern",
           "japanese": "東京はソウルより暑いです。",
-          "korean": "는 서울보다 더워요.",
-          "sourcePage": 50
+          "korean": "도쿄는 서울보다 더워요.",
+          "sourcePage": 50,
+          "reading": "東京(とうきょう)"
+        },
+        {
+          "id": "l16-p-79d5240810bf",
+          "lessonId": 16,
+          "type": "pattern",
+          "japanese": "ソウルは東京より寒いです。",
+          "korean": "서울은 도쿄보다 추워요.",
+          "sourcePage": 50,
+          "reading": "東京(とうきょう)"
         },
         {
           "id": "l16-p-57b457a536b7",
@@ -5517,12 +5686,30 @@
           "sourcePage": 50
         },
         {
-          "id": "l16-p-a139f14be754",
+          "id": "l16-p-c2d847e7157b",
+          "lessonId": 16,
+          "type": "pattern",
+          "japanese": "あのパソコンよりこのパソコンのほうが薄いです。",
+          "korean": "저 PC보다 이 PC가 더 얇습니다.",
+          "sourcePage": 50
+        },
+        {
+          "id": "l16-p-c5d334f70dea",
+          "lessonId": 16,
+          "type": "pattern",
+          "japanese": "ソウルより東京のほうが暑いです。",
+          "korean": "서울보다 도쿄가 더 더워요.",
+          "sourcePage": 50,
+          "reading": "東京(とうきょう)"
+        },
+        {
+          "id": "l16-p-b5e031bb5c5a",
           "lessonId": 16,
           "type": "pattern",
           "japanese": "東京よりソウルのほうが寒いです。",
-          "korean": "보다 서울이 더 추워요.",
-          "sourcePage": 50
+          "korean": "도쿄보다 서울이 더 추워요.",
+          "sourcePage": 50,
+          "reading": "東京(とうきょう)"
         },
         {
           "id": "l16-c-63c51987e374",
@@ -5817,12 +6004,46 @@
           "sourcePage": 53
         },
         {
-          "id": "l17-p-06c5153d0376",
+          "id": "l17-p-09bb4de0f829",
+          "lessonId": 17,
+          "type": "pattern",
+          "japanese": "金子さんの部屋と中山さんの部屋と、どっちが広かった?",
+          "korean": "가네코 씨 방과 나카야마 씨 방 중에 어떤 게 더 넓었어?",
+          "sourcePage": 53,
+          "reading": "中山(なかやま) · 金子(かねこ)"
+        },
+        {
+          "id": "l17-p-5764fd73224f",
+          "lessonId": 17,
+          "type": "pattern",
+          "japanese": "日本料理とフランス料理と、どっちがおいしかった?",
+          "korean": "일본 요리와 프랑스 요리 중에 어떤 게 더 맛있었어?",
+          "sourcePage": 53
+        },
+        {
+          "id": "l17-p-e02039b59801",
+          "lessonId": 17,
+          "type": "pattern",
+          "japanese": "その建物とあの建物と、どっちが新しかった?",
+          "korean": "그 건물과 저 건물 중에 어떤 게 더 새거였어?",
+          "sourcePage": 53
+        },
+        {
+          "id": "l17-p-f9f82c4e56e2",
+          "lessonId": 17,
+          "type": "pattern",
+          "japanese": "お父さんの時計とお母さんの時計と、どっちが古かった?",
+          "korean": "아버지 시계와 어머니 시계 중에 어떤 게 더 오래된 거였어?",
+          "sourcePage": 53
+        },
+        {
+          "id": "l17-p-f125e9fd77ea",
           "lessonId": 17,
           "type": "pattern",
           "japanese": "金子さんの部屋のほうが広かった。",
-          "korean": "씨 방이 더 넓었어.",
-          "sourcePage": 53
+          "korean": "가네코 씨 방이 더 넓었어.",
+          "sourcePage": 53,
+          "reading": "金子(かねこ)"
         },
         {
           "id": "l17-p-9237ea58d394",
@@ -6175,6 +6396,38 @@
           "sourcePage": 56
         },
         {
+          "id": "l18-p-e990d26b2f5f",
+          "lessonId": 18,
+          "type": "pattern",
+          "japanese": "先週と今週と、どちらが忙しかったですか。",
+          "korean": "지난주와 이번 주 중에 언제가 더 바빴습니까?",
+          "sourcePage": 56
+        },
+        {
+          "id": "l18-p-53458ad01778",
+          "lessonId": 18,
+          "type": "pattern",
+          "japanese": "英語のテストと日本語のテストと、どちらが難しかったですか。",
+          "korean": "영어 시험과 일본어 시험 중에 어느 쪽이 더 어려웠습니까?",
+          "sourcePage": 56
+        },
+        {
+          "id": "l18-p-1b81964c8ba0",
+          "lessonId": 18,
+          "type": "pattern",
+          "japanese": "フランス語の先生と中国語の先生と、どちらが優しかったですか。",
+          "korean": "프랑스어 선생님과 중국어 선생님 중에 누가 더 상냥했어요?",
+          "sourcePage": 56
+        },
+        {
+          "id": "l18-p-de2e6e83f58c",
+          "lessonId": 18,
+          "type": "pattern",
+          "japanese": "日本のドラマと韓国のドラマと、どちらが面白かったですか。",
+          "korean": "일본 드라마와 한국 드라마 중에 어느 쪽이 더 재미있었어요?",
+          "sourcePage": 56
+        },
+        {
           "id": "l18-p-1f93e14d7832",
           "lessonId": 18,
           "type": "pattern",
@@ -6427,11 +6680,11 @@
           "sourcePage": 58
         },
         {
-          "id": "l19-p-88232cdc4ac6",
+          "id": "l19-p-5df8f9f2e6cf",
           "lessonId": 19,
           "type": "pattern",
-          "japanese": "テレビを見る。 TV",
-          "korean": "를 볼래.",
+          "japanese": "テレビを見る。",
+          "korean": "TV를 볼래.",
           "sourcePage": 58
         },
         {
@@ -6475,11 +6728,11 @@
           "sourcePage": 58
         },
         {
-          "id": "l19-p-a39721170435",
+          "id": "l19-p-6fa54fed742c",
           "lessonId": 19,
           "type": "pattern",
-          "japanese": "テレビを見ない。 TV",
-          "korean": "를 안 봐.",
+          "japanese": "テレビを見ない。",
+          "korean": "TV를 안 봐.",
           "sourcePage": 58
         },
         {
@@ -6555,11 +6808,11 @@
           "sourcePage": 59
         },
         {
-          "id": "l19-p-92234df520a3",
+          "id": "l19-p-f9e6445bb048",
           "lessonId": 19,
           "type": "pattern",
-          "japanese": "テレビ、見ない? TV",
-          "korean": "안 봐?",
+          "japanese": "テレビ、見ない?",
+          "korean": "TV 안 봐?",
           "sourcePage": 59
         },
         {
@@ -6830,11 +7083,11 @@
           "sourcePage": 61
         },
         {
-          "id": "l20-p-cd5c1492a304",
+          "id": "l20-p-e77dc01369f4",
           "lessonId": 20,
           "type": "pattern",
-          "japanese": "DVDを借りません。 DVD",
-          "korean": "를 빌리지 않습니다.",
+          "japanese": "DVDを借りません。",
+          "korean": "DVD를 빌리지 않습니다.",
           "sourcePage": 61
         },
         {
@@ -6878,11 +7131,11 @@
           "sourcePage": 62
         },
         {
-          "id": "l20-p-e4e7035dbb3a",
+          "id": "l20-p-c5e5be72bc2b",
           "lessonId": 20,
           "type": "pattern",
-          "japanese": "DVDを借りますか。 DVD",
-          "korean": "를 빌려요?",
+          "japanese": "DVDを借りますか。",
+          "korean": "DVD를 빌려요?",
           "sourcePage": 62
         },
         {
@@ -7168,6 +7421,14 @@
           "sourcePage": 64
         },
         {
+          "id": "l21-p-9229ecf29cb5",
+          "lessonId": 21,
+          "type": "pattern",
+          "japanese": "来週、美佳がソウルに来る。",
+          "korean": "다음 주에 미카가 서울에 와.",
+          "sourcePage": 64
+        },
+        {
           "id": "l21-p-57c1cfce4ccb",
           "lessonId": 21,
           "type": "pattern",
@@ -7192,20 +7453,13 @@
           "sourcePage": 64
         },
         {
-          "id": "l21-p-33260613f7ca",
-          "lessonId": 21,
-          "type": "pattern",
-          "japanese": "ない",
-          "korean": "형(부정형)",
-          "sourcePage": 64
-        },
-        {
-          "id": "l21-p-918c46c1c969",
+          "id": "l21-p-6cf77e7a02dc",
           "lessonId": 21,
           "type": "pattern",
           "japanese": "悟はソウルに来ない。",
-          "korean": "는 서울에 오지 않아.",
-          "sourcePage": 64
+          "korean": "사토루는 서울에 오지 않아.",
+          "sourcePage": 64,
+          "reading": "悟(さとる)"
         },
         {
           "id": "l21-p-7b36a02ff9c1",
@@ -7230,6 +7484,15 @@
           "japanese": "来週からバイトをしない。",
           "korean": "다음 주부터 알바를 안 할래.",
           "sourcePage": 64
+        },
+        {
+          "id": "l21-p-e15f7736de71",
+          "lessonId": 21,
+          "type": "pattern",
+          "japanese": "悟は東京に来る?",
+          "korean": "사토루는 도쿄에 올 거야?",
+          "sourcePage": 65,
+          "reading": "東京(とうきょう) · 悟(さとる)"
         },
         {
           "id": "l21-p-c82b26104512",
@@ -7286,6 +7549,15 @@
           "japanese": "ううん、しない。",
           "korean": "아니, 안 해.",
           "sourcePage": 65
+        },
+        {
+          "id": "l21-p-4032404292fb",
+          "lessonId": 21,
+          "type": "pattern",
+          "japanese": "美佳は東京に来ない?",
+          "korean": "미카는 도쿄에 오지 않을 거야?",
+          "sourcePage": 65,
+          "reading": "東京(とうきょう)"
         },
         {
           "id": "l21-p-b4605c62831e",
@@ -7512,14 +7784,6 @@
           "japanese": "妹",
           "reading": "いもうと",
           "korean": "여동생",
-          "sourcePage": 67
-        },
-        {
-          "id": "l22-p-8fe76485b49a",
-          "lessonId": 22,
-          "type": "pattern",
-          "japanese": "ます",
-          "korean": "형",
           "sourcePage": 67
         },
         {
@@ -8617,6 +8881,14 @@
           "sourcePage": 76
         },
         {
+          "id": "l25-p-3eba833cb061",
+          "lessonId": 25,
+          "type": "pattern",
+          "japanese": "ベトナムで一緒に韓国語を教えない?",
+          "korean": "베트남에서 같이 한국어를 가르치지 않을래?",
+          "sourcePage": 76
+        },
+        {
           "id": "l25-p-860a02b068b4",
           "lessonId": 25,
           "type": "pattern",
@@ -8988,6 +9260,15 @@
           "sourcePage": 79
         },
         {
+          "id": "l26-p-aaddf135bb5b",
+          "lessonId": 26,
+          "type": "pattern",
+          "japanese": "その仕事は前田さんに頼みませんか。",
+          "korean": "그 일은 마에다 씨에게 부탁하지 않을래요?",
+          "sourcePage": 79,
+          "reading": "前田(まえだ)"
+        },
+        {
           "id": "l26-p-f11b1269b8a5",
           "lessonId": 26,
           "type": "pattern",
@@ -9060,6 +9341,15 @@
           "sourcePage": 80
         },
         {
+          "id": "l26-p-27e113a1599f",
+          "lessonId": 26,
+          "type": "pattern",
+          "japanese": "その仕事は前田さんに頼まないんですか。",
+          "korean": "그 일은 마에다 씨에게 부탁하지 않는 겁니까?",
+          "sourcePage": 80,
+          "reading": "前田(まえだ)"
+        },
+        {
           "id": "l26-p-10dfcf363216",
           "lessonId": 26,
           "type": "pattern",
@@ -9122,6 +9412,15 @@
           "japanese": "書類を書かなければなりません。",
           "korean": "서류를 써야 합니다.",
           "sourcePage": 80
+        },
+        {
+          "id": "l26-p-52bd06d0eeea",
+          "lessonId": 26,
+          "type": "pattern",
+          "japanese": "この仕事を前田さんに頼まなければなりません。",
+          "korean": "이 일을 마에다 씨에게 부탁해야 합니다.",
+          "sourcePage": 80,
+          "reading": "前田(まえだ)"
         },
         {
           "id": "l26-p-1f376d139e7f",
@@ -9708,6 +10007,15 @@
           "sourcePage": 85
         },
         {
+          "id": "l28-p-e895d3bd49ec",
+          "lessonId": 28,
+          "type": "pattern",
+          "japanese": "この仕事は小野さんに頼まないつもりです。",
+          "korean": "이 일은 오노 씨에게 부탁하지 않을 생각입니다.",
+          "sourcePage": 85,
+          "reading": "小野(おの)"
+        },
+        {
           "id": "l28-p-2265e5ef870b",
           "lessonId": 28,
           "type": "pattern",
@@ -9748,6 +10056,15 @@
           "sourcePage": 86
         },
         {
+          "id": "l28-p-c9bf24d1c5c1",
+          "lessonId": 28,
+          "type": "pattern",
+          "japanese": "この仕事は小野さんに頼まないつもりですか。",
+          "korean": "이 일은 오노 씨에게 부탁하지 않을 생각이에요?",
+          "sourcePage": 86,
+          "reading": "小野(おの)"
+        },
+        {
           "id": "l28-p-ed8072c557cc",
           "lessonId": 28,
           "type": "pattern",
@@ -9772,6 +10089,15 @@
           "sourcePage": 86
         },
         {
+          "id": "l28-p-7f1c0169e180",
+          "lessonId": 28,
+          "type": "pattern",
+          "japanese": "いいえ、小野さんに頼むつもりです。",
+          "korean": "아니요, 오노 씨에게 부탁할 생각이에요.",
+          "sourcePage": 86,
+          "reading": "小野(おの)"
+        },
+        {
           "id": "l28-p-9273e1661d79",
           "lessonId": 28,
           "type": "pattern",
@@ -9786,6 +10112,23 @@
           "japanese": "どうして明日、早く起きるんですか。",
           "korean": "왜 내일 일찍 일어나는 겁니까?",
           "sourcePage": 86
+        },
+        {
+          "id": "l28-p-8cbb738390ef",
+          "lessonId": 28,
+          "type": "pattern",
+          "japanese": "どうして友達のノートをコピーするんですか。",
+          "korean": "왜 친구의 노트를 복사하는 거예요?",
+          "sourcePage": 86
+        },
+        {
+          "id": "l28-p-1a7a4ddabc63",
+          "lessonId": 28,
+          "type": "pattern",
+          "japanese": "どうしてこの仕事を小野さんに頼まないんですか。",
+          "korean": "왜 이 일을 오노 씨에게 부탁하지 않는 겁니까?",
+          "sourcePage": 86,
+          "reading": "小野(おの)"
         },
         {
           "id": "l28-p-05d0bfcf4c2a",
@@ -9812,12 +10155,13 @@
           "sourcePage": 86
         },
         {
-          "id": "l28-p-0f57df18735c",
+          "id": "l28-p-6d31266a7315",
           "lessonId": 28,
           "type": "pattern",
           "japanese": "小野さんが嫌いですから。",
-          "korean": "씨를 싫어해서요.",
-          "sourcePage": 86
+          "korean": "오노 씨를 싫어해서요.",
+          "sourcePage": 86,
+          "reading": "小野(おの)"
         },
         {
           "id": "l28-p-86a35728bc4e",
@@ -10077,6 +10421,14 @@
           "japanese": "兄はたばこを吸うことがある。",
           "korean": "형/오빠는 담배를 피울 때가 있어.",
           "sourcePage": 88
+        },
+        {
+          "id": "l29-p-c55d5cda8d9b",
+          "lessonId": 29,
+          "type": "pattern",
+          "japanese": "その人は日本語を話さないことがある。",
+          "korean": "그 사람은 일본어를 말하지 않는 경우가 있어.",
+          "sourcePage": 89
         },
         {
           "id": "l29-p-a99c13cba2f2",
@@ -10418,6 +10770,14 @@
           "sourcePage": 91
         },
         {
+          "id": "l30-p-0efa3c1777f1",
+          "lessonId": 30,
+          "type": "pattern",
+          "japanese": "自転車で学校に行かないことがあります。",
+          "korean": "자전거로 학교에 가지 않는 경우가 있습니다.",
+          "sourcePage": 92
+        },
+        {
           "id": "l30-p-b4df5483cb8c",
           "lessonId": 30,
           "type": "pattern",
@@ -10439,6 +10799,14 @@
           "type": "pattern",
           "japanese": "洗濯をしないことがあります。",
           "korean": "빨래를 안 할 때가 있어요.",
+          "sourcePage": 92
+        },
+        {
+          "id": "l30-p-0a2ce1949aec",
+          "lessonId": 30,
+          "type": "pattern",
+          "japanese": "カラオケで歌う前にお酒を飲みます。",
+          "korean": "노래방에서 노래를 부르기 전에 술을 마십니다.",
           "sourcePage": 92
         },
         {
@@ -11060,6 +11428,14 @@
           "sourcePage": 97
         },
         {
+          "id": "l32-p-9bd571e2c7f4",
+          "lessonId": 32,
+          "type": "pattern",
+          "japanese": "先週は子供と全然出かけませんでした。",
+          "korean": "지난주에는 아이와 전혀 외출하지 않았어요.",
+          "sourcePage": 97
+        },
+        {
           "id": "l32-p-ad21a9dce273",
           "lessonId": 32,
           "type": "pattern",
@@ -11391,14 +11767,6 @@
           "sourcePage": 100
         },
         {
-          "id": "l33-p-20718d932387",
-          "lessonId": 33,
-          "type": "pattern",
-          "japanese": "た",
-          "korean": "형",
-          "sourcePage": 100
-        },
-        {
           "id": "l33-p-62b8d7c50b78",
           "lessonId": 33,
           "type": "pattern",
@@ -11444,6 +11812,14 @@
           "type": "pattern",
           "japanese": "しなかった。",
           "korean": "하지 않았어.",
+          "sourcePage": 100
+        },
+        {
+          "id": "l33-p-936fd20d4ed2",
+          "lessonId": 33,
+          "type": "pattern",
+          "japanese": "学校に鉛筆と消しゴムを持って来なかった。",
+          "korean": "학교에 연필과 지우개를 가져오지 않았어.",
           "sourcePage": 100
         },
         {
@@ -11548,6 +11924,14 @@
           "type": "pattern",
           "japanese": "しなかった?",
           "korean": "하지 않았어?",
+          "sourcePage": 101
+        },
+        {
+          "id": "l33-p-4b64919acb43",
+          "lessonId": 33,
+          "type": "pattern",
+          "japanese": "学校に鉛筆と消しゴム、持って来なかった?",
+          "korean": "학교에 연필과 지우개, 가져오지 않았어?",
           "sourcePage": 101
         },
         {
@@ -11695,6 +12079,24 @@
           "sourcePage": 103
         },
         {
+          "id": "l34-p-38fdf5624b32",
+          "lessonId": 34,
+          "type": "pattern",
+          "japanese": "柴田さんと原さんが病院へ来ました。",
+          "korean": "시바타 씨와 하라 씨가 병원으로 왔습니다.",
+          "sourcePage": 103,
+          "reading": "柴田(しばた) · 原(はら)"
+        },
+        {
+          "id": "l34-p-c99689b6ab53",
+          "lessonId": 34,
+          "type": "pattern",
+          "japanese": "先月、大阪と京都へ行って来ました。",
+          "korean": "지난달에 오사카와 교토로 갔다 왔어요.",
+          "sourcePage": 103,
+          "reading": "京都(きょうと) · 大阪(おおさか)"
+        },
+        {
           "id": "l34-p-aa1548f94e9d",
           "lessonId": 34,
           "type": "pattern",
@@ -11719,20 +12121,22 @@
           "sourcePage": 103
         },
         {
-          "id": "l34-p-0b9370ad0266",
+          "id": "l34-p-befc212de042",
           "lessonId": 34,
           "type": "pattern",
           "japanese": "原さんは病院へ来ませんでした。",
-          "korean": "씨는 병원으로 오지 않았습니다.",
-          "sourcePage": 103
+          "korean": "하라 씨는 병원으로 오지 않았습니다.",
+          "sourcePage": 103,
+          "reading": "原(はら)"
         },
         {
-          "id": "l34-p-0a21836bb5d9",
+          "id": "l34-p-45a92323302f",
           "lessonId": 34,
           "type": "pattern",
           "japanese": "京都へ行って来ませんでした。",
-          "korean": "로 안 갔다 왔어요.",
-          "sourcePage": 103
+          "korean": "교토로 안 갔다 왔어요.",
+          "sourcePage": 103,
+          "reading": "京都(きょうと)"
         },
         {
           "id": "l34-p-5a48e95f6aa6",
@@ -11743,11 +12147,45 @@
           "sourcePage": 103
         },
         {
+          "id": "l34-p-3e6521fc2952",
+          "lessonId": 34,
+          "type": "pattern",
+          "japanese": "友達とうちで歌を練習しませんでした。",
+          "korean": "친구랑 집에서 노래를 연습하지 않았어요.",
+          "sourcePage": 103
+        },
+        {
           "id": "l34-p-f3a979d69e1b",
           "lessonId": 34,
           "type": "pattern",
           "japanese": "しましたか。",
           "korean": "했습니까?",
+          "sourcePage": 104
+        },
+        {
+          "id": "l34-p-b65ced90cc6c",
+          "lessonId": 34,
+          "type": "pattern",
+          "japanese": "柴田さんと原さんが病院へ来ましたか。",
+          "korean": "시바타 씨와 하라 씨가 병원으로 왔습니까?",
+          "sourcePage": 104,
+          "reading": "柴田(しばた) · 原(はら)"
+        },
+        {
+          "id": "l34-p-d69eb431e223",
+          "lessonId": 34,
+          "type": "pattern",
+          "japanese": "先月、大阪と京都へ行って来ましたか。",
+          "korean": "지난달에 오사카와 교토로 갔다 왔어요?",
+          "sourcePage": 104,
+          "reading": "京都(きょうと) · 大阪(おおさか)"
+        },
+        {
+          "id": "l34-p-42e588ddb67d",
+          "lessonId": 34,
+          "type": "pattern",
+          "japanese": "お姉さんと百貨店で買い物をしましたか。",
+          "korean": "누나와 함께 백화점에서 쇼핑을 했습니까?",
           "sourcePage": 104
         },
         {
@@ -11799,12 +12237,22 @@
           "sourcePage": 104
         },
         {
-          "id": "l34-p-d82d10c21194",
+          "id": "l34-p-bd20081e1f5f",
           "lessonId": 34,
           "type": "pattern",
           "japanese": "原さんは病院へ来ませんでしたか。",
-          "korean": "씨는 병원으로 오지 않았습니까?",
-          "sourcePage": 104
+          "korean": "하라 씨는 병원으로 오지 않았습니까?",
+          "sourcePage": 104,
+          "reading": "原(はら)"
+        },
+        {
+          "id": "l34-p-49f59818fa08",
+          "lessonId": 34,
+          "type": "pattern",
+          "japanese": "先月、大阪へ行って来ませんでしたか。",
+          "korean": "지난달에 오사카로 갔다 오지 않았어요?",
+          "sourcePage": 104,
+          "reading": "大阪(おおさか)"
         },
         {
           "id": "l34-p-cba0c18bd258",
@@ -14864,12 +15312,53 @@
           "sourcePage": 132
         },
         {
+          "id": "l43-p-a9ddaf3e3702",
+          "lessonId": 43,
+          "type": "pattern",
+          "japanese": "学校で先生の説明を聞いたり、友達と話したりした。",
+          "korean": "학교에서 선생님(의) 설명을 듣기도 하고 친구와 이야기하기도 했어.",
+          "sourcePage": 132
+        },
+        {
+          "id": "l43-p-841f778f04b7",
+          "lessonId": 43,
+          "type": "pattern",
+          "japanese": "パーティーでご飯を食べたり、お酒を飲んだりした。",
+          "korean": "파티에서 밥을 먹거나 술을 마셨어.",
+          "sourcePage": 132
+        },
+        {
           "id": "l43-p-c0fe258d98fc",
           "lessonId": 43,
           "type": "pattern",
           "japanese": "私はチョコレートとか飴とかが好き。",
           "korean": "나는 초콜릿이라든가 사탕 등을 좋아해.",
           "sourcePage": 132
+        },
+        {
+          "id": "l43-p-38f7373d0bb2",
+          "lessonId": 43,
+          "type": "pattern",
+          "japanese": "韓国旅行のお土産はのりとかキムチとかがいい。",
+          "korean": "한국 여행(의) 선물은 김이라든가 김치 등이 좋아.",
+          "sourcePage": 132
+        },
+        {
+          "id": "l43-p-c9e6effce873",
+          "lessonId": 43,
+          "type": "pattern",
+          "japanese": "週末はいつも運動とか散歩とかをする。",
+          "korean": "주말은 항상 운동이라든가 산책 등을 해.",
+          "sourcePage": 132
+        },
+        {
+          "id": "l43-p-672bddfff900",
+          "lessonId": 43,
+          "type": "pattern",
+          "japanese": "飲み会に原田さんとか竹内さんとかが来る。",
+          "korean": "술 모임에 하라다 씨라든가 다케우치 씨 등이 올 거야.",
+          "sourcePage": 132,
+          "reading": "竹内(たけうち) · 原田(はらだ)"
         },
         {
           "id": "l43-c-f2ebdfe038d2",
@@ -15106,11 +15595,27 @@
           "sourcePage": 135
         },
         {
+          "id": "l44-p-c90ca0193798",
+          "lessonId": 44,
+          "type": "pattern",
+          "japanese": "薬を塗った後で、ばんそうこうを貼りました。",
+          "korean": "약을 바른 후에 반창고를 붙였습니다.",
+          "sourcePage": 135
+        },
+        {
           "id": "l44-p-6938fc7f963b",
           "lessonId": 44,
           "type": "pattern",
           "japanese": "お酒を飲んだ後でたばこを吸いました。",
           "korean": "술을 마신 후에 담배를 피웠어요.",
+          "sourcePage": 135
+        },
+        {
+          "id": "l44-p-9ed7444dfe8b",
+          "lessonId": 44,
+          "type": "pattern",
+          "japanese": "お土産をもらった後で、電話をかけました。",
+          "korean": "선물을 받은 후에 전화를 걸었어요.",
           "sourcePage": 135
         },
         {
@@ -15146,11 +15651,52 @@
           "sourcePage": 135
         },
         {
+          "id": "l44-p-1f8a9f2b80e7",
+          "lessonId": 44,
+          "type": "pattern",
+          "japanese": "薬を塗ったり、ばんそうこうを貼ったりしました。",
+          "korean": "약을 바르거나 반창고를 붙였습니다.",
+          "sourcePage": 135
+        },
+        {
           "id": "l44-p-227d83892848",
           "lessonId": 44,
           "type": "pattern",
           "japanese": "電気をつけたり消したりしました。",
           "korean": "불을 켰다가 껐다가 했습니다.",
+          "sourcePage": 135
+        },
+        {
+          "id": "l44-p-e406e5df3cbf",
+          "lessonId": 44,
+          "type": "pattern",
+          "japanese": "電話をかけたり、プレゼントを持って行ったりしました。",
+          "korean": "전화를 걸기도 하고 선물을 가져가기도 했어요.",
+          "sourcePage": 135
+        },
+        {
+          "id": "l44-p-68279e86ed70",
+          "lessonId": 44,
+          "type": "pattern",
+          "japanese": "眼鏡をかけたりコンタクトをしたりします。",
+          "korean": "안경을 쓰거나 렌즈를 끼거나 해요.",
+          "sourcePage": 135
+        },
+        {
+          "id": "l44-p-a9fcef9fb38f",
+          "lessonId": 44,
+          "type": "pattern",
+          "japanese": "大阪や京都や奈良などへ行きます。",
+          "korean": "오사카며 교토며 나라 등으로 갑니다.",
+          "sourcePage": 135,
+          "reading": "京都(きょうと) · 大阪(おおさか) · 奈良(なら)"
+        },
+        {
+          "id": "l44-p-6822da7c5d17",
+          "lessonId": 44,
+          "type": "pattern",
+          "japanese": "鉛筆や消しゴムやノートなどをもらいました。",
+          "korean": "연필이며 지우개며 노트 등을 받았습니다.",
           "sourcePage": 135
         },
         {
@@ -15760,27 +16306,27 @@
           "sourcePage": 141
         },
         {
-          "id": "l46-p-6f006b58b365",
+          "id": "l46-p-28ddf4c36b05",
           "lessonId": 46,
           "type": "pattern",
-          "japanese": "二つで28,500円です。 2",
-          "korean": "개로 28,500엔입니다.",
+          "japanese": "二つで28,500円です。",
+          "korean": "2개로 28,500엔입니다.",
           "sourcePage": 141
         },
         {
-          "id": "l46-p-f0376c8a6689",
+          "id": "l46-p-e286424fd509",
           "lessonId": 46,
           "type": "pattern",
-          "japanese": "四つで414円です。 4",
-          "korean": "개에 414엔이에요.",
+          "japanese": "四つで414円です。",
+          "korean": "4개에 414엔이에요.",
           "sourcePage": 141
         },
         {
-          "id": "l46-p-53599384e836",
+          "id": "l46-p-0e5102591847",
           "lessonId": 46,
           "type": "pattern",
-          "japanese": "五つで276円です。 5",
-          "korean": "개에 276엔이에요.",
+          "japanese": "五つで276円です。",
+          "korean": "5개에 276엔이에요.",
           "sourcePage": 141
         },
         {
@@ -15955,12 +16501,13 @@
           "sourcePage": 143
         },
         {
-          "id": "l47-p-646164edac35",
+          "id": "l47-p-e1e1dbc444e3",
           "lessonId": 47,
           "type": "pattern",
           "japanese": "東京に住みたい。",
-          "korean": "에 살고 싶어.",
-          "sourcePage": 143
+          "korean": "도쿄에 살고 싶어.",
+          "sourcePage": 143,
+          "reading": "東京(とうきょう)"
         },
         {
           "id": "l47-p-1aa571a31088",
@@ -15987,12 +16534,13 @@
           "sourcePage": 143
         },
         {
-          "id": "l47-p-0b7d04d3bcb8",
+          "id": "l47-p-3ca26edba30f",
           "lessonId": 47,
           "type": "pattern",
           "japanese": "東京に住みたくない。",
-          "korean": "에 살고 싶지 않아.",
-          "sourcePage": 143
+          "korean": "도쿄에 살고 싶지 않아.",
+          "sourcePage": 143,
+          "reading": "東京(とうきょう)"
         },
         {
           "id": "l47-p-720be530a8fb",
@@ -16065,6 +16613,15 @@
           "japanese": "靴を買いに百貨店に来た。",
           "korean": "구두를 사러 백화점에 왔어.",
           "sourcePage": 144
+        },
+        {
+          "id": "l47-p-1c37e8e2880a",
+          "lessonId": 47,
+          "type": "pattern",
+          "japanese": "明日、東京へ家を見に行く。",
+          "korean": "내일 도쿄로 집을 보러 가.",
+          "sourcePage": 144,
+          "reading": "東京(とうきょう)"
         },
         {
           "id": "l47-p-bc9a513bc296",
@@ -16327,6 +16884,15 @@
           "sourcePage": 146
         },
         {
+          "id": "l48-p-893f66538996",
+          "lessonId": 48,
+          "type": "pattern",
+          "japanese": "この仕事を江口さんに頼みたいです。",
+          "korean": "이 일을 에구치 씨에게 부탁하고 싶습니다.",
+          "sourcePage": 146,
+          "reading": "江口(えぐち)"
+        },
+        {
           "id": "l48-p-448e1e41ad78",
           "lessonId": 48,
           "type": "pattern",
@@ -16415,6 +16981,14 @@
           "sourcePage": 147
         },
         {
+          "id": "l48-p-f1a47c227c04",
+          "lessonId": 48,
+          "type": "pattern",
+          "japanese": "天気がいいから、散歩に行きたいです。",
+          "korean": "날씨가 좋으니까 산책하러 가고 싶습니다.",
+          "sourcePage": 147
+        },
+        {
           "id": "l48-p-473fe0b8ec82",
           "lessonId": 48,
           "type": "pattern",
@@ -16444,6 +17018,30 @@
           "type": "pattern",
           "japanese": "この花の中でどれが一番好きですか。",
           "korean": "이 꽃들 중에서 어떤 것을 가장 좋아합니까?",
+          "sourcePage": 147
+        },
+        {
+          "id": "l48-p-5c5b5e0f9676",
+          "lessonId": 48,
+          "type": "pattern",
+          "japanese": "この果物の中で、どれが一番おいしいですか。",
+          "korean": "이 과일들 중에서 어떤 것이 가장 맛있습니까?",
+          "sourcePage": 147
+        },
+        {
+          "id": "l48-p-8d9d64bb4716",
+          "lessonId": 48,
+          "type": "pattern",
+          "japanese": "その映画の中で、どの映画が一番面白いですか。",
+          "korean": "그 영화들 중에서 어떤 영화가 제일 재미있어요?",
+          "sourcePage": 147
+        },
+        {
+          "id": "l48-p-d133a6bf577a",
+          "lessonId": 48,
+          "type": "pattern",
+          "japanese": "その歌の中でどの歌が一番いいですか。",
+          "korean": "그 노래들 중에서 어떤 노래가 제일 좋아요?",
           "sourcePage": 147
         },
         {
@@ -17436,11 +18034,27 @@
           "sourcePage": 155
         },
         {
+          "id": "l51-p-74cb4af5a414",
+          "lessonId": 51,
+          "type": "pattern",
+          "japanese": "妹が隣のおばさんにネックレスをあげた。",
+          "korean": "여동생이 옆집 아줌마한테 목걸이를 줬어.",
+          "sourcePage": 156
+        },
+        {
           "id": "l51-p-f21fb4fb8db8",
           "lessonId": 51,
           "type": "pattern",
           "japanese": "弟が裏のおじさんに紅茶をあげた。",
           "korean": "남동생이 뒷집 아저씨한테 홍차를 줬어.",
+          "sourcePage": 156
+        },
+        {
+          "id": "l51-p-d1908793145a",
+          "lessonId": 51,
+          "type": "pattern",
+          "japanese": "先生が友達にプレゼントをくれなかった。",
+          "korean": "선생님이 친구한테 선물을 주지 않았어.",
           "sourcePage": 156
         },
         {
@@ -17465,6 +18079,14 @@
           "type": "pattern",
           "japanese": "僕はおじにお小遣いをもらった。",
           "korean": "나는 삼촌한테 용돈을 받았어.",
+          "sourcePage": 156
+        },
+        {
+          "id": "l51-p-9098a3c9617e",
+          "lessonId": 51,
+          "type": "pattern",
+          "japanese": "今年の誕生日におばにネックレスをもらう。",
+          "korean": "올해 생일에 고모한테 목걸이를 받을 거야.",
           "sourcePage": 156
         },
         {
@@ -17715,10 +18337,10 @@
           "sourcePage": 158
         },
         {
-          "id": "l52-p-dc673bcfe723",
+          "id": "l52-p-10ae47d25cf3",
           "lessonId": 52,
           "type": "pattern",
-          "japanese": "おばが 息子にハガキをくれませんでした。",
+          "japanese": "おばが息子にハガキをくれませんでした。",
           "korean": "이모가 아들에게 엽서를 안 줬어요.",
           "sourcePage": 158
         },
@@ -17975,12 +18597,22 @@
           "sourcePage": 161
         },
         {
-          "id": "l53-p-6a4f484d61e0",
+          "id": "l53-p-680cd405fbfb",
           "lessonId": 53,
           "type": "pattern",
-          "japanese": "おの",
-          "korean": "씨(의) 자녀분은 따님이고, 지금 고등학생이야.",
-          "sourcePage": 161
+          "japanese": "小野さんのお子さんはお嬢さんで、今高校生。",
+          "korean": "오노 씨의 자녀분은 따님이고, 지금 고등학생이야.",
+          "sourcePage": 161,
+          "reading": "小野(おの)"
+        },
+        {
+          "id": "l53-p-c2227202a73b",
+          "lessonId": 53,
+          "type": "pattern",
+          "japanese": "田村さんは親切で、竹内さんはまじめ。",
+          "korean": "다무라 씨는 친절하고, 다케우치 씨는 성실해.",
+          "sourcePage": 161,
+          "reading": "竹内(たけうち) · 田村(たむら)"
         },
         {
           "id": "l53-p-88f08dd494aa",
@@ -17999,12 +18631,13 @@
           "sourcePage": 162
         },
         {
-          "id": "l53-p-909736f6790c",
+          "id": "l53-p-091bb63b4fb2",
           "lessonId": 53,
           "type": "pattern",
           "japanese": "明日香は頭がよくて、妹はかわいい。",
-          "korean": "는 머리가 좋고, 여동생은 귀여워.",
-          "sourcePage": 162
+          "korean": "아스카는 머리가 좋고, 여동생은 귀여워.",
+          "sourcePage": 162,
+          "reading": "明日香(あすか)"
         },
         {
           "id": "l53-p-78f1dbbce4fc",
@@ -18341,6 +18974,22 @@
           "sourcePage": 164
         },
         {
+          "id": "l54-p-1e9f1fcbfc52",
+          "lessonId": 54,
+          "type": "pattern",
+          "japanese": "上書き保存を取り消して、名前を付けて保存しました。",
+          "korean": "덮어쓰기를 취소하고, 다른 이름으로 저장했어요.",
+          "sourcePage": 164
+        },
+        {
+          "id": "l54-p-47128557484b",
+          "lessonId": 54,
+          "type": "pattern",
+          "japanese": "こっちは新しいデータで、そっちは古いデータです。",
+          "korean": "이쪽은 새 데이터이고, 그쪽은 오래된 데이터입니다.",
+          "sourcePage": 164
+        },
+        {
           "id": "l54-p-70c88699782d",
           "lessonId": 54,
           "type": "pattern",
@@ -18349,11 +18998,35 @@
           "sourcePage": 164
         },
         {
+          "id": "l54-p-665351d0fbd2",
+          "lessonId": 54,
+          "type": "pattern",
+          "japanese": "この会社は有名で、その会社は大きいです。",
+          "korean": "이 회사는 유명하고, 그 회사는 커요.",
+          "sourcePage": 164
+        },
+        {
           "id": "l54-p-b5ddd40b5f31",
           "lessonId": 54,
           "type": "pattern",
           "japanese": "このソフトは簡単で便利です。",
           "korean": "이 소프트웨어는 간단하고 편리해요.",
+          "sourcePage": 165
+        },
+        {
+          "id": "l54-p-1235b1bedf18",
+          "lessonId": 54,
+          "type": "pattern",
+          "japanese": "このスマホは高くて、そのケータイは安いです。",
+          "korean": "이 스마트폰은 비싸고, 그 일반 핸드폰은 쌉니다.",
+          "sourcePage": 165
+        },
+        {
+          "id": "l54-p-74b05e5e98da",
+          "lessonId": 54,
+          "type": "pattern",
+          "japanese": "新しいソフトは易しくて、古いソフトは難しいです。",
+          "korean": "새 소프트웨어는 쉽고, 오래된 소프트웨어는 어렵습니다.",
           "sourcePage": 165
         },
         {
@@ -18389,6 +19062,14 @@
           "sourcePage": 165
         },
         {
+          "id": "l54-p-2687cfce13ec",
+          "lessonId": 54,
+          "type": "pattern",
+          "japanese": "ノートパソコンを売ってお金を作りました。",
+          "korean": "노트북PC를 팔아서 돈을 마련했어요.",
+          "sourcePage": 165
+        },
+        {
           "id": "l54-p-75f4ccc92768",
           "lessonId": 54,
           "type": "pattern",
@@ -18418,6 +19099,14 @@
           "type": "pattern",
           "japanese": "仕事が嫌で、会社を休みました。",
           "korean": "일이 싫어서 회사를 쉬었어요.",
+          "sourcePage": 165
+        },
+        {
+          "id": "l54-p-60d777a8996f",
+          "lessonId": 54,
+          "type": "pattern",
+          "japanese": "ケータイは不便で、スマホを買いました。",
+          "korean": "일반 핸드폰은 불편해서 스마트폰을 샀어요.",
           "sourcePage": 165
         },
         {
@@ -19016,11 +19705,27 @@
           "sourcePage": 171
         },
         {
+          "id": "l56-p-9e14cc75465b",
+          "lessonId": 56,
+          "type": "pattern",
+          "japanese": "試合でいい結果が出なくて残念でした。",
+          "korean": "시합에서 좋은 결과가 안 나와서 아쉬웠습니다.",
+          "sourcePage": 172
+        },
+        {
           "id": "l56-p-2518d02cfe2a",
           "lessonId": 56,
           "type": "pattern",
           "japanese": "その飛行機に乗らなくてよかったです。",
           "korean": "그 비행기를 안 타서 다행이었어요.",
+          "sourcePage": 172
+        },
+        {
+          "id": "l56-p-167ebed07611",
+          "lessonId": 56,
+          "type": "pattern",
+          "japanese": "意味がわからなくて先生に聞きました。",
+          "korean": "의미가 이해되지 않아서 선생님에게 물었어요.",
           "sourcePage": 172
         },
         {
@@ -19101,6 +19806,14 @@
           "type": "pattern",
           "japanese": "ちゃんと歯を磨いてから寝ました。",
           "korean": "제대로 이를 닦고 나서 잤어요.",
+          "sourcePage": 172
+        },
+        {
+          "id": "l56-p-0d2917294fb3",
+          "lessonId": 56,
+          "type": "pattern",
+          "japanese": "説明書を読んでから薬を飲んでください。",
+          "korean": "설명서를 읽고 나서 약을 먹어 주세요.",
           "sourcePage": 172
         },
         {
@@ -19345,6 +20058,46 @@
           "japanese": "友達が(私の)バイトを一緒に探してくれた。",
           "korean": "친구가 (내) 알바를 같이 찾아 줬어.",
           "sourcePage": 174
+        },
+        {
+          "id": "l57-p-5c67c53c76e6",
+          "lessonId": 57,
+          "type": "pattern",
+          "japanese": "後で弟が(私の)パソコンを直してくれる。",
+          "korean": "이따가 남동생이 (내) PC를 고쳐 줄 거야.",
+          "sourcePage": 174
+        },
+        {
+          "id": "l57-p-9bb770e02390",
+          "lessonId": 57,
+          "type": "pattern",
+          "japanese": "(私は)彼氏にうちまで送ってもらった。",
+          "korean": "남자 친구가 (나를) 집까지 바래다줬어. ((나는) 남자 친구한테 집까지 바래다 받았어.)",
+          "sourcePage": 175
+        },
+        {
+          "id": "l57-p-a74d210af8ad",
+          "lessonId": 57,
+          "type": "pattern",
+          "japanese": "(私は)娘に塩を取ってもらった。",
+          "korean": "딸이 (나한테) 소금을 건네 줬어. ((나는) 딸한테 소금을 건네 받았어.)",
+          "sourcePage": 175
+        },
+        {
+          "id": "l57-p-6b88c2b213b3",
+          "lessonId": 57,
+          "type": "pattern",
+          "japanese": "(私は)友達にバイトを一緒に探してもらった。",
+          "korean": "친구가 (내) 알바를 같이 찾아 줬어. ((나는) 친구한테 알바를 같이 찾아 받았어.)",
+          "sourcePage": 175
+        },
+        {
+          "id": "l57-p-e22194caf008",
+          "lessonId": 57,
+          "type": "pattern",
+          "japanese": "(私は)後で弟にパソコンを直してもらう。",
+          "korean": "이따가 남동생이 (내) PC를 고쳐 줄 거야. ((나는) 이따가 남동생한테 PC를 고쳐 받을 거야.)",
+          "sourcePage": 175
         },
         {
           "id": "l57-p-678fb01f6b0d",
@@ -19621,6 +20374,14 @@
           "sourcePage": 177
         },
         {
+          "id": "l58-p-71de71b3f439",
+          "lessonId": 58,
+          "type": "pattern",
+          "japanese": "毎朝、主人のネクタイを締めてあげます。",
+          "korean": "매일 아침에 남편(의) 넥타이를 매 줍니다.",
+          "sourcePage": 177
+        },
+        {
           "id": "l58-p-ff0fe8dd5fe9",
           "lessonId": 58,
           "type": "pattern",
@@ -19677,6 +20438,22 @@
           "sourcePage": 177
         },
         {
+          "id": "l58-p-fef010dc6003",
+          "lessonId": 58,
+          "type": "pattern",
+          "japanese": "毎朝、妻にネクタイを締めてもらいます。",
+          "korean": "매일 아침에 아내가 넥타이를 매 줍니다.(매일 아침에 아내에게 넥타이를 매 받습니다.)",
+          "sourcePage": 178
+        },
+        {
+          "id": "l58-p-07a9c8f1b6c9",
+          "lessonId": 58,
+          "type": "pattern",
+          "japanese": "親切な人に道を案内してもらいました。",
+          "korean": "친절한 사람이 길을 안내해 줬습니다. (친절한 사람에게 길을 안내해 받았습니다.)",
+          "sourcePage": 178
+        },
+        {
           "id": "l58-p-ca802ddabbe4",
           "lessonId": 58,
           "type": "pattern",
@@ -19690,6 +20467,70 @@
           "type": "pattern",
           "japanese": "母にほめてもらいました。",
           "korean": "어머니가 칭찬해 줬어요. (어머니에게 칭찬해 받았어요.)",
+          "sourcePage": 178
+        },
+        {
+          "id": "l58-p-ca7d9a04961e",
+          "lessonId": 58,
+          "type": "pattern",
+          "japanese": "すみませんが、急いでくださいませんか。",
+          "korean": "죄송하지만, 서둘러 주시지 않겠습니까?",
+          "sourcePage": 178
+        },
+        {
+          "id": "l58-p-376ef87ef5bc",
+          "lessonId": 58,
+          "type": "pattern",
+          "japanese": "すみませんが、この荷物を届けてくださいませんか。",
+          "korean": "죄송하지만, 이 짐을 갖다 주시지 않겠습니까?",
+          "sourcePage": 178
+        },
+        {
+          "id": "l58-p-1c7894631af8",
+          "lessonId": 58,
+          "type": "pattern",
+          "japanese": "すみませんが、そこまで案内してくださいませんか。",
+          "korean": "죄송하지만, 거기까지 안내해 주시지 않을래요?",
+          "sourcePage": 178
+        },
+        {
+          "id": "l58-p-bbf848db3791",
+          "lessonId": 58,
+          "type": "pattern",
+          "japanese": "すみませんが、この子を育ててくださいませんか。",
+          "korean": "죄송하지만, 이 아이를 키워 주시지 않을래요?",
+          "sourcePage": 178
+        },
+        {
+          "id": "l58-p-60e9bb464ec4",
+          "lessonId": 58,
+          "type": "pattern",
+          "japanese": "すみませんが、急いでいただけますか。",
+          "korean": "죄송하지만, 서둘러 주실 수 있습니까? (서둘러 받을 수 있습니까?)",
+          "sourcePage": 178
+        },
+        {
+          "id": "l58-p-af57b26a4e56",
+          "lessonId": 58,
+          "type": "pattern",
+          "japanese": "すみませんが、この荷物を届けていただけますか。",
+          "korean": "죄송하지만, 이 짐을 갖다 주실 수 있습니까? (갖다 줘 받을 수 있습니까?)",
+          "sourcePage": 178
+        },
+        {
+          "id": "l58-p-0befab67d2ba",
+          "lessonId": 58,
+          "type": "pattern",
+          "japanese": "すみませんが、そこまで案内していただけますか。",
+          "korean": "죄송하지만, 거기까지 안내해 주실 수 있어요? (안내해 받을 수 있어요?)",
+          "sourcePage": 178
+        },
+        {
+          "id": "l58-p-ac0f4838bc50",
+          "lessonId": 58,
+          "type": "pattern",
+          "japanese": "すみませんが、この子を育てていただけますか。",
+          "korean": "죄송하지만, 이 아이를 키워 주실 수 있어요? (키워 받을 수 있어요?)",
           "sourcePage": 178
         },
         {

@@ -29,6 +29,69 @@ SPACE_RE = re.compile(r"\s+")
 LEADING_STAGE_RE = re.compile(r"^\([^)]*\)\s*")
 KOREAN_STAGE_RE = re.compile(r"\([^)]*[가-힣][^)]*\)")
 
+# The book prints readings for proper names and places in kana immediately
+# before the Korean translation. Keep those readings as study metadata and
+# render the Korean translation as natural Korean instead of dropping the
+# subject while splitting the bilingual line.
+KANA_TO_KOREAN = {
+    "たけうち": "다케우치",
+    "なかむら": "나카무라",
+    "なかやま": "나카야마",
+    "はしもと": "하시모토",
+    "とうきょう": "도쿄",
+    "きょうと": "교토",
+    "おおさか": "오사카",
+    "あすか": "아스카",
+    "えぐち": "에구치",
+    "かねこ": "가네코",
+    "さとう": "사토",
+    "さとる": "사토루",
+    "しばた": "시바타",
+    "しゅん": "슌",
+    "すずき": "스즈키",
+    "たむら": "다무라",
+    "なかの": "나카노",
+    "はらだ": "하라다",
+    "まえだ": "마에다",
+    "まなぶ": "마나부",
+    "めぐみ": "메구미",
+    "ゆうな": "유나",
+    "わだ": "와다",
+    "おの": "오노",
+    "なら": "나라",
+    "はら": "하라",
+    "みか": "미카",
+}
+
+KANA_TO_SURFACE = {
+    "たけうち": "竹内",
+    "なかむら": "中村",
+    "なかやま": "中山",
+    "はしもと": "橋本",
+    "とうきょう": "東京",
+    "きょうと": "京都",
+    "おおさか": "大阪",
+    "あすか": "明日香",
+    "えぐち": "江口",
+    "かねこ": "金子",
+    "さとう": "佐藤",
+    "さとる": "悟",
+    "しばた": "柴田",
+    "しゅん": "駿",
+    "すずき": "鈴木",
+    "たむら": "田村",
+    "なかの": "中野",
+    "はらだ": "原田",
+    "まえだ": "前田",
+    "まなぶ": "学",
+    "めぐみ": "恵",
+    "ゆうな": "優奈",
+    "わだ": "和田",
+    "おの": "小野",
+    "なら": "奈良",
+    "はら": "原",
+}
+
 
 @dataclass(frozen=True)
 class LessonRange:
@@ -212,6 +275,43 @@ def split_bilingual_line(text: str) -> tuple[str, str] | None:
     return (japanese, korean) if japanese and korean else None
 
 
+def localize_korean_readings(value: str) -> str:
+    localized = normalize_korean(value)
+    for kana in sorted(KANA_TO_KOREAN, key=len, reverse=True):
+        localized = localized.replace(kana, KANA_TO_KOREAN[kana])
+    for korean_name in set(KANA_TO_KOREAN.values()):
+        localized = localized.replace(f"{korean_name}씨", f"{korean_name} 씨")
+        localized = localized.replace(f"{korean_name} 씨(의)", f"{korean_name} 씨의")
+        localized = localized.replace(f"{korean_name}(의)", f"{korean_name}의")
+    return normalize_korean(localized)
+
+
+def proper_noun_reading(japanese: str, raw_translation: str) -> str:
+    readings: list[str] = []
+    translation_tokens = set(re.findall(r"[ぁ-んー]+", raw_translation))
+    for kana, surface in KANA_TO_SURFACE.items():
+        if kana not in translation_tokens or surface not in japanese:
+            continue
+        label = f"{surface}({kana})"
+        if label not in readings:
+            readings.append(label)
+    return " · ".join(readings)
+
+
+def pattern_line_parts(line: dict[str, Any]) -> tuple[str, str]:
+    """Separate 10.2pt Japanese source text from the smaller translation."""
+    text = line_text(line)
+    japanese = japanese_main_text(line)
+    if not japanese:
+        return "", text
+    if text.startswith(japanese):
+        return japanese, text[len(japanese) :].strip()
+    hangul = HANGUL_RE.search(text)
+    if hangul and re.sub(r"\s+", "", text[: hangul.start()]) == re.sub(r"\s+", "", japanese):
+        return japanese, text[hangul.start() :].strip()
+    return japanese, ""
+
+
 def valid_sentence_pair(japanese: str, korean: str) -> bool:
     blocked = ("단계", "예문", "본책", ".mp3")
     if any(token in japanese or token in korean for token in blocked):
@@ -239,25 +339,63 @@ def extract_patterns(
         page = pdf.pages[page_index]
         start = header_top(page, "2단계 : 기본 문형 익히기")
         min_top = (start + 16) if start is not None else 42
+        pending_japanese = ""
+        pending_top: float | None = None
+
+        def append_pair(japanese: str, raw_korean: str) -> None:
+            japanese = normalize_japanese(japanese)
+            punctuation = re.match(r"^([。？！?!]+)\s*", raw_korean)
+            if punctuation:
+                japanese = normalize_japanese(japanese + punctuation.group(1))
+                raw_korean = raw_korean[punctuation.end() :]
+            korean = localize_korean_readings(raw_korean)
+            if not valid_sentence_pair(japanese, korean):
+                return
+            item: dict[str, Any] = {
+                "id": stable_id("pattern", lesson_range.number, japanese, korean),
+                "lessonId": lesson_range.number,
+                "type": "pattern",
+                "japanese": japanese,
+                "korean": korean,
+                "sourcePage": page_index + 1,
+            }
+            reading = proper_noun_reading(japanese, raw_korean)
+            if reading:
+                item["reading"] = reading
+            items.append(item)
+
         for line in page_lines(page):
             if line["top"] < min_top or line["top"] > 585:
                 continue
-            pair = split_bilingual_line(line_text(line))
-            if not pair:
+            top = float(line["top"])
+            japanese, raw_korean = pattern_line_parts(line)
+
+            if japanese and HANGUL_RE.search(raw_korean):
+                pending_japanese = ""
+                pending_top = None
+                append_pair(japanese, raw_korean)
                 continue
-            japanese, korean = pair
-            if not valid_sentence_pair(japanese, korean):
+
+            if japanese:
+                if pending_japanese and pending_top is not None and top - pending_top <= 16.5:
+                    pending_japanese = normalize_japanese(pending_japanese + japanese)
+                else:
+                    pending_japanese = japanese
+                pending_top = top
                 continue
-            items.append(
-                {
-                    "id": stable_id("pattern", lesson_range.number, japanese, korean),
-                    "lessonId": lesson_range.number,
-                    "type": "pattern",
-                    "japanese": japanese,
-                    "korean": korean,
-                    "sourcePage": page_index + 1,
-                }
-            )
+
+            if (
+                pending_japanese
+                and pending_top is not None
+                and top - pending_top <= 16.5
+                and HANGUL_RE.search(raw_korean)
+            ):
+                append_pair(pending_japanese, raw_korean)
+                pending_japanese = ""
+                pending_top = None
+            elif pending_top is not None and top - pending_top > 16.5:
+                pending_japanese = ""
+                pending_top = None
     return items
 
 
@@ -459,7 +597,7 @@ def extract(source: Path) -> dict[str, Any]:
             )
 
     return {
-        "version": 1,
+        "version": 2,
         "title": "일본어 무작정 따라하기 완전판",
         "lessons": lessons,
         "diagnostics": {"conversationTurnMismatches": mismatch_report},
