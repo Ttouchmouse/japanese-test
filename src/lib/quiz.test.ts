@@ -90,6 +90,64 @@ describe("generateQuiz", () => {
     }
   });
 
+  it("balances selected lessons and shuffles prioritized review items", () => {
+    const selectedLessonIds = bank.lessons.slice(0, 18).map((lesson) => lesson.id);
+    const progress = Object.fromEntries(
+      bank.lessons
+        .slice(0, 10)
+        .flatMap((lesson) => lesson.items)
+        .filter((item) => item.type !== "vocabulary")
+        .map((item) => [
+          item.id,
+          {
+            sourceItemId: item.id,
+            attempts: 1,
+            correctAttempts: 0,
+            streak: 0,
+            confused: false,
+            lastResult: "incorrect" as const,
+            lastReviewedAt: "2026-07-01T00:00:00.000Z",
+            dueAt: "2026-07-01T00:00:00.000Z",
+          },
+        ]),
+    );
+    const questions = generateQuiz(
+      bank,
+      selectedLessonIds,
+      seededRandom(42),
+      progress,
+      new Date("2026-08-22T00:00:00.000Z"),
+      200,
+      "recall",
+      "sentence",
+    );
+    const counts = selectedLessonIds.map(
+      (lessonId) => questions.filter((question) => question.lessonId === lessonId).length,
+    );
+
+    expect(Math.max(...counts) - Math.min(...counts)).toBeLessThanOrEqual(1);
+    expect(questions.slice(0, 20).some((question) => question.lessonId > 10)).toBe(true);
+    expect(new Set(questions.map((question) => question.sourceItemId)).size).toBe(200);
+
+    const quickQuestions = generateQuiz(
+      bank,
+      selectedLessonIds,
+      seededRandom(43),
+      progress,
+      new Date("2026-08-22T00:00:00.000Z"),
+      200,
+      "quick",
+      "all",
+    );
+    const quickCounts = selectedLessonIds.map(
+      (lessonId) => quickQuestions.filter((question) => question.lessonId === lessonId).length,
+    );
+
+    expect(Math.max(...quickCounts) - Math.min(...quickCounts)).toBeLessThanOrEqual(3);
+    expect(quickQuestions.slice(0, 20).some((question) => question.lessonId > 10)).toBe(true);
+    expect(new Set(quickQuestions.map((question) => question.sourceItemId)).size).toBe(200);
+  });
+
   it("never repeats the same bilingual source pair across selected lessons", () => {
     const questions = generateQuiz(bank, bank.lessons.map((lesson) => lesson.id), seededRandom(7));
     const pairs = questions.map((question) => `${question.japanese}|${question.korean}`);

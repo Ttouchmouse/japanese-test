@@ -233,6 +233,130 @@ function eligibleDirections(item: StudyItem, answerKeys: DirectionAnswerKeys): Q
   );
 }
 
+function balancedPick(
+  items: StudyItem[],
+  limit: number,
+  random: Random,
+  progress: LearningProgress,
+  now: Date,
+): StudyItem[] {
+  const targetCount = Math.min(limit, items.length);
+  if (targetCount <= 0) return [];
+
+  const itemsByLesson = new Map<number, StudyItem[]>();
+  for (const item of items) {
+    const lessonItems = itemsByLesson.get(item.lessonId) ?? [];
+    lessonItems.push(item);
+    itemsByLesson.set(item.lessonId, lessonItems);
+  }
+
+  const lessonQuotas = new Map(
+    [...itemsByLesson.keys()].map((lessonId) => [lessonId, 0]),
+  );
+  let remaining = targetCount;
+  while (remaining > 0) {
+    const activeLessons = [...itemsByLesson.entries()]
+      .filter(([lessonId, lessonItems]) =>
+        (lessonQuotas.get(lessonId) ?? 0) < lessonItems.length,
+      )
+      .map(([lessonId]) => lessonId);
+    if (!activeLessons.length) break;
+
+    for (const lessonId of shuffle(activeLessons, random)) {
+      if (remaining <= 0) break;
+      lessonQuotas.set(lessonId, (lessonQuotas.get(lessonId) ?? 0) + 1);
+      remaining -= 1;
+    }
+  }
+
+  const prioritizedByLesson = new Map(
+    [...itemsByLesson.entries()].map(([lessonId, lessonItems]) => [
+      lessonId,
+      lessonItems
+        .map((item) => ({
+          item,
+          priority: progressPriority(item.id, progress, now),
+          tie: random(),
+        }))
+        .filter(({ priority }) => priority > 0)
+        .sort((left, right) => right.priority - left.priority || right.tie - left.tie)
+        .map(({ item }) => item),
+    ]),
+  );
+  const priorityLessonLimit = Math.min(
+    Math.round(targetCount * 0.4),
+    [...prioritizedByLesson.values()].filter((lessonItems) => lessonItems.length > 0).length,
+  );
+  const priorityLessons = [...prioritizedByLesson.entries()]
+    .filter(([, lessonItems]) => lessonItems.length > 0)
+    .map(([lessonId, lessonItems]) => ({
+      lessonId,
+      priority: Math.max(
+        ...lessonItems.map((item) => progressPriority(item.id, progress, now)),
+      ),
+      tie: random(),
+    }))
+    .sort((left, right) => right.priority - left.priority || right.tie - left.tie)
+    .slice(0, priorityLessonLimit);
+
+  for (const { lessonId } of priorityLessons) {
+    if ((lessonQuotas.get(lessonId) ?? 0) > 0) continue;
+    const donor = [...lessonQuotas.entries()]
+      .filter(
+        ([donorLessonId, quota]) =>
+          donorLessonId !== lessonId &&
+          quota > 0 &&
+          (prioritizedByLesson.get(donorLessonId)?.length ?? 0) === 0,
+      )
+      .map(([donorLessonId, quota]) => ({ donorLessonId, quota, tie: random() }))
+      .sort((left, right) => right.quota - left.quota || right.tie - left.tie)[0];
+    if (!donor) continue;
+    lessonQuotas.set(donor.donorLessonId, donor.quota - 1);
+    lessonQuotas.set(lessonId, 1);
+  }
+
+  const priorityQuotas = new Map(
+    [...itemsByLesson.keys()].map((lessonId) => [lessonId, 0]),
+  );
+  let priorityRemaining = Math.min(
+    Math.round(targetCount * 0.4),
+    [...prioritizedByLesson.values()].reduce((sum, lessonItems) => sum + lessonItems.length, 0),
+  );
+  while (priorityRemaining > 0) {
+    const activeLessons = [...prioritizedByLesson.entries()]
+      .filter(([lessonId, lessonItems]) => {
+        const priorityQuota = priorityQuotas.get(lessonId) ?? 0;
+        return (
+          priorityQuota < lessonItems.length &&
+          priorityQuota < (lessonQuotas.get(lessonId) ?? 0)
+        );
+      })
+      .map(([lessonId]) => lessonId);
+    if (!activeLessons.length) break;
+
+    for (const lessonId of shuffle(activeLessons, random)) {
+      if (priorityRemaining <= 0) break;
+      priorityQuotas.set(lessonId, (priorityQuotas.get(lessonId) ?? 0) + 1);
+      priorityRemaining -= 1;
+    }
+  }
+
+  const selected = [...itemsByLesson.entries()].flatMap(([lessonId, lessonItems]) => {
+    const quota = lessonQuotas.get(lessonId) ?? 0;
+    const prioritized = (prioritizedByLesson.get(lessonId) ?? []).slice(
+      0,
+      priorityQuotas.get(lessonId) ?? 0,
+    );
+    const prioritizedIds = new Set(prioritized.map((item) => item.id));
+    return [
+      ...prioritized,
+      ...shuffle(lessonItems.filter((item) => !prioritizedIds.has(item.id)), random),
+    ].slice(0, quota);
+  });
+
+  return shuffle(selected, random);
+}
+
 function chooseSources(
   items: StudyItem[],
   pools: Record<QuestionType, StudyItem[]>,
@@ -248,39 +372,27 @@ function chooseSources(
 
   const take = (type: QuestionType, limit: number) => {
     const candidates = pools[type].filter((item) => (eligibility.get(item.id)?.length ?? 0) > 0);
-    const priorityLimit = Math.round(limit * 0.4);
-    const priorityCandidates = candidates
-      .map((item) => ({ item, priority: progressPriority(item.id, progress, now), tie: random() }))
-      .filter(({ priority }) => priority > 0)
-      .sort((left, right) => right.priority - left.priority || right.tie - left.tie)
-      .slice(0, priorityLimit)
-      .map(({ item }) => item);
-    const priorityIds = new Set(priorityCandidates.map((item) => item.id));
-    const ordered = [
-      ...priorityCandidates,
-      ...shuffle(candidates.filter((item) => !priorityIds.has(item.id)), random),
-    ];
-
-    for (const item of ordered) {
-      if (selected.length >= quizSize || limit <= 0 || selectedIds.has(item.id)) continue;
+    for (const item of balancedPick(candidates, limit, random, progress, now)) {
+      if (selected.length >= quizSize || selectedIds.has(item.id)) continue;
       selected.push(item);
       selectedIds.add(item.id);
-      limit -= 1;
     }
   };
 
   (Object.keys(targets) as QuestionType[]).forEach((type) => take(type, targets[type]));
 
   if (selected.length < quizSize) {
-    const remaining = shuffle(
-      items.filter(
-        (item) =>
-          !selectedIds.has(item.id) && (eligibility.get(item.id)?.length ?? 0) > 0,
-      ),
-      random,
+    const remaining = items.filter(
+      (item) =>
+        !selectedIds.has(item.id) && (eligibility.get(item.id)?.length ?? 0) > 0,
     );
-    for (const item of remaining) {
-      if (selected.length >= quizSize) break;
+    for (const item of balancedPick(
+      remaining,
+      quizSize - selected.length,
+      random,
+      progress,
+      now,
+    )) {
       selected.push(item);
       selectedIds.add(item.id);
     }
@@ -307,18 +419,7 @@ function chooseWriteSources(
   progress: LearningProgress,
   now: Date,
 ): StudyItem[] {
-  const priorityLimit = Math.round(quizSize * 0.4);
-  const prioritized = items
-    .map((item) => ({ item, priority: progressPriority(item.id, progress, now), tie: random() }))
-    .filter(({ priority }) => priority > 0)
-    .sort((left, right) => right.priority - left.priority || right.tie - left.tie)
-    .slice(0, priorityLimit)
-    .map(({ item }) => item);
-  const priorityIds = new Set(prioritized.map((item) => item.id));
-  return [
-    ...prioritized,
-    ...shuffle(items.filter((item) => !priorityIds.has(item.id)), random),
-  ].slice(0, quizSize);
+  return balancedPick(items, quizSize, random, progress, now);
 }
 
 export function generateQuiz(
