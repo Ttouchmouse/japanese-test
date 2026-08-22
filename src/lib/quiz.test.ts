@@ -5,6 +5,7 @@ import { isAnswerCorrect, RECALL_REMEMBERED } from "./answer";
 import {
   availableQuestionCount,
   generateQuiz,
+  QUIZ_COUNTS,
   scoreQuiz,
   selectDistractorAnswers,
 } from "./quiz";
@@ -67,8 +68,14 @@ describe("generateQuiz", () => {
   });
 
   it("keeps the preferred 40/40/20 mix for every selectable question count", () => {
-    const expected = { 10: [4, 4, 2], 20: [8, 8, 4], 30: [12, 12, 6] } as const;
-    for (const count of [10, 20, 30] as QuizCount[]) {
+    const expected: Record<QuizCount, readonly [number, number, number]> = {
+      10: [4, 4, 2],
+      20: [8, 8, 4],
+      30: [12, 12, 6],
+      100: [40, 40, 20],
+      200: [80, 80, 40],
+    };
+    for (const count of QUIZ_COUNTS) {
       const questions = generateQuiz(
         bank,
         bank.lessons.map((lesson) => lesson.id),

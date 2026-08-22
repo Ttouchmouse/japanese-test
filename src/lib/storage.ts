@@ -24,7 +24,7 @@ const LEGACY_QUESTION_COUNT_STORAGE_KEY = "nihongo-review-question-count-v1";
 const PROGRESS_STORAGE_KEY = "nihongo-review-progress-v1";
 const CONFUSION_STORAGE_KEY = "nihongo-review-confusions-v1";
 
-const QUIZ_COUNTS: QuizCount[] = [10, 20, 30];
+const QUIZ_COUNTS: QuizCount[] = [10, 20, 30, 100, 200];
 
 export function loadSession(validSourceItemIds?: ReadonlySet<string>): QuizSession | null {
   try {

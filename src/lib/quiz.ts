@@ -12,7 +12,7 @@ import type {
 import { progressPriority } from "./progress";
 import { isAnswerCorrect } from "./answer";
 
-export const QUIZ_COUNTS: QuizCount[] = [10, 20, 30];
+export const QUIZ_COUNTS: QuizCount[] = [10, 20, 30, 100, 200];
 export const QUIZ_SIZE: QuizCount = 20;
 
 function typeTargets(quizSize: number, category: QuizCategory): Record<QuestionType, number> {
