@@ -564,6 +564,140 @@ def dedupe_lesson_items(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return result
 
 
+# A few compact pages continue pattern rows above the conversation section or
+# print Korean dialogue translations in two interleaved columns. PDF text
+# extraction cannot recover that reading order reliably, so preserve the
+# verified textbook pairs here. Existing item IDs stay unchanged when only the
+# Korean text is corrected; newly recovered source items receive stable IDs.
+KNOWN_KOREAN_CORRECTIONS = {
+    (22, "vocabulary", "行って来る"): "갔다 오다, 다녀오다",
+    (22, "conversation", "チャンミンさん、いつまた日本へ来ますか。"): "창민 씨, 언제 또 일본에 와요?",
+    (22, "conversation", "来月です。来月は母を連れて来ます。"): "다음 달이요. 다음 달에는 어머니를 데려와요.",
+    (22, "conversation", "絵美さんはキムチが好きですか。韓国のキムチはおいしいですよ。"): "에미 씨는 김치를 좋아해요? 한국 김치는 맛있어요.",
+    (22, "conversation", "そうですか。でも、私はキムチはちょっと苦手です。"): "그래요. 그런데 저는 김치는 좀 잘 못 먹어요.",
+    (22, "conversation", "じゃ、のりはどうですか。"): "그럼, 김은 어때요?",
+    (22, "conversation", "韓国ののりはとても好きです。"): "한국 김은 무척 좋아해요.",
+    (22, "conversation", "じゃ、のりを持って来ますね。"): "그럼, 김을 가져올게요.",
+    (22, "conversation", "ありがとうございます。"): "고마워요.",
+    (22, "conversation", "じゃ、また連絡します。"): "그럼, 또 연락할게요.",
+    (22, "conversation", "じゃ、お気を付けて。"): "그럼, 조심히 갔다 오세요.",
+    (23, "vocabulary", "お土産"): "(여행지 등에서 사 오는) 기념 선물",
+    (
+        23,
+        "conversation",
+        "そう?じゃ、あのお店に行く!何がいいかなぁ......。これ、かわいい!",
+    ): "그래? 그럼 저 가게에 갈래! (가게에 들어가서) 뭐가 좋을까...... 이거 예쁘다!",
+}
+
+KNOWN_MISSING_ITEMS = {
+    20: [
+        {
+            "after": "じゃ、明後日は?",
+            "type": "conversation",
+            "japanese": "いいですよ。石田さんも一緒にどうですか。",
+            "korean": "좋아요. 이시다 씨도 같이 보는 게 어때요? (이시다 씨도 함께 어때요?)",
+            "sourcePage": 63,
+        },
+        {
+            "after": "いいですよ。石田さんも一緒にどうですか。",
+            "type": "conversation",
+            "japanese": "え?石田さんもですか。",
+            "korean": "에? 이시다 씨도요?",
+            "sourcePage": 63,
+        },
+    ],
+    21: [
+        {
+            "after": "ううん、持って来る。",
+            "type": "pattern",
+            "japanese": "うん、しない。",
+            "korean": "응, 안 해.",
+            "sourcePage": 66,
+        },
+        {
+            "after": "うん、しない。",
+            "type": "pattern",
+            "japanese": "ううん、よくする。",
+            "korean": "아니, 자주 해.",
+            "sourcePage": 66,
+        },
+        {
+            "after": "へえ、ヘアモデル。",
+            "type": "conversation",
+            "japanese": "祐介もヘアモデルする?",
+            "korean": "유스케도 헤어모델 할래?",
+            "sourcePage": 66,
+        },
+    ],
+    22: [
+        {
+            "after": "今月",
+            "type": "vocabulary",
+            "japanese": "来月",
+            "reading": "らいげつ",
+            "korean": "다음 달",
+            "sourcePage": 67,
+        },
+        {
+            "after": "いいえ、父も連れて来ます。",
+            "type": "pattern",
+            "japanese": "はい、しません。",
+            "korean": "네, 안 해요.",
+            "sourcePage": 69,
+        },
+        {
+            "after": "はい、しません。",
+            "type": "pattern",
+            "japanese": "いいえ、します。",
+            "korean": "아니요, 할 거예요.",
+            "sourcePage": 69,
+        },
+        {
+            "after": "来月です。来月は母を連れて来ます。",
+            "type": "conversation",
+            "japanese": "そうですか。",
+            "korean": "그렇군요.",
+            "sourcePage": 69,
+        },
+    ],
+}
+
+
+def apply_known_corrections(lesson: int, items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    corrected = [dict(item) for item in items]
+    for item in corrected:
+        korean = KNOWN_KOREAN_CORRECTIONS.get((lesson, item["type"], item["japanese"]))
+        if korean:
+            item["korean"] = korean
+
+    for missing in KNOWN_MISSING_ITEMS.get(lesson, []):
+        if any(
+            item["type"] == missing["type"] and item["japanese"] == missing["japanese"]
+            for item in corrected
+        ):
+            continue
+        new_item = {
+            "id": stable_id(missing["type"], lesson, missing["japanese"], missing["korean"]),
+            "lessonId": lesson,
+            "type": missing["type"],
+            "japanese": missing["japanese"],
+            "korean": missing["korean"],
+            "sourcePage": missing["sourcePage"],
+        }
+        if missing.get("reading"):
+            new_item["reading"] = missing["reading"]
+        insert_at = next(
+            (
+                index + 1
+                for index, item in enumerate(corrected)
+                if item["type"] == missing["type"] and item["japanese"] == missing["after"]
+            ),
+            len(corrected),
+        )
+        corrected.insert(insert_at, new_item)
+    return corrected
+
+
 def extract(source: Path) -> dict[str, Any]:
     lessons: list[dict[str, Any]] = []
     mismatch_report: list[dict[str, int]] = []
@@ -584,7 +718,10 @@ def extract(source: Path) -> dict[str, Any]:
                 mismatch_report.append(
                     {"lesson": lesson_range.number, "japaneseTurns": counts[0], "koreanTurns": counts[1]}
                 )
-            items = dedupe_lesson_items(vocabulary + patterns + conversation)
+            items = apply_known_corrections(
+                lesson_range.number,
+                dedupe_lesson_items(vocabulary + patterns + conversation),
+            )
             lessons.append(
                 {
                     "id": lesson_range.number,

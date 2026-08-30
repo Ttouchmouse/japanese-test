@@ -43,6 +43,7 @@ MANUAL_CUES = {
     "l08-c-68738268b8f7": ("08-4-1.mp3", 292.36, 297.84),
     "l15-c-a734c420176f": ("15-4-1.mp3", 63.90, 64.30),
     "l19-c-389153d135b9": ("19-4-1.mp3", 56.90, 62.66),
+    "l20-c-0cdb4dd9a9c6": ("20-4-1.mp3", 50.22, 51.68),
     "l22-c-2e439a12d825": ("22-4-1.mp3", 282.58, 284.10),
     "l23-c-32d0785d0fff": ("23-4-1.mp3", 236.22, 236.96),
     "l23-c-7ac6d3d94b47": ("23-4-1.mp3", 239.26, 240.44),
@@ -472,10 +473,6 @@ def main() -> int:
                     # standalone item in the extracted question bank.
                     group_index = item_index
                     if item_type == "vocabulary" and lesson_id == 13 and item_index >= 8:
-                        group_index += 1
-                    # Lesson 22 reads 来月 between 今月 and 母, but 来月 is not
-                    # a standalone vocabulary item in the question bank.
-                    if item_type == "vocabulary" and lesson_id == 22 and item_index >= 6:
                         group_index += 1
                     if group_index >= len(groups) or not groups[group_index]:
                         raise ValueError(

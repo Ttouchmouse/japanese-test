@@ -7315,6 +7315,22 @@
           "sourcePage": 63
         },
         {
+          "id": "l20-c-436af2496ef6",
+          "lessonId": 20,
+          "type": "conversation",
+          "japanese": "いいですよ。石田さんも一緒にどうですか。",
+          "korean": "좋아요. 이시다 씨도 같이 보는 게 어때요? (이시다 씨도 함께 어때요?)",
+          "sourcePage": 63
+        },
+        {
+          "id": "l20-c-5ac73e50c23e",
+          "lessonId": 20,
+          "type": "conversation",
+          "japanese": "え?石田さんもですか。",
+          "korean": "에? 이시다 씨도요?",
+          "sourcePage": 63
+        },
+        {
           "id": "l20-c-c82d5194c9bc",
           "lessonId": 20,
           "type": "conversation",
@@ -7600,6 +7616,22 @@
           "sourcePage": 65
         },
         {
+          "id": "l21-p-e5c559743307",
+          "lessonId": 21,
+          "type": "pattern",
+          "japanese": "うん、しない。",
+          "korean": "응, 안 해.",
+          "sourcePage": 66
+        },
+        {
+          "id": "l21-p-2b8de6add4fc",
+          "lessonId": 21,
+          "type": "pattern",
+          "japanese": "ううん、よくする。",
+          "korean": "아니, 자주 해.",
+          "sourcePage": 66
+        },
+        {
           "id": "l21-c-2467eb864005",
           "lessonId": 21,
           "type": "conversation",
@@ -7672,6 +7704,14 @@
           "sourcePage": 66
         },
         {
+          "id": "l21-c-dae41104fdfa",
+          "lessonId": 21,
+          "type": "conversation",
+          "japanese": "祐介もヘアモデルする?",
+          "korean": "유스케도 헤어모델 할래?",
+          "sourcePage": 66
+        },
+        {
           "id": "l21-c-5f7e87de6bd8",
           "lessonId": 21,
           "type": "conversation",
@@ -7702,7 +7742,7 @@
           "type": "vocabulary",
           "japanese": "行って来る",
           "reading": "いってくる",
-          "korean": "갔다 오다, 다녀",
+          "korean": "갔다 오다, 다녀오다",
           "sourcePage": 67
         },
         {
@@ -7749,6 +7789,15 @@
           "reading": "こんげつ",
           "korean": "이번 달",
           "sourcePage": 67
+        },
+        {
+          "id": "l22-v-e6db7104f721",
+          "lessonId": 22,
+          "type": "vocabulary",
+          "japanese": "来月",
+          "korean": "다음 달",
+          "sourcePage": 67,
+          "reading": "らいげつ"
         },
         {
           "id": "l22-v-28829b3dc726",
@@ -7963,11 +8012,27 @@
           "sourcePage": 68
         },
         {
+          "id": "l22-p-55ca6f6f9297",
+          "lessonId": 22,
+          "type": "pattern",
+          "japanese": "はい、しません。",
+          "korean": "네, 안 해요.",
+          "sourcePage": 69
+        },
+        {
+          "id": "l22-p-1e02ea1f12de",
+          "lessonId": 22,
+          "type": "pattern",
+          "japanese": "いいえ、します。",
+          "korean": "아니요, 할 거예요.",
+          "sourcePage": 69
+        },
+        {
           "id": "l22-c-4883dd8de19c",
           "lessonId": 22,
           "type": "conversation",
           "japanese": "チャンミンさん、いつまた日本へ来ますか。",
-          "korean": "다 음 달이요. 다음 달에는 어머니를 데 려와요.",
+          "korean": "창민 씨, 언제 또 일본에 와요?",
           "sourcePage": 69
         },
         {
@@ -7975,7 +8040,15 @@
           "lessonId": 22,
           "type": "conversation",
           "japanese": "来月です。来月は母を連れて来ます。",
-          "korean": "창민 씨, 언제 또 일본에 와요?",
+          "korean": "다음 달이요. 다음 달에는 어머니를 데려와요.",
+          "sourcePage": 69
+        },
+        {
+          "id": "l22-c-aacecc698744",
+          "lessonId": 22,
+          "type": "conversation",
+          "japanese": "そうですか。",
+          "korean": "그렇군요.",
           "sourcePage": 69
         },
         {
@@ -7983,7 +8056,7 @@
           "lessonId": 22,
           "type": "conversation",
           "japanese": "絵美さんはキムチが好きですか。韓国のキムチはおいしいですよ。",
-          "korean": "그렇군요.",
+          "korean": "에미 씨는 김치를 좋아해요? 한국 김치는 맛있어요.",
           "sourcePage": 69
         },
         {
@@ -7991,7 +8064,7 @@
           "lessonId": 22,
           "type": "conversation",
           "japanese": "そうですか。でも、私はキムチはちょっと苦手です。",
-          "korean": "그럼, 김은 어때요?",
+          "korean": "그래요. 그런데 저는 김치는 좀 잘 못 먹어요.",
           "sourcePage": 69
         },
         {
@@ -7999,7 +8072,7 @@
           "lessonId": 22,
           "type": "conversation",
           "japanese": "じゃ、のりはどうですか。",
-          "korean": "그 래요. 그런데 저는 김치는 좀 잘 못 먹어요.",
+          "korean": "그럼, 김은 어때요?",
           "sourcePage": 69
         },
         {
@@ -8007,7 +8080,7 @@
           "lessonId": 22,
           "type": "conversation",
           "japanese": "韓国ののりはとても好きです。",
-          "korean": "그럼, 김을 가져올게요.",
+          "korean": "한국 김은 무척 좋아해요.",
           "sourcePage": 69
         },
         {
@@ -8015,7 +8088,7 @@
           "lessonId": 22,
           "type": "conversation",
           "japanese": "じゃ、のりを持って来ますね。",
-          "korean": "한국 김은 무척 좋아해요.",
+          "korean": "그럼, 김을 가져올게요.",
           "sourcePage": 69
         },
         {
@@ -8023,7 +8096,7 @@
           "lessonId": 22,
           "type": "conversation",
           "japanese": "ありがとうございます。",
-          "korean": "그럼, 또 연락할게요.",
+          "korean": "고마워요.",
           "sourcePage": 69
         },
         {
@@ -8031,7 +8104,7 @@
           "lessonId": 22,
           "type": "conversation",
           "japanese": "じゃ、また連絡します。",
-          "korean": "고마워요.",
+          "korean": "그럼, 또 연락할게요.",
           "sourcePage": 69
         },
         {
@@ -8111,7 +8184,7 @@
           "type": "vocabulary",
           "japanese": "お土産",
           "reading": "おみやげ",
-          "korean": "(여행지 등에서 사",
+          "korean": "(여행지 등에서 사 오는) 기념 선물",
           "sourcePage": 70
         },
         {
@@ -8378,7 +8451,7 @@
           "lessonId": 23,
           "type": "conversation",
           "japanese": "そう?じゃ、あのお店に行く!何がいいかなぁ......。これ、かわいい!",
-          "korean": "그 래? 그럼 저 가게에 갈래! (가게에 들어가서) 뭐가 좋을까...... 이거 예쁘다!",
+          "korean": "그래? 그럼 저 가게에 갈래! (가게에 들어가서) 뭐가 좋을까...... 이거 예쁘다!",
           "sourcePage": 72
         },
         {
