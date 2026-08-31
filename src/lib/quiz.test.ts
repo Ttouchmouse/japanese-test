@@ -277,6 +277,54 @@ describe("generateQuiz", () => {
     const selectedIds = new Set(questions.map((question) => question.sourceItemId));
     preferred.forEach((item) => expect(selectedIds).toContain(item.id));
   });
+
+  it("prefers unseen items, then the least recently shown items within a lesson", () => {
+    const lesson = bank.lessons[0];
+    const vocabulary = lesson.items.filter((item) => item.type === "vocabulary");
+    const recent = vocabulary.slice(0, 4);
+    const unseen = vocabulary.slice(4);
+    const recentHistory = Object.fromEntries(
+      recent.map((item) => [item.id, "2026-08-30T00:00:00.000Z"]),
+    );
+
+    const unseenQuestions = generateQuiz(
+      bank,
+      [lesson.id],
+      seededRandom(90),
+      {},
+      new Date("2026-08-31T00:00:00.000Z"),
+      unseen.length,
+      "write",
+      "vocabulary",
+      recentHistory,
+    );
+
+    expect(new Set(unseenQuestions.map((question) => question.sourceItemId))).toEqual(
+      new Set(unseen.map((item) => item.id)),
+    );
+
+    const datedHistory = Object.fromEntries(
+      vocabulary.map((item, index) => [
+        item.id,
+        new Date(Date.UTC(2026, 7, index + 1)).toISOString(),
+      ]),
+    );
+    const oldestQuestions = generateQuiz(
+      bank,
+      [lesson.id],
+      seededRandom(91),
+      {},
+      new Date("2026-08-31T00:00:00.000Z"),
+      3,
+      "write",
+      "vocabulary",
+      datedHistory,
+    );
+
+    expect(new Set(oldestQuestions.map((question) => question.sourceItemId))).toEqual(
+      new Set(vocabulary.slice(0, 3).map((item) => item.id)),
+    );
+  });
 });
 
 describe("scoreQuiz", () => {

@@ -1,4 +1,5 @@
 import type {
+  ExposureHistory,
   LearningProgress,
   QuestionBank,
   QuestionDirection,
@@ -239,6 +240,7 @@ function balancedPick(
   random: Random,
   progress: LearningProgress,
   now: Date,
+  exposureHistory: ExposureHistory,
 ): StudyItem[] {
   const targetCount = Math.min(limit, items.length);
   if (targetCount <= 0) return [];
@@ -348,9 +350,20 @@ function balancedPick(
       priorityQuotas.get(lessonId) ?? 0,
     );
     const prioritizedIds = new Set(prioritized.map((item) => item.id));
+    const leastRecentlyShown = lessonItems
+      .filter((item) => !prioritizedIds.has(item.id))
+      .map((item) => ({
+        item,
+        shownAt: exposureHistory[item.id]
+          ? Date.parse(exposureHistory[item.id])
+          : Number.NEGATIVE_INFINITY,
+        tie: random(),
+      }))
+      .sort((left, right) => left.shownAt - right.shownAt || left.tie - right.tie)
+      .map(({ item }) => item);
     return [
       ...prioritized,
-      ...shuffle(lessonItems.filter((item) => !prioritizedIds.has(item.id)), random),
+      ...leastRecentlyShown,
     ].slice(0, quota);
   });
 
@@ -366,13 +379,21 @@ function chooseSources(
   random: Random,
   progress: LearningProgress,
   now: Date,
+  exposureHistory: ExposureHistory,
 ): StudyItem[] {
   const selected: StudyItem[] = [];
   const selectedIds = new Set<string>();
 
   const take = (type: QuestionType, limit: number) => {
     const candidates = pools[type].filter((item) => (eligibility.get(item.id)?.length ?? 0) > 0);
-    for (const item of balancedPick(candidates, limit, random, progress, now)) {
+    for (const item of balancedPick(
+      candidates,
+      limit,
+      random,
+      progress,
+      now,
+      exposureHistory,
+    )) {
       if (selected.length >= quizSize || selectedIds.has(item.id)) continue;
       selected.push(item);
       selectedIds.add(item.id);
@@ -392,6 +413,7 @@ function chooseSources(
       random,
       progress,
       now,
+      exposureHistory,
     )) {
       selected.push(item);
       selectedIds.add(item.id);
@@ -418,8 +440,9 @@ function chooseWriteSources(
   random: Random,
   progress: LearningProgress,
   now: Date,
+  exposureHistory: ExposureHistory,
 ): StudyItem[] {
-  return balancedPick(items, quizSize, random, progress, now);
+  return balancedPick(items, quizSize, random, progress, now, exposureHistory);
 }
 
 export function generateQuiz(
@@ -431,13 +454,21 @@ export function generateQuiz(
   quizSize: number = QUIZ_SIZE,
   mode: QuizMode = "quick",
   category: QuizCategory = "all",
+  exposureHistory: ExposureHistory = {},
 ): QuizQuestion[] {
   const effectiveCategory =
     mode === "write" ? "vocabulary" : mode === "recall" ? "sentence" : category;
   const items = selectedItems(bank, selectedLessonIds, effectiveCategory);
 
   if (mode === "write") {
-    const sources = chooseWriteSources(items, quizSize, random, progress, now);
+    const sources = chooseWriteSources(
+      items,
+      quizSize,
+      random,
+      progress,
+      now,
+      exposureHistory,
+    );
     if (sources.length < quizSize) {
       throw new QuizGenerationError(`선택한 과에는 단어가 ${sources.length}개 있습니다.`);
     }
@@ -461,7 +492,14 @@ export function generateQuiz(
   }
 
   if (mode === "recall") {
-    const sources = chooseWriteSources(items, quizSize, random, progress, now);
+    const sources = chooseWriteSources(
+      items,
+      quizSize,
+      random,
+      progress,
+      now,
+      exposureHistory,
+    );
     if (sources.length < quizSize) {
       throw new QuizGenerationError(`선택한 과에는 문장이 ${sources.length}개 있습니다.`);
     }
@@ -505,6 +543,7 @@ export function generateQuiz(
     random,
     progress,
     now,
+    exposureHistory,
   );
   if (sources.length < quizSize) {
     throw new QuizGenerationError(`선택한 과에서 서로 다른 ${quizSize}문제를 만들 수 없습니다.`);

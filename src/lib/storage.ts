@@ -1,5 +1,6 @@
 import type {
   ConfusionMarks,
+  ExposureHistory,
   LearningProgress,
   QuizCategory,
   QuizCount,
@@ -22,6 +23,7 @@ const CATEGORY_STORAGE_KEY = "nihongo-review-category-v1";
 const QUESTION_COUNT_STORAGE_KEY = "nihongo-review-question-count-v2";
 const LEGACY_QUESTION_COUNT_STORAGE_KEY = "nihongo-review-question-count-v1";
 const PROGRESS_STORAGE_KEY = "nihongo-review-progress-v1";
+const EXPOSURE_STORAGE_KEY = "nihongo-review-exposures-v1";
 const CONFUSION_STORAGE_KEY = "nihongo-review-confusions-v1";
 
 const QUIZ_COUNTS: QuizCount[] = [10, 20, 30, 100, 200];
@@ -157,6 +159,32 @@ export function migrateLearningProgress(
 
 export function saveLearningProgress(progress: LearningProgress): void {
   window.localStorage.setItem(PROGRESS_STORAGE_KEY, JSON.stringify(progress));
+}
+
+export function loadExposureHistory(
+  validSourceItemIds?: ReadonlySet<string>,
+): ExposureHistory {
+  try {
+    const raw = window.localStorage.getItem(EXPOSURE_STORAGE_KEY);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw) as ExposureHistory;
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return {};
+
+    return Object.fromEntries(
+      Object.entries(parsed).filter(
+        ([sourceItemId, shownAt]) =>
+          (!validSourceItemIds || validSourceItemIds.has(sourceItemId)) &&
+          typeof shownAt === "string" &&
+          Number.isFinite(Date.parse(shownAt)),
+      ),
+    );
+  } catch {
+    return {};
+  }
+}
+
+export function saveExposureHistory(history: ExposureHistory): void {
+  window.localStorage.setItem(EXPOSURE_STORAGE_KEY, JSON.stringify(history));
 }
 
 export function migrateConfusionMarks(

@@ -10,12 +10,14 @@ import {
   clearSession,
   loadCategory,
   loadConfusionMarks,
+  loadExposureHistory,
   loadLearningProgress,
   loadMode,
   loadQuestionCount,
   loadSession,
   saveCategory,
   saveConfusionMarks,
+  saveExposureHistory,
   saveLearningProgress,
   saveMode,
   saveQuestionCount,
@@ -23,6 +25,7 @@ import {
 } from "./lib/storage";
 import type {
   ConfusionMarks,
+  ExposureHistory,
   LearningProgress,
   QuestionBank,
   QuizCategory,
@@ -82,6 +85,19 @@ function progressWithConfusions(
   return next;
 }
 
+function mergeStoredExposures(progress: LearningProgress): ExposureHistory {
+  const exposures = loadExposureHistory(sourceItemIds);
+
+  for (const item of Object.values(progress)) {
+    const shownAt = exposures[item.sourceItemId];
+    if (!shownAt || Date.parse(item.lastReviewedAt) > Date.parse(shownAt)) {
+      exposures[item.sourceItemId] = item.lastReviewedAt;
+    }
+  }
+
+  return exposures;
+}
+
 function createSession(
   selectedLessonIds: number[],
   mode: QuizMode,
@@ -89,6 +105,7 @@ function createSession(
   countOption: QuizCountOption,
   progress: LearningProgress,
   confusionMarks: ConfusionMarks,
+  exposureHistory: ExposureHistory,
 ): QuizSession {
   const availableCount = availableQuestionCount(
     questionBank,
@@ -107,6 +124,7 @@ function createSession(
     questionCount,
     mode,
     category,
+    exposureHistory,
   );
   const confusedSourceItemIds = questions
     .map((question) => question.sourceItemId)
@@ -143,6 +161,9 @@ export default function App() {
   const [learningProgress, setLearningProgress] = useState<LearningProgress>(() =>
     loadLearningProgress(sourceItemIds),
   );
+  const [exposureHistory, setExposureHistory] = useState<ExposureHistory>(() =>
+    mergeStoredExposures(learningProgress),
+  );
   const [confusionMarks, setConfusionMarks] = useState<ConfusionMarks>(() =>
     mergeStoredConfusions(session, learningProgress),
   );
@@ -168,6 +189,23 @@ export default function App() {
   useEffect(() => {
     saveLearningProgress(learningProgress);
   }, [learningProgress]);
+
+  useEffect(() => {
+    saveExposureHistory(exposureHistory);
+  }, [exposureHistory]);
+
+  const visibleSourceItemId =
+    session?.status === "quiz"
+      ? session.questions[session.currentIndex]?.sourceItemId
+      : undefined;
+
+  useEffect(() => {
+    if (!visibleSourceItemId) return;
+    setExposureHistory((current) => ({
+      ...current,
+      [visibleSourceItemId]: new Date().toISOString(),
+    }));
+  }, [visibleSourceItemId]);
 
   const selectedLessonsLabel = !session
     ? ""
@@ -226,6 +264,7 @@ export default function App() {
           countOption,
           learningProgress,
           confusionMarks,
+          exposureHistory,
         ),
       );
       setError("");
@@ -328,6 +367,7 @@ export default function App() {
         session.countOption,
         learningProgress,
         confusionMarks,
+        exposureHistory,
       ),
     );
     window.scrollTo({ top: 0 });

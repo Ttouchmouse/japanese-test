@@ -60,6 +60,7 @@ export interface ItemProgress {
 }
 
 export type LearningProgress = Record<string, ItemProgress>;
+export type ExposureHistory = Record<string, string>;
 export type ConfusionMarks = Record<string, string>;
 
 export interface QuizSession {
