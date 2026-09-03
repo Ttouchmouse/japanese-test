@@ -587,6 +587,23 @@ KNOWN_KOREAN_CORRECTIONS = {
         "conversation",
         "そう?じゃ、あのお店に行く!何がいいかなぁ......。これ、かわいい!",
     ): "그래? 그럼 저 가게에 갈래! (가게에 들어가서) 뭐가 좋을까...... 이거 예쁘다!",
+    (
+        28,
+        "conversation",
+        "コンサートは8時からですから、一緒に晩ご飯も食べませんか。",
+    ): "콘서트는 8시부터니까, 같이 저녁도 먹지 않을래요?",
+    (
+        29,
+        "conversation",
+        "それから......レポートを書く前に吸うことがある。",
+    ): "그리고...... 리포트를 쓰기 전에 피우는 경우가 있어.",
+}
+
+KNOWN_JAPANESE_CORRECTIONS = {
+    (28, "vocabulary", "ある 5"): "ある",
+    (29, "vocabulary", "弾く 5"): "弾く",
+    (29, "vocabulary", "吸う 5"): "吸う",
+    (30, "vocabulary", "歌う 5"): "歌う",
 }
 
 KNOWN_MISSING_ITEMS = {
@@ -660,15 +677,117 @@ KNOWN_MISSING_ITEMS = {
             "sourcePage": 69,
         },
     ],
+    25: [
+        {
+            "before": "そう。",
+            "type": "conversation",
+            "japanese": "ここが大阪城?桜がきれい!",
+            "korean": "여기가 오사카성이야? 벚꽃이 예쁘다!",
+            "sourcePage": 78,
+        },
+        {
+            "after": "ここが大阪城?桜がきれい!",
+            "type": "conversation",
+            "japanese": "大阪城は桜が有名なんだ。",
+            "korean": "오사카성은 벚꽃이 유명하거든.",
+            "sourcePage": 78,
+        },
+        {
+            "after": "はい、チーズ!",
+            "id": "l25-c-791637fcfb8b",
+            "type": "conversation",
+            "japanese": "竜也も写真撮らない?",
+            "korean": "류야도 사진 찍지 않을래?",
+            "sourcePage": 78,
+        },
+        {
+            "after": "撮らないの?",
+            "type": "conversation",
+            "japanese": "うん、撮らない。そこのお店でちょっと休まない?",
+            "korean": "응, 안 찍을래. 거기 있는 가게에서 잠깐 쉬지 않을래?",
+            "sourcePage": 78,
+        },
+    ],
+    26: [
+        {
+            "after": "あ、こんにちは。",
+            "type": "conversation",
+            "japanese": "今日、真奈美に飴を渡しますか。",
+            "korean": "오늘, 마나미에게 사탕을 줄 거예요?",
+            "sourcePage": 81,
+        },
+        {
+            "after": "渡さないんですか。",
+            "type": "conversation",
+            "japanese": "ええ。僕は真奈美さんが好きじゃありません。",
+            "korean": "네. 나는 마나미 씨를 좋아하지 않아요.",
+            "sourcePage": 81,
+        },
+    ],
+    27: [
+        {
+            "after": "本当?!おめでとう!",
+            "type": "conversation",
+            "japanese": "恵子は結婚しないつもり?",
+            "korean": "게이코는 결혼하지 않을 생각이야?",
+            "sourcePage": 84,
+        },
+    ],
+    28: [
+        {
+            "after": "イェウンさん、今度の日曜日、何をしますか。",
+            "type": "conversation",
+            "japanese": "うちでゆっくり休むつもりです。森さんは?",
+            "korean": "집에서 푹 쉴 생각이에요. 모리 씨는요?",
+            "sourcePage": 87,
+        },
+    ],
+    29: [
+        {
+            "after": "ギター",
+            "type": "vocabulary",
+            "japanese": "シャワー",
+            "korean": "샤워",
+            "sourcePage": 88,
+        },
+        {
+            "after": "たばこ",
+            "type": "vocabulary",
+            "japanese": "外",
+            "reading": "そと",
+            "korean": "밖, 바깥",
+            "sourcePage": 88,
+        },
+        {
+            "before": "うん。よく吸うよ。",
+            "type": "conversation",
+            "japanese": "あれ?雄太、たばこ吸うの?",
+            "korean": "어라? 유타, 담배 피우는 거야?",
+            "sourcePage": 90,
+        },
+    ],
+    30: [
+        {
+            "after": "そうですか。いいですね。",
+            "type": "conversation",
+            "japanese": "遠藤さんは何で行きますか。",
+            "korean": "엔도 씨는 뭘 타고(뭘로) 갑니까?",
+            "sourcePage": 93,
+        },
+    ],
 }
 
 
 def apply_known_corrections(lesson: int, items: list[dict[str, Any]]) -> list[dict[str, Any]]:
     corrected = [dict(item) for item in items]
     for item in corrected:
-        korean = KNOWN_KOREAN_CORRECTIONS.get((lesson, item["type"], item["japanese"]))
+        correction_key = (lesson, item["type"], item["japanese"])
+        korean = KNOWN_KOREAN_CORRECTIONS.get(correction_key)
         if korean:
             item["korean"] = korean
+        japanese = KNOWN_JAPANESE_CORRECTIONS.get(correction_key)
+        if japanese:
+            item["japanese"] = japanese
 
     for missing in KNOWN_MISSING_ITEMS.get(lesson, []):
         if any(
@@ -677,7 +796,10 @@ def apply_known_corrections(lesson: int, items: list[dict[str, Any]]) -> list[di
         ):
             continue
         new_item = {
-            "id": stable_id(missing["type"], lesson, missing["japanese"], missing["korean"]),
+            "id": missing.get(
+                "id",
+                stable_id(missing["type"], lesson, missing["japanese"], missing["korean"]),
+            ),
             "lessonId": lesson,
             "type": missing["type"],
             "japanese": missing["japanese"],
@@ -686,14 +808,26 @@ def apply_known_corrections(lesson: int, items: list[dict[str, Any]]) -> list[di
         }
         if missing.get("reading"):
             new_item["reading"] = missing["reading"]
-        insert_at = next(
-            (
-                index + 1
-                for index, item in enumerate(corrected)
-                if item["type"] == missing["type"] and item["japanese"] == missing["after"]
-            ),
-            len(corrected),
-        )
+        if missing.get("before"):
+            insert_at = next(
+                (
+                    index
+                    for index, item in enumerate(corrected)
+                    if item["type"] == missing["type"]
+                    and item["japanese"] == missing["before"]
+                ),
+                len(corrected),
+            )
+        else:
+            insert_at = next(
+                (
+                    index + 1
+                    for index, item in enumerate(corrected)
+                    if item["type"] == missing["type"]
+                    and item["japanese"] == missing["after"]
+                ),
+                len(corrected),
+            )
         corrected.insert(insert_at, new_item)
     return corrected
 

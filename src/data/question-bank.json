@@ -9146,6 +9146,22 @@
           "sourcePage": 77
         },
         {
+          "id": "l25-c-9d39e8591c80",
+          "lessonId": 25,
+          "type": "conversation",
+          "japanese": "ここが大阪城?桜がきれい!",
+          "korean": "여기가 오사카성이야? 벚꽃이 예쁘다!",
+          "sourcePage": 78
+        },
+        {
+          "id": "l25-c-5ff8ff271c67",
+          "lessonId": 25,
+          "type": "conversation",
+          "japanese": "大阪城は桜が有名なんだ。",
+          "korean": "오사카성은 벚꽃이 유명하거든.",
+          "sourcePage": 78
+        },
+        {
           "id": "l25-c-3fe08d7453eb",
           "lessonId": 25,
           "type": "conversation",
@@ -9178,6 +9194,14 @@
           "sourcePage": 78
         },
         {
+          "id": "l25-c-791637fcfb8b",
+          "lessonId": 25,
+          "type": "conversation",
+          "japanese": "竜也も写真撮らない?",
+          "korean": "류야도 사진 찍지 않을래?",
+          "sourcePage": 78
+        },
+        {
           "id": "l25-c-4310efc8f83f",
           "lessonId": 25,
           "type": "conversation",
@@ -9191,6 +9215,14 @@
           "type": "conversation",
           "japanese": "撮らないの?",
           "korean": "안 찍을 거야?",
+          "sourcePage": 78
+        },
+        {
+          "id": "l25-c-5a4a256d8fe6",
+          "lessonId": 25,
+          "type": "conversation",
+          "japanese": "うん、撮らない。そこのお店でちょっと休まない?",
+          "korean": "응, 안 찍을래. 거기 있는 가게에서 잠깐 쉬지 않을래?",
           "sourcePage": 78
         },
         {
@@ -9520,6 +9552,14 @@
           "sourcePage": 81
         },
         {
+          "id": "l26-c-1afc6fc15848",
+          "lessonId": 26,
+          "type": "conversation",
+          "japanese": "今日、真奈美に飴を渡しますか。",
+          "korean": "오늘, 마나미에게 사탕을 줄 거예요?",
+          "sourcePage": 81
+        },
+        {
           "id": "l26-c-954cde3e6cad",
           "lessonId": 26,
           "type": "conversation",
@@ -9565,6 +9605,14 @@
           "type": "conversation",
           "japanese": "渡さないんですか。",
           "korean": "주지 않을 거예요?",
+          "sourcePage": 81
+        },
+        {
+          "id": "l26-c-07d2631628a5",
+          "lessonId": 26,
+          "type": "conversation",
+          "japanese": "ええ。僕は真奈美さんが好きじゃありません。",
+          "korean": "네. 나는 마나미 씨를 좋아하지 않아요.",
           "sourcePage": 81
         },
         {
@@ -9941,6 +9989,14 @@
           "sourcePage": 84
         },
         {
+          "id": "l27-c-b440ab8232bf",
+          "lessonId": 27,
+          "type": "conversation",
+          "japanese": "恵子は結婚しないつもり?",
+          "korean": "게이코는 결혼하지 않을 생각이야?",
+          "sourcePage": 84
+        },
+        {
           "id": "l27-c-31aea5dbde75",
           "lessonId": 27,
           "type": "conversation",
@@ -9997,7 +10053,7 @@
           "id": "l28-v-d51a69b51b2e",
           "lessonId": 28,
           "type": "vocabulary",
-          "japanese": "ある 5",
+          "japanese": "ある",
           "reading": "",
           "korean": "(무생물이) 있다",
           "sourcePage": 85
@@ -10253,6 +10309,14 @@
           "sourcePage": 87
         },
         {
+          "id": "l28-c-69a856d6d47d",
+          "lessonId": 28,
+          "type": "conversation",
+          "japanese": "うちでゆっくり休むつもりです。森さんは?",
+          "korean": "집에서 푹 쉴 생각이에요. 모리 씨는요?",
+          "sourcePage": 87
+        },
+        {
           "id": "l28-c-3dee569207a9",
           "lessonId": 28,
           "type": "conversation",
@@ -10321,7 +10385,7 @@
           "lessonId": 28,
           "type": "conversation",
           "japanese": "コンサートは8時からですから、一緒に晩ご飯も食べませんか。",
-          "korean": "콘 서트는 8시부터니까, 같이 저녁도 먹지 않을래요?",
+          "korean": "콘서트는 8시부터니까, 같이 저녁도 먹지 않을래요?",
           "sourcePage": 87
         },
         {
@@ -10345,7 +10409,7 @@
           "id": "l29-v-27d5fe6a27fb",
           "lessonId": 29,
           "type": "vocabulary",
-          "japanese": "弾く 5",
+          "japanese": "弾く",
           "reading": "ひく",
           "korean": "(현악기, 건반악기를)치다, 연주",
           "sourcePage": 88
@@ -10372,7 +10436,7 @@
           "id": "l29-v-f7bc9b93850f",
           "lessonId": 29,
           "type": "vocabulary",
-          "japanese": "吸う 5",
+          "japanese": "吸う",
           "reading": "すう",
           "korean": "(담배를)피우다",
           "sourcePage": 88
@@ -10396,6 +10460,14 @@
           "sourcePage": 88
         },
         {
+          "id": "l29-v-697565e05e4b",
+          "lessonId": 29,
+          "type": "vocabulary",
+          "japanese": "シャワー",
+          "korean": "샤워",
+          "sourcePage": 88
+        },
+        {
           "id": "l29-v-29bd6dab09f4",
           "lessonId": 29,
           "type": "vocabulary",
@@ -10403,6 +10475,15 @@
           "reading": "",
           "korean": "담배",
           "sourcePage": 88
+        },
+        {
+          "id": "l29-v-4ffacbd0bc89",
+          "lessonId": 29,
+          "type": "vocabulary",
+          "japanese": "外",
+          "korean": "밖, 바깥",
+          "sourcePage": 88,
+          "reading": "そと"
         },
         {
           "id": "l29-v-c985429341e1",
@@ -10592,6 +10673,14 @@
           "sourcePage": 89
         },
         {
+          "id": "l29-c-c255a1e7bd6e",
+          "lessonId": 29,
+          "type": "conversation",
+          "japanese": "あれ?雄太、たばこ吸うの?",
+          "korean": "어라? 유타, 담배 피우는 거야?",
+          "sourcePage": 90
+        },
+        {
           "id": "l29-c-5e71c5f857c9",
           "lessonId": 29,
           "type": "conversation",
@@ -10644,7 +10733,7 @@
           "lessonId": 29,
           "type": "conversation",
           "japanese": "それから......レポートを書く前に吸うことがある。",
-          "korean": "그 리고...... 리포트를 쓰기 전에 피우는 경우가 있어.",
+          "korean": "그리고...... 리포트를 쓰기 전에 피우는 경우가 있어.",
           "sourcePage": 90
         },
         {
@@ -10692,7 +10781,7 @@
           "id": "l30-v-31ca867de5b9",
           "lessonId": 30,
           "type": "vocabulary",
-          "japanese": "歌う 5",
+          "japanese": "歌う",
           "reading": "うたう",
           "korean": "(노래를)부르다",
           "sourcePage": 91
@@ -11008,6 +11097,14 @@
           "type": "conversation",
           "japanese": "そうですか。いいですね。",
           "korean": "그렇군요. 좋겠네요.",
+          "sourcePage": 93
+        },
+        {
+          "id": "l30-c-27e4a8da238a",
+          "lessonId": 30,
+          "type": "conversation",
+          "japanese": "遠藤さんは何で行きますか。",
+          "korean": "엔도 씨는 뭘 타고(뭘로) 갑니까?",
           "sourcePage": 93
         },
         {
