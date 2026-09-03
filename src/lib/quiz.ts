@@ -286,7 +286,7 @@ function balancedPick(
     ]),
   );
   const priorityLessonLimit = Math.min(
-    Math.round(targetCount * 0.4),
+    targetCount,
     [...prioritizedByLesson.values()].filter((lessonItems) => lessonItems.length > 0).length,
   );
   const priorityLessons = [...prioritizedByLesson.entries()]
@@ -300,6 +300,7 @@ function balancedPick(
     }))
     .sort((left, right) => right.priority - left.priority || right.tie - left.tie)
     .slice(0, priorityLessonLimit);
+  const priorityLessonIds = new Set(priorityLessons.map(({ lessonId }) => lessonId));
 
   for (const { lessonId } of priorityLessons) {
     if ((lessonQuotas.get(lessonId) ?? 0) > 0) continue;
@@ -308,7 +309,7 @@ function balancedPick(
         ([donorLessonId, quota]) =>
           donorLessonId !== lessonId &&
           quota > 0 &&
-          (prioritizedByLesson.get(donorLessonId)?.length ?? 0) === 0,
+          !priorityLessonIds.has(donorLessonId),
       )
       .map(([donorLessonId, quota]) => ({ donorLessonId, quota, tie: random() }))
       .sort((left, right) => right.quota - left.quota || right.tie - left.tie)[0];
@@ -317,38 +318,9 @@ function balancedPick(
     lessonQuotas.set(lessonId, 1);
   }
 
-  const priorityQuotas = new Map(
-    [...itemsByLesson.keys()].map((lessonId) => [lessonId, 0]),
-  );
-  let priorityRemaining = Math.min(
-    Math.round(targetCount * 0.4),
-    [...prioritizedByLesson.values()].reduce((sum, lessonItems) => sum + lessonItems.length, 0),
-  );
-  while (priorityRemaining > 0) {
-    const activeLessons = [...prioritizedByLesson.entries()]
-      .filter(([lessonId, lessonItems]) => {
-        const priorityQuota = priorityQuotas.get(lessonId) ?? 0;
-        return (
-          priorityQuota < lessonItems.length &&
-          priorityQuota < (lessonQuotas.get(lessonId) ?? 0)
-        );
-      })
-      .map(([lessonId]) => lessonId);
-    if (!activeLessons.length) break;
-
-    for (const lessonId of shuffle(activeLessons, random)) {
-      if (priorityRemaining <= 0) break;
-      priorityQuotas.set(lessonId, (priorityQuotas.get(lessonId) ?? 0) + 1);
-      priorityRemaining -= 1;
-    }
-  }
-
   const selected = [...itemsByLesson.entries()].flatMap(([lessonId, lessonItems]) => {
     const quota = lessonQuotas.get(lessonId) ?? 0;
-    const prioritized = (prioritizedByLesson.get(lessonId) ?? []).slice(
-      0,
-      priorityQuotas.get(lessonId) ?? 0,
-    );
+    const prioritized = (prioritizedByLesson.get(lessonId) ?? []).slice(0, quota);
     const prioritizedIds = new Set(prioritized.map((item) => item.id));
     const leastRecentlyShown = lessonItems
       .filter((item) => !prioritizedIds.has(item.id))

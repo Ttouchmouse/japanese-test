@@ -278,6 +278,47 @@ describe("generateQuiz", () => {
     preferred.forEach((item) => expect(selectedIds).toContain(item.id));
   });
 
+  it("lets urgent review items fill the available share instead of capping them at 40 percent", () => {
+    const lesson = bank.lessons[0];
+    const vocabulary = lesson.items.filter((item) => item.type === "vocabulary");
+    const urgent = vocabulary.slice(0, 5);
+    const reviewedAt = "2026-08-01T00:00:00.000Z";
+    const progress = Object.fromEntries(
+      urgent.map((item) => [
+        item.id,
+        {
+          sourceItemId: item.id,
+          attempts: 1,
+          correctAttempts: 0,
+          streak: 0,
+          confused: false,
+          lastResult: "incorrect" as const,
+          lastReviewedAt: reviewedAt,
+          dueAt: reviewedAt,
+        },
+      ]),
+    ) satisfies LearningProgress;
+    const exposureHistory = Object.fromEntries([
+      ...urgent.map((item) => [item.id, "2026-08-30T00:00:00.000Z"]),
+      ...vocabulary.slice(5).map((item) => [item.id, "2026-01-01T00:00:00.000Z"]),
+    ]);
+
+    const questions = generateQuiz(
+      bank,
+      [lesson.id],
+      seededRandom(89),
+      progress,
+      new Date("2026-08-31T00:00:00.000Z"),
+      6,
+      "write",
+      "vocabulary",
+      exposureHistory,
+    );
+    const selectedIds = new Set(questions.map((question) => question.sourceItemId));
+
+    urgent.forEach((item) => expect(selectedIds).toContain(item.id));
+  });
+
   it("prefers unseen items, then the least recently shown items within a lesson", () => {
     const lesson = bank.lessons[0];
     const vocabulary = lesson.items.filter((item) => item.type === "vocabulary");
