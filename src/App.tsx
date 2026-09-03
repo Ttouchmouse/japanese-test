@@ -222,6 +222,17 @@ export default function App() {
     );
   };
 
+  const selectLessonRange = (startLessonId: number, endLessonId: number) => {
+    const firstLessonId = Math.min(startLessonId, endLessonId);
+    const lastLessonId = Math.max(startLessonId, endLessonId);
+    setError("");
+    setSelectedLessonIds(
+      questionBank.lessons
+        .map((lesson) => lesson.id)
+        .filter((lessonId) => lessonId >= firstLessonId && lessonId <= lastLessonId),
+    );
+  };
+
   const changeMode = (nextMode: QuizMode) => {
     setError("");
     setMode(nextMode);
@@ -419,6 +430,7 @@ export default function App() {
           availableQuestionCount={selectedLessonIds.length ? availableCount : null}
           error={error}
           onToggle={toggleLesson}
+          onSelectRange={selectLessonRange}
           onModeChange={changeMode}
           onCategoryChange={changeCategory}
           onQuestionCountChange={changeQuestionCount}

@@ -35,10 +35,10 @@ test("direct input accepts a saved hiragana reading and survives refresh", async
 
   await page.getByRole("textbox", { name: "일본어 답" }).fill(reading);
   await page.getByRole("button", { name: "정답 확인" }).click();
-  await expect(page.locator(".feedback strong")).toHaveText("정답이에요.");
+  await expect(page.locator(".answer-reveal")).toBeVisible();
   await page.getByRole("button", { name: "헷갈려요" }).click();
   await page.reload();
-  await expect(page.locator(".feedback strong")).toHaveText("정답이에요.");
+  await expect(page.locator(".answer-reveal")).toBeVisible();
   await expect(page.getByRole("button", { name: "헷갈려요" })).toHaveAttribute("aria-pressed", "true");
 
   page.once("dialog", (dialog) => dialog.accept());
@@ -70,9 +70,11 @@ test("tablet quick-review flow keeps answers and reaches results", async ({ page
 
   await page.getByRole("button", { name: "복습 시작" }).click();
   await expect(page.getByText("1 / 20")).toBeVisible();
+  await expect(page.locator(".question-meta")).toHaveCount(0);
+  await expect(page.locator(".quiz-actions")).toHaveCSS("position", "fixed");
   await expect(page.locator(".answer-option")).toHaveCount(5);
   await page.locator(".answer-option").first().click();
-  await expect(page.locator(".feedback strong")).toBeVisible();
+  await expect(page.locator(".answer-reveal")).toHaveCount(0);
   await expect(page.locator(".answer-option:disabled")).toHaveCount(5);
   await page.getByRole("button", { name: "헷갈려요" }).click();
 
@@ -103,6 +105,32 @@ test("tablet quick-review flow keeps answers and reaches results", async ({ page
   expect(browserErrors).toEqual([]);
 });
 
+test("range lesson selection replaces the selection between two endpoints", async ({ page }) => {
+  await page.goto("/");
+
+  const rangeToggle = page.getByRole("switch", { name: "구간 과 선택" });
+  await expect(rangeToggle).toHaveAttribute("aria-checked", "false");
+  await rangeToggle.click();
+  await expect(rangeToggle).toHaveAttribute("aria-checked", "true");
+  await expect(page.getByText("시작 과를 선택하세요.")).toBeVisible();
+
+  await page.locator(".lesson-card").nth(9).click();
+  await expect(page.getByText("10과부터 선택할 끝 과를 선택하세요.")).toBeVisible();
+  await expect(page.locator(".lesson-card.is-range-start")).toHaveCount(1);
+
+  await page.locator(".lesson-card").nth(29).click();
+  await expect(rangeToggle).toHaveAttribute("aria-checked", "true");
+  await expect(page.getByText("시작 과를 선택하세요.")).toBeVisible();
+  await expect(page.locator(".lesson-card.is-selected")).toHaveCount(21);
+  await expect(page.locator(".selection-count")).toContainText("10~30과 · 21개 과 선택");
+
+  await rangeToggle.click();
+  await expect(rangeToggle).toHaveAttribute("aria-checked", "false");
+  await page.locator(".lesson-card").nth(19).click();
+  await expect(page.locator(".lesson-card.is-selected")).toHaveCount(20);
+  await expect(page.locator(".selection-count")).toContainText("20개 과 선택");
+});
+
 test("sentence recall reveals the book answer and records self-assessment", async ({ page }) => {
   const browserErrors: string[] = [];
   page.on("console", (message) => {
@@ -118,12 +146,12 @@ test("sentence recall reveals the book answer and records self-assessment", asyn
   await page.getByRole("button", { name: "복습 시작" }).click();
 
   await expect(page.getByText("1 / 10")).toBeVisible();
-  await expect(page.getByText("한국어 → 일본어")).toBeVisible();
-  await expect(page.locator(".recall-answer")).toHaveCount(0);
+  await expect(page.getByText("한국어 → 일본어")).toHaveCount(0);
+  await expect(page.locator(".answer-reveal")).toHaveCount(0);
 
   for (let index = 0; index < 10; index += 1) {
     await page.getByRole("button", { name: "정답 확인" }).click();
-    await expect(page.locator(".recall-answer")).toBeVisible();
+    await expect(page.locator(".answer-reveal")).toBeVisible();
     const confusionToggle = page.getByRole("button", { name: "헷갈려요" });
     await expect(confusionToggle).toHaveAttribute("aria-pressed", "false");
     if (index === 0) {

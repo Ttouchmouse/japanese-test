@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { CATEGORY_LABELS, QUIZ_COUNTS } from "../lib/quiz";
 import type {
   Lesson,
@@ -15,6 +16,7 @@ interface LessonSelectionProps {
   availableQuestionCount: number | null;
   error: string;
   onToggle: (lessonId: number) => void;
+  onSelectRange: (startLessonId: number, endLessonId: number) => void;
   onModeChange: (mode: QuizMode) => void;
   onCategoryChange: (category: QuizCategory) => void;
   onQuestionCountChange: (count: QuizCountOption) => void;
@@ -32,11 +34,14 @@ export function LessonSelection({
   availableQuestionCount,
   error,
   onToggle,
+  onSelectRange,
   onModeChange,
   onCategoryChange,
   onQuestionCountChange,
   onStart,
 }: LessonSelectionProps) {
+  const [rangeSelectionEnabled, setRangeSelectionEnabled] = useState(false);
+  const [rangeStartId, setRangeStartId] = useState<number | null>(null);
   const selected = new Set(selectedIds);
   const selectedCount =
     countOption === "all" ? availableQuestionCount : countOption;
@@ -46,6 +51,34 @@ export function LessonSelection({
       (countOption !== "all" && countOption > availableQuestionCount));
   const modeLabel =
     mode === "write" ? "직접 입력" : mode === "recall" ? "생각하고 풀기" : "빠른 복습";
+  const sortedSelectedIds = [...selectedIds].sort((a, b) => a - b);
+  const isContinuousFromFirstToLast = sortedSelectedIds.every(
+    (id, index) => index === 0 || id === sortedSelectedIds[index - 1] + 1,
+  );
+  const selectedRangeLabel =
+    sortedSelectedIds.length > 1 && isContinuousFromFirstToLast
+      ? `${sortedSelectedIds[0]}~${sortedSelectedIds.at(-1)}과 · `
+      : sortedSelectedIds.length === 1
+        ? `${sortedSelectedIds[0]}과 · `
+        : "";
+
+  const toggleRangeSelection = () => {
+    setRangeSelectionEnabled((current) => !current);
+    setRangeStartId(null);
+  };
+
+  const selectLesson = (lessonId: number) => {
+    if (!rangeSelectionEnabled) {
+      onToggle(lessonId);
+      return;
+    }
+    if (rangeStartId === null) {
+      setRangeStartId(lessonId);
+      return;
+    }
+    onSelectRange(rangeStartId, lessonId);
+    setRangeStartId(null);
+  };
 
   return (
     <main className="selection-page">
@@ -165,20 +198,44 @@ export function LessonSelection({
             <h2 id="lesson-heading">복습할 과를 선택하세요.</h2>
           </div>
           <p className="selection-count" aria-live="polite">
-            <strong>{selectedIds.length}</strong>개 과 선택
+            {selectedRangeLabel}<strong>{selectedIds.length}</strong>개 과 선택
+          </p>
+        </div>
+
+        <div className="lesson-selection-tools">
+          <button
+            className={`range-select-toggle${rangeSelectionEnabled ? " is-active" : ""}`}
+            type="button"
+            role="switch"
+            aria-checked={rangeSelectionEnabled}
+            onClick={toggleRangeSelection}
+          >
+            <span className="range-toggle-track" aria-hidden="true">
+              <span />
+            </span>
+            구간 과 선택
+          </button>
+          <p className="range-selection-status" aria-live="polite">
+            {rangeSelectionEnabled
+              ? rangeStartId === null
+                ? "시작 과를 선택하세요."
+                : `${rangeStartId}과부터 선택할 끝 과를 선택하세요.`
+              : ""}
           </p>
         </div>
 
         <div className="lesson-grid">
           {lessons.map((lesson) => {
             const isSelected = selected.has(lesson.id);
+            const isRangeStart = rangeStartId === lesson.id;
             return (
               <button
-                className={`lesson-card${isSelected ? " is-selected" : ""}`}
+                className={`lesson-card${isSelected ? " is-selected" : ""}${isRangeStart ? " is-range-start" : ""}`}
                 type="button"
                 key={lesson.id}
                 aria-pressed={isSelected}
-                onClick={() => onToggle(lesson.id)}
+                aria-label={`${lesson.id}과 ${lesson.title}${isRangeStart ? ", 구간 시작" : ""}`}
+                onClick={() => selectLesson(lesson.id)}
               >
                 <span className="lesson-number">{lesson.id}</span>
                 <span className="lesson-copy">
@@ -186,7 +243,7 @@ export function LessonSelection({
                   <small>{lesson.speechLevel || "기본 표현"}</small>
                 </span>
                 <span className="selection-mark" aria-hidden="true">
-                  {isSelected ? "✓" : ""}
+                  {isRangeStart ? "1" : isSelected ? "✓" : ""}
                 </span>
               </button>
             );

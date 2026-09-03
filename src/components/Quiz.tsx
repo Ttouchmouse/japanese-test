@@ -1,8 +1,7 @@
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { AudioButton } from "./AudioButton";
 import { isAnswerCorrect, RECALL_REMEMBERED } from "../lib/answer";
 import { audioCueFor } from "../lib/audio";
-import { DIRECTION_LABELS, TYPE_LABELS } from "../lib/quiz";
 import type { QuizAnswers, QuizQuestion } from "../types";
 
 interface QuizProps {
@@ -21,21 +20,24 @@ const OPTION_LABELS = ["A", "B", "C", "D", "E"];
 
 interface ConfusionToggleProps {
   selected: boolean;
+  disabled: boolean;
   onToggle: () => void;
 }
 
-function ConfusionToggle({ selected, onToggle }: ConfusionToggleProps) {
+function ConfusionToggle({ selected, disabled, onToggle }: ConfusionToggleProps) {
   return (
     <button
-      className={`confusion-toggle${selected ? " is-selected" : ""}`}
+      className={`confusion-toggle is-icon-only${selected ? " is-selected" : ""}`}
       type="button"
+      aria-label="헷갈려요"
       aria-pressed={selected}
+      title="헷갈려요"
+      disabled={disabled}
       onClick={onToggle}
     >
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M6 21V4m0 1h10.3c.9 0 1.4 1 .9 1.7L15.8 9l1.4 2.3c.5.7 0 1.7-.9 1.7H6" />
       </svg>
-      <span>헷갈려요</span>
     </button>
   );
 }
@@ -54,7 +56,7 @@ export function Quiz({
   const question = questions[currentIndex];
   const selectedAnswer = answers[question.id];
   const [draftAnswer, setDraftAnswer] = useState(selectedAnswer ?? "");
-  const [recallRevealed, setRecallRevealed] = useState(selectedAnswer !== undefined);
+  const feedbackRef = useRef<HTMLDivElement>(null);
   const answered = selectedAnswer !== undefined;
   const isCorrect = isAnswerCorrect(question, selectedAnswer);
   const isConfused = confusedSourceItemIds.includes(question.sourceItemId);
@@ -64,8 +66,15 @@ export function Quiz({
 
   useEffect(() => {
     setDraftAnswer(answers[question.id] ?? "");
-    setRecallRevealed(answers[question.id] !== undefined);
   }, [answers, question.id]);
+
+  useEffect(() => {
+    if (!answered) return;
+    const frame = window.requestAnimationFrame(() => {
+      feedbackRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [answered, question.id]);
 
   const optionClass = (option: string) => {
     if (!answered) return "answer-option";
@@ -93,12 +102,6 @@ export function Quiz({
           <span style={{ width: `${((currentIndex + 1) / questions.length) * 100}%` }} />
         </div>
 
-        <div className="question-meta">
-          <span>{question.lessonId}과</span>
-          <span>{TYPE_LABELS[question.type]}</span>
-          <span>{DIRECTION_LABELS[question.direction]}</span>
-        </div>
-
         <div className="prompt-block">
           <p>
             {question.answerKind === "self"
@@ -112,7 +115,7 @@ export function Quiz({
           <h1 id="question-prompt" lang={question.direction === "ja-ko" ? "ja" : "ko"}>
             {question.prompt}
           </h1>
-          {question.direction === "ja-ko" && question.reading && (
+          {question.direction === "ja-ko" && question.reading && question.reading !== question.prompt && (
             <span className="reading" lang="ja">{question.reading}</span>
           )}
           {question.direction === "ja-ko" && audioCue && (
@@ -121,6 +124,18 @@ export function Quiz({
             </div>
           )}
         </div>
+
+        {answered && question.answerKind !== "choice" && (
+          <div className="answer-reveal" ref={feedbackRef} aria-live="polite">
+            <div className="answer-reveal-text">
+              <strong lang="ja">{question.japanese}</strong>
+              {question.reading && question.reading !== question.japanese && (
+                <span lang="ja">{question.reading}</span>
+              )}
+            </div>
+            {audioCue && <AudioButton src={audioCue.src} />}
+          </div>
+        )}
 
         {question.answerKind === "choice" ? (
           <div className="answer-list" role="group" aria-label="답안">
@@ -174,74 +189,24 @@ export function Quiz({
               정답 확인
             </button>
           </form>
-        ) : (
-          <div
-            className={`recall-stage${recallRevealed ? " is-revealed" : ""}`}
-            aria-live="polite"
-          >
-            {!recallRevealed ? (
-              <>
-                <span className="recall-step">생각하고 말하기</span>
-                <strong>소리 내어 문장을 완성해 보세요.</strong>
-                <p>말한 뒤에 확인할수록 기억에 오래 남아요.</p>
-                <button
-                  className="primary-button"
-                  type="button"
-                  onClick={() => {
-                    setRecallRevealed(true);
-                    onAnswer(RECALL_REMEMBERED);
-                  }}
-                >
-                  정답 확인
-                </button>
-              </>
-            ) : (
-              <>
-                <span className="recall-step">책의 표현</span>
-                <strong className="recall-answer" lang="ja">{question.japanese}</strong>
-                {question.reading && (
-                  <span className="recall-answer-reading" lang="ja">{question.reading}</span>
-                )}
-                <p className="recall-meaning">{question.korean}</p>
-                {audioCue && (
-                  <div className="recall-audio">
-                    <AudioButton src={audioCue.src} />
-                  </div>
-                )}
-              </>
-            )}
-          </div>
-        )}
-
-        {answered && question.answerKind !== "self" && (
-          <div className="feedback" aria-live="polite">
-            <div className="feedback-heading">
-              <strong className={isCorrect ? "correct-text" : "wrong-text"}>
-                {isCorrect ? "정답이에요." : "아쉬워요. 정답을 확인해 보세요."}
-              </strong>
-              {question.direction === "ko-ja" && audioCue && (
-                <AudioButton src={audioCue.src} />
-              )}
-            </div>
-            <p>
-              <span lang="ja">{question.japanese}</span>
-              {question.reading && <span className="feedback-reading" lang="ja">{question.reading}</span>}
-              <i aria-hidden="true">·</i>
-              <span>{question.korean}</span>
-            </p>
-          </div>
-        )}
-
-        {answered && (
-          <div className="confusion-row">
-            <ConfusionToggle
-              selected={isConfused}
-              onToggle={() => onToggleConfusion(question.sourceItemId)}
-            />
+        ) : answered ? null : (
+          <div className="recall-action">
+            <button
+              className="primary-button"
+              type="button"
+              onClick={() => onAnswer(RECALL_REMEMBERED)}
+            >
+              정답 확인
+            </button>
           </div>
         )}
 
         <div className="quiz-actions">
+          <ConfusionToggle
+            selected={isConfused}
+            disabled={!answered}
+            onToggle={() => onToggleConfusion(question.sourceItemId)}
+          />
           <button
             className="secondary-button"
             type="button"
