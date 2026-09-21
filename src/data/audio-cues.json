@@ -30,7 +30,17 @@
     27,
     28,
     29,
-    30
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
   ],
   "cues": [
     {
@@ -10536,6 +10546,3479 @@
       "start": 280.25,
       "end": 283.37,
       "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-v-ec1bf856daf9",
+      "src": "/audio/lesson-31/l31-v-ec1bf856daf9.mp3",
+      "audioFile": "31-2.mp3",
+      "start": 9.61,
+      "end": 10.34,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-v-e0f008745d44",
+      "src": "/audio/lesson-31/l31-v-e0f008745d44.mp3",
+      "audioFile": "31-2.mp3",
+      "start": 16.11,
+      "end": 17.1,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-v-9b91461ad7fe",
+      "src": "/audio/lesson-31/l31-v-9b91461ad7fe.mp3",
+      "audioFile": "31-2.mp3",
+      "start": 23.66,
+      "end": 24.48,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-v-4e93dcfe9d64",
+      "src": "/audio/lesson-31/l31-v-4e93dcfe9d64.mp3",
+      "audioFile": "31-2.mp3",
+      "start": 29.64,
+      "end": 30.69,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-v-d45258affd6f",
+      "src": "/audio/lesson-31/l31-v-d45258affd6f.mp3",
+      "audioFile": "31-2.mp3",
+      "start": 35.31,
+      "end": 36.13,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-v-4ae6ada2d1cc",
+      "src": "/audio/lesson-31/l31-v-4ae6ada2d1cc.mp3",
+      "audioFile": "31-2.mp3",
+      "start": 41.07,
+      "end": 41.75,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-v-70f8808e86da",
+      "src": "/audio/lesson-31/l31-v-70f8808e86da.mp3",
+      "audioFile": "31-2.mp3",
+      "start": 46.7,
+      "end": 47.56,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-v-094869cef351",
+      "src": "/audio/lesson-31/l31-v-094869cef351.mp3",
+      "audioFile": "31-2.mp3",
+      "start": 52.27,
+      "end": 53.18,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-v-8ca1d144ed20",
+      "src": "/audio/lesson-31/l31-v-8ca1d144ed20.mp3",
+      "audioFile": "31-2.mp3",
+      "start": 57.97,
+      "end": 58.85,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-v-6f460a9d6688",
+      "src": "/audio/lesson-31/l31-v-6f460a9d6688.mp3",
+      "audioFile": "31-2.mp3",
+      "start": 63.68,
+      "end": 64.59,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-v-f50877619b06",
+      "src": "/audio/lesson-31/l31-v-f50877619b06.mp3",
+      "audioFile": "31-2.mp3",
+      "start": 69.58,
+      "end": 70.68,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-p-2534ea7da6e1",
+      "src": "/audio/lesson-31/l31-p-2534ea7da6e1.mp3",
+      "audioFile": "31-3.mp3",
+      "start": 14.42,
+      "end": 16.32,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-p-74a2f5f55be7",
+      "src": "/audio/lesson-31/l31-p-74a2f5f55be7.mp3",
+      "audioFile": "31-3.mp3",
+      "start": 24.35,
+      "end": 26.09,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-p-fa108c5c13b1",
+      "src": "/audio/lesson-31/l31-p-fa108c5c13b1.mp3",
+      "audioFile": "31-3.mp3",
+      "start": 34.29,
+      "end": 36.5,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-p-7edf208bab26",
+      "src": "/audio/lesson-31/l31-p-7edf208bab26.mp3",
+      "audioFile": "31-3.mp3",
+      "start": 44.67,
+      "end": 46.47,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-p-f6367706e0b8",
+      "src": "/audio/lesson-31/l31-p-f6367706e0b8.mp3",
+      "audioFile": "31-3.mp3",
+      "start": 55.88,
+      "end": 57.75,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-p-df3e3fe2a592",
+      "src": "/audio/lesson-31/l31-p-df3e3fe2a592.mp3",
+      "audioFile": "31-3.mp3",
+      "start": 66.82,
+      "end": 69.29,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-p-2b81fd4e3e7f",
+      "src": "/audio/lesson-31/l31-p-2b81fd4e3e7f.mp3",
+      "audioFile": "31-3.mp3",
+      "start": 78.36,
+      "end": 80.72,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-p-d673482c0f70",
+      "src": "/audio/lesson-31/l31-p-d673482c0f70.mp3",
+      "audioFile": "31-3.mp3",
+      "start": 89.55,
+      "end": 91.76,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-p-d60ff18b9095",
+      "src": "/audio/lesson-31/l31-p-d60ff18b9095.mp3",
+      "audioFile": "31-3.mp3",
+      "start": 101.26,
+      "end": 103.51,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-p-30d4203754a1",
+      "src": "/audio/lesson-31/l31-p-30d4203754a1.mp3",
+      "audioFile": "31-3.mp3",
+      "start": 110.47,
+      "end": 111.88,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-p-f538aa599fff",
+      "src": "/audio/lesson-31/l31-p-f538aa599fff.mp3",
+      "audioFile": "31-3.mp3",
+      "start": 118.86,
+      "end": 120.3,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-p-489bbf241fd4",
+      "src": "/audio/lesson-31/l31-p-489bbf241fd4.mp3",
+      "audioFile": "31-3.mp3",
+      "start": 128.11,
+      "end": 130.13,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-p-4ed6ff2e9895",
+      "src": "/audio/lesson-31/l31-p-4ed6ff2e9895.mp3",
+      "audioFile": "31-3.mp3",
+      "start": 138.55,
+      "end": 139.98,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-p-aa06c0bd7d50",
+      "src": "/audio/lesson-31/l31-p-aa06c0bd7d50.mp3",
+      "audioFile": "31-3.mp3",
+      "start": 147.42,
+      "end": 149.21,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-p-15ebd94fb1ec",
+      "src": "/audio/lesson-31/l31-p-15ebd94fb1ec.mp3",
+      "audioFile": "31-3.mp3",
+      "start": 157.45,
+      "end": 159.62,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-p-62d2d8dc2d88",
+      "src": "/audio/lesson-31/l31-p-62d2d8dc2d88.mp3",
+      "audioFile": "31-3.mp3",
+      "start": 167.91,
+      "end": 170.06,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-p-5672cb262155",
+      "src": "/audio/lesson-31/l31-p-5672cb262155.mp3",
+      "audioFile": "31-3.mp3",
+      "start": 178.58,
+      "end": 180.28,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-p-fca0c07958a9",
+      "src": "/audio/lesson-31/l31-p-fca0c07958a9.mp3",
+      "audioFile": "31-3.mp3",
+      "start": 187.83,
+      "end": 189.55,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-p-00ca3a7dc28c",
+      "src": "/audio/lesson-31/l31-p-00ca3a7dc28c.mp3",
+      "audioFile": "31-3.mp3",
+      "start": 198.34,
+      "end": 200.46,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-p-2c8e9d6cd7c3",
+      "src": "/audio/lesson-31/l31-p-2c8e9d6cd7c3.mp3",
+      "audioFile": "31-3.mp3",
+      "start": 209.28,
+      "end": 211.82,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-p-e200fc1021e1",
+      "src": "/audio/lesson-31/l31-p-e200fc1021e1.mp3",
+      "audioFile": "31-3.mp3",
+      "start": 220.64,
+      "end": 222.47,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-p-9358775c515d",
+      "src": "/audio/lesson-31/l31-p-9358775c515d.mp3",
+      "audioFile": "31-3.mp3",
+      "start": 230.42,
+      "end": 232.23,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-p-3ba03804de5e",
+      "src": "/audio/lesson-31/l31-p-3ba03804de5e.mp3",
+      "audioFile": "31-3.mp3",
+      "start": 240.35,
+      "end": 242.43,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-p-9548cd01b771",
+      "src": "/audio/lesson-31/l31-p-9548cd01b771.mp3",
+      "audioFile": "31-3.mp3",
+      "start": 250.83,
+      "end": 253.05,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-c-cebf892944e2",
+      "src": "/audio/lesson-31/l31-c-cebf892944e2.mp3",
+      "audioFile": "31-4-1.mp3",
+      "start": 46.83,
+      "end": 48.34,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-c-de54c55822ed",
+      "src": "/audio/lesson-31/l31-c-de54c55822ed.mp3",
+      "audioFile": "31-4-1.mp3",
+      "start": 48.93,
+      "end": 52.72,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-c-fb0cdee4d48b",
+      "src": "/audio/lesson-31/l31-c-fb0cdee4d48b.mp3",
+      "audioFile": "31-4-1.mp3",
+      "start": 53.19,
+      "end": 54.58,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-c-80cf83a0e0b4",
+      "src": "/audio/lesson-31/l31-c-80cf83a0e0b4.mp3",
+      "audioFile": "31-4-1.mp3",
+      "start": 55.26,
+      "end": 60.27,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-c-fbb6670c72f9",
+      "src": "/audio/lesson-31/l31-c-fbb6670c72f9.mp3",
+      "audioFile": "31-4-1.mp3",
+      "start": 60.6,
+      "end": 63.22,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-c-6345f3643dd7",
+      "src": "/audio/lesson-31/l31-c-6345f3643dd7.mp3",
+      "audioFile": "31-4-1.mp3",
+      "start": 63.83,
+      "end": 65.2,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-c-11fc59c7d1c2",
+      "src": "/audio/lesson-31/l31-c-11fc59c7d1c2.mp3",
+      "audioFile": "31-4-1.mp3",
+      "start": 65.34,
+      "end": 66.9,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-c-645bb8bfd011",
+      "src": "/audio/lesson-31/l31-c-645bb8bfd011.mp3",
+      "audioFile": "31-4-1.mp3",
+      "start": 66.92,
+      "end": 67.83,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-c-dfe0e90894bb",
+      "src": "/audio/lesson-31/l31-c-dfe0e90894bb.mp3",
+      "audioFile": "31-4-1.mp3",
+      "start": 68.02,
+      "end": 68.97,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-c-6cdaeab9cec3",
+      "src": "/audio/lesson-31/l31-c-6cdaeab9cec3.mp3",
+      "audioFile": "31-4-1.mp3",
+      "start": 69.05,
+      "end": 70.51,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-c-b852cf4ea20f",
+      "src": "/audio/lesson-31/l31-c-b852cf4ea20f.mp3",
+      "audioFile": "31-4-1.mp3",
+      "start": 70.49,
+      "end": 72.98,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l31-c-61919a787f1e",
+      "src": "/audio/lesson-31/l31-c-61919a787f1e.mp3",
+      "audioFile": "31-4-1.mp3",
+      "start": 72.92,
+      "end": 74.02,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-v-8f2bdefe405b",
+      "src": "/audio/lesson-32/l32-v-8f2bdefe405b.mp3",
+      "audioFile": "32-2.mp3",
+      "start": 11.1,
+      "end": 11.97,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-v-4f113093da72",
+      "src": "/audio/lesson-32/l32-v-4f113093da72.mp3",
+      "audioFile": "32-2.mp3",
+      "start": 17.68,
+      "end": 18.67,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-v-dad7eeea319b",
+      "src": "/audio/lesson-32/l32-v-dad7eeea319b.mp3",
+      "audioFile": "32-2.mp3",
+      "start": 25.92,
+      "end": 26.74,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-v-997ed21d2c8d",
+      "src": "/audio/lesson-32/l32-v-997ed21d2c8d.mp3",
+      "audioFile": "32-2.mp3",
+      "start": 32.41,
+      "end": 33.09,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-v-2d5b44b00c69",
+      "src": "/audio/lesson-32/l32-v-2d5b44b00c69.mp3",
+      "audioFile": "32-2.mp3",
+      "start": 39.1,
+      "end": 39.79,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-v-d739f78b7c19",
+      "src": "/audio/lesson-32/l32-v-d739f78b7c19.mp3",
+      "audioFile": "32-2.mp3",
+      "start": 45.67,
+      "end": 46.68,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-p-45d206457b13",
+      "src": "/audio/lesson-32/l32-p-45d206457b13.mp3",
+      "audioFile": "32-3.mp3",
+      "start": 14.63,
+      "end": 16.73,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-p-ab2b25095d47",
+      "src": "/audio/lesson-32/l32-p-ab2b25095d47.mp3",
+      "audioFile": "32-3.mp3",
+      "start": 26.24,
+      "end": 28.94,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-p-ceee681ed6f8",
+      "src": "/audio/lesson-32/l32-p-ceee681ed6f8.mp3",
+      "audioFile": "32-3.mp3",
+      "start": 37.46,
+      "end": 39.67,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-p-6d654cfb3ed5",
+      "src": "/audio/lesson-32/l32-p-6d654cfb3ed5.mp3",
+      "audioFile": "32-3.mp3",
+      "start": 49.93,
+      "end": 53.12,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-p-5e97113f9f49",
+      "src": "/audio/lesson-32/l32-p-5e97113f9f49.mp3",
+      "audioFile": "32-3.mp3",
+      "start": 63.09,
+      "end": 65.52,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-p-6b27ca785ee6",
+      "src": "/audio/lesson-32/l32-p-6b27ca785ee6.mp3",
+      "audioFile": "32-3.mp3",
+      "start": 75.55,
+      "end": 78.56,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-p-5b3cc622d232",
+      "src": "/audio/lesson-32/l32-p-5b3cc622d232.mp3",
+      "audioFile": "32-3.mp3",
+      "start": 88.3,
+      "end": 91.44,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-p-9bd571e2c7f4",
+      "src": "/audio/lesson-32/l32-p-9bd571e2c7f4.mp3",
+      "audioFile": "32-3.mp3",
+      "start": 102.51,
+      "end": 106.23,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-p-ad21a9dce273",
+      "src": "/audio/lesson-32/l32-p-ad21a9dce273.mp3",
+      "audioFile": "32-3.mp3",
+      "start": 115.71,
+      "end": 117.92,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-p-a41f8f4d7902",
+      "src": "/audio/lesson-32/l32-p-a41f8f4d7902.mp3",
+      "audioFile": "32-3.mp3",
+      "start": 125.58,
+      "end": 127.33,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-p-a2db3b6d877b",
+      "src": "/audio/lesson-32/l32-p-a2db3b6d877b.mp3",
+      "audioFile": "32-3.mp3",
+      "start": 136.84,
+      "end": 139.53,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-p-b9dcef9854f0",
+      "src": "/audio/lesson-32/l32-p-b9dcef9854f0.mp3",
+      "audioFile": "32-3.mp3",
+      "start": 147.0,
+      "end": 148.64,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-p-63c7e15ffd34",
+      "src": "/audio/lesson-32/l32-p-63c7e15ffd34.mp3",
+      "audioFile": "32-3.mp3",
+      "start": 157.05,
+      "end": 158.49,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-p-52d40f493696",
+      "src": "/audio/lesson-32/l32-p-52d40f493696.mp3",
+      "audioFile": "32-3.mp3",
+      "start": 165.72,
+      "end": 167.06,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-p-e9785b1a1419",
+      "src": "/audio/lesson-32/l32-p-e9785b1a1419.mp3",
+      "audioFile": "32-3.mp3",
+      "start": 176.54,
+      "end": 179.1,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-p-6f9423a0cd77",
+      "src": "/audio/lesson-32/l32-p-6f9423a0cd77.mp3",
+      "audioFile": "32-3.mp3",
+      "start": 187.13,
+      "end": 188.97,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-p-cacb72f4045b",
+      "src": "/audio/lesson-32/l32-p-cacb72f4045b.mp3",
+      "audioFile": "32-3.mp3",
+      "start": 198.32,
+      "end": 200.21,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-p-a122ba6a70a1",
+      "src": "/audio/lesson-32/l32-p-a122ba6a70a1.mp3",
+      "audioFile": "32-3.mp3",
+      "start": 208.34,
+      "end": 210.25,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-p-5dfbe9662593",
+      "src": "/audio/lesson-32/l32-p-5dfbe9662593.mp3",
+      "audioFile": "32-3.mp3",
+      "start": 218.54,
+      "end": 220.58,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-p-ea696d5349be",
+      "src": "/audio/lesson-32/l32-p-ea696d5349be.mp3",
+      "audioFile": "32-3.mp3",
+      "start": 229.76,
+      "end": 232.19,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-p-d3a6cbd193f2",
+      "src": "/audio/lesson-32/l32-p-d3a6cbd193f2.mp3",
+      "audioFile": "32-3.mp3",
+      "start": 240.93,
+      "end": 242.65,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-p-3bcb297b27e0",
+      "src": "/audio/lesson-32/l32-p-3bcb297b27e0.mp3",
+      "audioFile": "32-3.mp3",
+      "start": 250.22,
+      "end": 251.96,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-p-9e8b8c74cd37",
+      "src": "/audio/lesson-32/l32-p-9e8b8c74cd37.mp3",
+      "audioFile": "32-3.mp3",
+      "start": 259.85,
+      "end": 261.67,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-p-5ff93dc39197",
+      "src": "/audio/lesson-32/l32-p-5ff93dc39197.mp3",
+      "audioFile": "32-3.mp3",
+      "start": 269.95,
+      "end": 271.99,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-c-02eed7906559",
+      "src": "/audio/lesson-32/l32-c-02eed7906559.mp3",
+      "audioFile": "32-4-1.mp3",
+      "start": 293.53,
+      "end": 295.9,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-c-1c603e63a985",
+      "src": "/audio/lesson-32/l32-c-1c603e63a985.mp3",
+      "audioFile": "32-4-1.mp3",
+      "start": 295.99,
+      "end": 297.9,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-c-2b273231f06b",
+      "src": "/audio/lesson-32/l32-c-2b273231f06b.mp3",
+      "audioFile": "32-4-1.mp3",
+      "start": 297.95,
+      "end": 302.69,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-c-43f8b705c170",
+      "src": "/audio/lesson-32/l32-c-43f8b705c170.mp3",
+      "audioFile": "32-4-1.mp3",
+      "start": 302.82,
+      "end": 305.13,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-c-dd9417b83272",
+      "src": "/audio/lesson-32/l32-c-dd9417b83272.mp3",
+      "audioFile": "32-4-1.mp3",
+      "start": 305.21,
+      "end": 307.25,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-c-74aa6edd5be4",
+      "src": "/audio/lesson-32/l32-c-74aa6edd5be4.mp3",
+      "audioFile": "32-4-1.mp3",
+      "start": 307.38,
+      "end": 308.14,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-c-6093ca5d8ed0",
+      "src": "/audio/lesson-32/l32-c-6093ca5d8ed0.mp3",
+      "audioFile": "32-4-1.mp3",
+      "start": 308.45,
+      "end": 310.47,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-c-15baf072fa25",
+      "src": "/audio/lesson-32/l32-c-15baf072fa25.mp3",
+      "audioFile": "32-4-1.mp3",
+      "start": 310.43,
+      "end": 312.84,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-c-a9ca375fd8ce",
+      "src": "/audio/lesson-32/l32-c-a9ca375fd8ce.mp3",
+      "audioFile": "32-4-1.mp3",
+      "start": 313.01,
+      "end": 315.88,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-c-75e055fe8d1e",
+      "src": "/audio/lesson-32/l32-c-75e055fe8d1e.mp3",
+      "audioFile": "32-4-1.mp3",
+      "start": 316.17,
+      "end": 319.75,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-c-f529c45a6a72",
+      "src": "/audio/lesson-32/l32-c-f529c45a6a72.mp3",
+      "audioFile": "32-4-1.mp3",
+      "start": 319.72,
+      "end": 321.19,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-c-53482d023cf4",
+      "src": "/audio/lesson-32/l32-c-53482d023cf4.mp3",
+      "audioFile": "32-4-1.mp3",
+      "start": 321.51,
+      "end": 323.94,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l32-c-4be68e686952",
+      "src": "/audio/lesson-32/l32-c-4be68e686952.mp3",
+      "audioFile": "32-4-1.mp3",
+      "start": 324.79,
+      "end": 327.77,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-v-65ed1f614194",
+      "src": "/audio/lesson-33/l33-v-65ed1f614194.mp3",
+      "audioFile": "33-2.mp3",
+      "start": 10.29,
+      "end": 11.28,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-v-90325dbde5a2",
+      "src": "/audio/lesson-33/l33-v-90325dbde5a2.mp3",
+      "audioFile": "33-2.mp3",
+      "start": 17.04,
+      "end": 18.04,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-v-bdb773aa24ad",
+      "src": "/audio/lesson-33/l33-v-bdb773aa24ad.mp3",
+      "audioFile": "33-2.mp3",
+      "start": 26.37,
+      "end": 27.02,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-v-1812129a0236",
+      "src": "/audio/lesson-33/l33-v-1812129a0236.mp3",
+      "audioFile": "33-2.mp3",
+      "start": 35.34,
+      "end": 36.41,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-v-cfae9d8293c9",
+      "src": "/audio/lesson-33/l33-v-cfae9d8293c9.mp3",
+      "audioFile": "33-2.mp3",
+      "start": 42.85,
+      "end": 43.52,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-v-2560f8ded93a",
+      "src": "/audio/lesson-33/l33-v-2560f8ded93a.mp3",
+      "audioFile": "33-2.mp3",
+      "start": 50.05,
+      "end": 50.95,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-v-38b6a04bd3db",
+      "src": "/audio/lesson-33/l33-v-38b6a04bd3db.mp3",
+      "audioFile": "33-2.mp3",
+      "start": 56.77,
+      "end": 57.67,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-v-833c0737d0de",
+      "src": "/audio/lesson-33/l33-v-833c0737d0de.mp3",
+      "audioFile": "33-2.mp3",
+      "start": 63.73,
+      "end": 64.76,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-v-20c377417d6a",
+      "src": "/audio/lesson-33/l33-v-20c377417d6a.mp3",
+      "audioFile": "33-2.mp3",
+      "start": 70.83,
+      "end": 71.77,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-v-7b1fcafc603f",
+      "src": "/audio/lesson-33/l33-v-7b1fcafc603f.mp3",
+      "audioFile": "33-2.mp3",
+      "start": 77.51,
+      "end": 78.4,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-v-6e16a90c0eb5",
+      "src": "/audio/lesson-33/l33-v-6e16a90c0eb5.mp3",
+      "audioFile": "33-2.mp3",
+      "start": 84.14,
+      "end": 84.96,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-p-87a94aee9916",
+      "src": "/audio/lesson-33/l33-p-87a94aee9916.mp3",
+      "audioFile": "33-3.mp3",
+      "start": 15.71,
+      "end": 18.98,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-p-1043843440ae",
+      "src": "/audio/lesson-33/l33-p-1043843440ae.mp3",
+      "audioFile": "33-3.mp3",
+      "start": 28.13,
+      "end": 30.67,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-p-39f24ad6c546",
+      "src": "/audio/lesson-33/l33-p-39f24ad6c546.mp3",
+      "audioFile": "33-3.mp3",
+      "start": 39.74,
+      "end": 42.09,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-p-e928e5f45682",
+      "src": "/audio/lesson-33/l33-p-e928e5f45682.mp3",
+      "audioFile": "33-3.mp3",
+      "start": 50.38,
+      "end": 52.55,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-p-936fd20d4ed2",
+      "src": "/audio/lesson-33/l33-p-936fd20d4ed2.mp3",
+      "audioFile": "33-3.mp3",
+      "start": 65.03,
+      "end": 68.85,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-p-cf1451ec7036",
+      "src": "/audio/lesson-33/l33-p-cf1451ec7036.mp3",
+      "audioFile": "33-3.mp3",
+      "start": 79.27,
+      "end": 82.17,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-p-4da501c890c9",
+      "src": "/audio/lesson-33/l33-p-4da501c890c9.mp3",
+      "audioFile": "33-3.mp3",
+      "start": 92.01,
+      "end": 94.79,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-p-1a26319dc6b8",
+      "src": "/audio/lesson-33/l33-p-1a26319dc6b8.mp3",
+      "audioFile": "33-3.mp3",
+      "start": 103.67,
+      "end": 106.22,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-p-114763c22c22",
+      "src": "/audio/lesson-33/l33-p-114763c22c22.mp3",
+      "audioFile": "33-3.mp3",
+      "start": 117.52,
+      "end": 120.83,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-p-6e7d92aedc98",
+      "src": "/audio/lesson-33/l33-p-6e7d92aedc98.mp3",
+      "audioFile": "33-3.mp3",
+      "start": 130.64,
+      "end": 133.91,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-p-8100fb9b2037",
+      "src": "/audio/lesson-33/l33-p-8100fb9b2037.mp3",
+      "audioFile": "33-3.mp3",
+      "start": 142.89,
+      "end": 145.2,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-p-9310a2eff3ae",
+      "src": "/audio/lesson-33/l33-p-9310a2eff3ae.mp3",
+      "audioFile": "33-3.mp3",
+      "start": 154.94,
+      "end": 157.7,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-p-7bc8f5cbd1dd",
+      "src": "/audio/lesson-33/l33-p-7bc8f5cbd1dd.mp3",
+      "audioFile": "33-3.mp3",
+      "start": 166.08,
+      "end": 167.57,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-p-a5b87ca14cd7",
+      "src": "/audio/lesson-33/l33-p-a5b87ca14cd7.mp3",
+      "audioFile": "33-3.mp3",
+      "start": 175.68,
+      "end": 177.81,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-p-bf63695ad6d7",
+      "src": "/audio/lesson-33/l33-p-bf63695ad6d7.mp3",
+      "audioFile": "33-3.mp3",
+      "start": 185.14,
+      "end": 186.88,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-p-60b716e42c74",
+      "src": "/audio/lesson-33/l33-p-60b716e42c74.mp3",
+      "audioFile": "33-3.mp3",
+      "start": 194.64,
+      "end": 196.38,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-p-4b64919acb43",
+      "src": "/audio/lesson-33/l33-p-4b64919acb43.mp3",
+      "audioFile": "33-3.mp3",
+      "start": 208.64,
+      "end": 212.12,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-p-89b2b8917a09",
+      "src": "/audio/lesson-33/l33-p-89b2b8917a09.mp3",
+      "audioFile": "33-3.mp3",
+      "start": 221.83,
+      "end": 224.53,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-p-dbc8e08f239b",
+      "src": "/audio/lesson-33/l33-p-dbc8e08f239b.mp3",
+      "audioFile": "33-3.mp3",
+      "start": 234.37,
+      "end": 237.08,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-p-23d9c23514d9",
+      "src": "/audio/lesson-33/l33-p-23d9c23514d9.mp3",
+      "audioFile": "33-3.mp3",
+      "start": 246.14,
+      "end": 248.64,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-p-b7c62cdf90ff",
+      "src": "/audio/lesson-33/l33-p-b7c62cdf90ff.mp3",
+      "audioFile": "33-3.mp3",
+      "start": 257.71,
+      "end": 259.58,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-p-87e92bab8fd6",
+      "src": "/audio/lesson-33/l33-p-87e92bab8fd6.mp3",
+      "audioFile": "33-3.mp3",
+      "start": 262.57,
+      "end": 264.32,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-p-f38544b36b2b",
+      "src": "/audio/lesson-33/l33-p-f38544b36b2b.mp3",
+      "audioFile": "33-3.mp3",
+      "start": 277.37,
+      "end": 279.34,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-p-bf20f1dddcc8",
+      "src": "/audio/lesson-33/l33-p-bf20f1dddcc8.mp3",
+      "audioFile": "33-3.mp3",
+      "start": 282.29,
+      "end": 283.6,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-c-a0c73cb61383",
+      "src": "/audio/lesson-33/l33-c-a0c73cb61383.mp3",
+      "audioFile": "33-4-1.mp3",
+      "start": 27.82,
+      "end": 30.66,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-c-afc41d1f7c88",
+      "src": "/audio/lesson-33/l33-c-afc41d1f7c88.mp3",
+      "audioFile": "33-4-1.mp3",
+      "start": 30.86,
+      "end": 32.27,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-c-d486fd79efac",
+      "src": "/audio/lesson-33/l33-c-d486fd79efac.mp3",
+      "audioFile": "33-4-1.mp3",
+      "start": 32.82,
+      "end": 37.49,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-c-1ad3feecb190",
+      "src": "/audio/lesson-33/l33-c-1ad3feecb190.mp3",
+      "audioFile": "33-4-1.mp3",
+      "start": 37.81,
+      "end": 40.71,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-c-45bf508cd9d0",
+      "src": "/audio/lesson-33/l33-c-45bf508cd9d0.mp3",
+      "audioFile": "33-4-1.mp3",
+      "start": 41.22,
+      "end": 45.46,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-c-7b47f5b82f5b",
+      "src": "/audio/lesson-33/l33-c-7b47f5b82f5b.mp3",
+      "audioFile": "33-4-1.mp3",
+      "start": 45.78,
+      "end": 47.16,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-c-b2b179aed4ef",
+      "src": "/audio/lesson-33/l33-c-b2b179aed4ef.mp3",
+      "audioFile": "33-4-1.mp3",
+      "start": 47.21,
+      "end": 52.18,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l33-c-0fe35a9feb1f",
+      "src": "/audio/lesson-33/l33-c-0fe35a9feb1f.mp3",
+      "audioFile": "33-4-1.mp3",
+      "start": 52.42,
+      "end": 53.92,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-v-8a9c82068286",
+      "src": "/audio/lesson-34/l34-v-8a9c82068286.mp3",
+      "audioFile": "34-2.mp3",
+      "start": 10.34,
+      "end": 11.3,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-v-abf4a1fb6f12",
+      "src": "/audio/lesson-34/l34-v-abf4a1fb6f12.mp3",
+      "audioFile": "34-2.mp3",
+      "start": 18.44,
+      "end": 19.36,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-v-31541f299124",
+      "src": "/audio/lesson-34/l34-v-31541f299124.mp3",
+      "audioFile": "34-2.mp3",
+      "start": 26.25,
+      "end": 27.07,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-v-9f5cfaa754a0",
+      "src": "/audio/lesson-34/l34-v-9f5cfaa754a0.mp3",
+      "audioFile": "34-2.mp3",
+      "start": 33.29,
+      "end": 34.38,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-v-2d185bfec49f",
+      "src": "/audio/lesson-34/l34-v-2d185bfec49f.mp3",
+      "audioFile": "34-2.mp3",
+      "start": 42.5,
+      "end": 43.14,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-v-700fc822da8e",
+      "src": "/audio/lesson-34/l34-v-700fc822da8e.mp3",
+      "audioFile": "34-2.mp3",
+      "start": 51.45,
+      "end": 52.44,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-v-23b3a16d8291",
+      "src": "/audio/lesson-34/l34-v-23b3a16d8291.mp3",
+      "audioFile": "34-2.mp3",
+      "start": 58.53,
+      "end": 59.58,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-v-1bbb3220b596",
+      "src": "/audio/lesson-34/l34-v-1bbb3220b596.mp3",
+      "audioFile": "34-2.mp3",
+      "start": 65.54,
+      "end": 66.57,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-p-38fdf5624b32",
+      "src": "/audio/lesson-34/l34-p-38fdf5624b32.mp3",
+      "audioFile": "34-3.mp3",
+      "start": 16.4,
+      "end": 19.5,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-p-c99689b6ab53",
+      "src": "/audio/lesson-34/l34-p-c99689b6ab53.mp3",
+      "audioFile": "34-3.mp3",
+      "start": 30.56,
+      "end": 33.94,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-p-aa1548f94e9d",
+      "src": "/audio/lesson-34/l34-p-aa1548f94e9d.mp3",
+      "audioFile": "34-3.mp3",
+      "start": 44.44,
+      "end": 47.31,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-p-30ae2d9f94e4",
+      "src": "/audio/lesson-34/l34-p-30ae2d9f94e4.mp3",
+      "audioFile": "34-3.mp3",
+      "start": 57.78,
+      "end": 61.13,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-p-befc212de042",
+      "src": "/audio/lesson-34/l34-p-befc212de042.mp3",
+      "audioFile": "34-3.mp3",
+      "start": 71.72,
+      "end": 74.37,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-p-45a92323302f",
+      "src": "/audio/lesson-34/l34-p-45a92323302f.mp3",
+      "audioFile": "34-3.mp3",
+      "start": 83.06,
+      "end": 85.15,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-p-5a48e95f6aa6",
+      "src": "/audio/lesson-34/l34-p-5a48e95f6aa6.mp3",
+      "audioFile": "34-3.mp3",
+      "start": 95.9,
+      "end": 99.14,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-p-3e6521fc2952",
+      "src": "/audio/lesson-34/l34-p-3e6521fc2952.mp3",
+      "audioFile": "34-3.mp3",
+      "start": 110.22,
+      "end": 113.74,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-p-b65ced90cc6c",
+      "src": "/audio/lesson-34/l34-p-b65ced90cc6c.mp3",
+      "audioFile": "34-3.mp3",
+      "start": 125.93,
+      "end": 129.21,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-p-d69eb431e223",
+      "src": "/audio/lesson-34/l34-p-d69eb431e223.mp3",
+      "audioFile": "34-3.mp3",
+      "start": 140.51,
+      "end": 143.94,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-p-42e588ddb67d",
+      "src": "/audio/lesson-34/l34-p-42e588ddb67d.mp3",
+      "audioFile": "34-3.mp3",
+      "start": 155.02,
+      "end": 158.44,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-p-d7df016c725c",
+      "src": "/audio/lesson-34/l34-p-d7df016c725c.mp3",
+      "audioFile": "34-3.mp3",
+      "start": 169.07,
+      "end": 172.27,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-p-495c36f5e86d",
+      "src": "/audio/lesson-34/l34-p-495c36f5e86d.mp3",
+      "audioFile": "34-3.mp3",
+      "start": 180.6,
+      "end": 181.8,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-p-cde9a1a9e33b",
+      "src": "/audio/lesson-34/l34-p-cde9a1a9e33b.mp3",
+      "audioFile": "34-3.mp3",
+      "start": 190.68,
+      "end": 192.86,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-p-08af3e9342ca",
+      "src": "/audio/lesson-34/l34-p-08af3e9342ca.mp3",
+      "audioFile": "34-3.mp3",
+      "start": 200.08,
+      "end": 201.34,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-p-271d63fd32f5",
+      "src": "/audio/lesson-34/l34-p-271d63fd32f5.mp3",
+      "audioFile": "34-3.mp3",
+      "start": 209.39,
+      "end": 211.23,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-p-bd20081e1f5f",
+      "src": "/audio/lesson-34/l34-p-bd20081e1f5f.mp3",
+      "audioFile": "34-3.mp3",
+      "start": 221.95,
+      "end": 224.61,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-p-49f59818fa08",
+      "src": "/audio/lesson-34/l34-p-49f59818fa08.mp3",
+      "audioFile": "34-3.mp3",
+      "start": 235.27,
+      "end": 238.5,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-p-cba0c18bd258",
+      "src": "/audio/lesson-34/l34-p-cba0c18bd258.mp3",
+      "audioFile": "34-3.mp3",
+      "start": 247.93,
+      "end": 250.64,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-p-2d597c88c986",
+      "src": "/audio/lesson-34/l34-p-2d597c88c986.mp3",
+      "audioFile": "34-3.mp3",
+      "start": 260.44,
+      "end": 263.41,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-p-97c3eb9cf21c",
+      "src": "/audio/lesson-34/l34-p-97c3eb9cf21c.mp3",
+      "audioFile": "34-3.mp3",
+      "start": 272.33,
+      "end": 274.05,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-p-6ba41508f315",
+      "src": "/audio/lesson-34/l34-p-6ba41508f315.mp3",
+      "audioFile": "34-3.mp3",
+      "start": 281.9,
+      "end": 283.69,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-p-972452fc2919",
+      "src": "/audio/lesson-34/l34-p-972452fc2919.mp3",
+      "audioFile": "34-3.mp3",
+      "start": 291.46,
+      "end": 293.14,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-p-410d913a034e",
+      "src": "/audio/lesson-34/l34-p-410d913a034e.mp3",
+      "audioFile": "34-3.mp3",
+      "start": 300.72,
+      "end": 302.2,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-c-b7db676074d8",
+      "src": "/audio/lesson-34/l34-c-b7db676074d8.mp3",
+      "audioFile": "34-4-1.mp3",
+      "start": 41.62,
+      "end": 42.61,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-c-2650e63aa0f9",
+      "src": "/audio/lesson-34/l34-c-2650e63aa0f9.mp3",
+      "audioFile": "34-4-1.mp3",
+      "start": 42.67,
+      "end": 43.88,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-c-8cca11c45bff",
+      "src": "/audio/lesson-34/l34-c-8cca11c45bff.mp3",
+      "audioFile": "34-4-1.mp3",
+      "start": 43.97,
+      "end": 45.73,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-c-163356c66a83",
+      "src": "/audio/lesson-34/l34-c-163356c66a83.mp3",
+      "audioFile": "34-4-1.mp3",
+      "start": 45.94,
+      "end": 47.59,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-c-a3df430d9f07",
+      "src": "/audio/lesson-34/l34-c-a3df430d9f07.mp3",
+      "audioFile": "34-4-1.mp3",
+      "start": 47.67,
+      "end": 50.97,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-c-6eb5c313a522",
+      "src": "/audio/lesson-34/l34-c-6eb5c313a522.mp3",
+      "audioFile": "34-4-1.mp3",
+      "start": 51.51,
+      "end": 55.77,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-c-648575305ee7",
+      "src": "/audio/lesson-34/l34-c-648575305ee7.mp3",
+      "audioFile": "34-4-1.mp3",
+      "start": 56.39,
+      "end": 62.7,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-c-5ac256eed0cb",
+      "src": "/audio/lesson-34/l34-c-5ac256eed0cb.mp3",
+      "audioFile": "34-4-1.mp3",
+      "start": 62.99,
+      "end": 64.65,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-c-cd5ab8ba63d1",
+      "src": "/audio/lesson-34/l34-c-cd5ab8ba63d1.mp3",
+      "audioFile": "34-4-1.mp3",
+      "start": 64.59,
+      "end": 67.83,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-c-a4e0e33bee1f",
+      "src": "/audio/lesson-34/l34-c-a4e0e33bee1f.mp3",
+      "audioFile": "34-4-1.mp3",
+      "start": 68.22,
+      "end": 71.06,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-c-26c69a1ee182",
+      "src": "/audio/lesson-34/l34-c-26c69a1ee182.mp3",
+      "audioFile": "34-4-1.mp3",
+      "start": 71.18,
+      "end": 73.59,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l34-c-affbac9a4ff7",
+      "src": "/audio/lesson-34/l34-c-affbac9a4ff7.mp3",
+      "audioFile": "34-4-1.mp3",
+      "start": 73.7,
+      "end": 75.19,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-v-61da3e76986d",
+      "src": "/audio/lesson-35/l35-v-61da3e76986d.mp3",
+      "audioFile": "35-2.mp3",
+      "start": 13.28,
+      "end": 14.0,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-v-58414f3ba828",
+      "src": "/audio/lesson-35/l35-v-58414f3ba828.mp3",
+      "audioFile": "35-2.mp3",
+      "start": 19.69,
+      "end": 20.42,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-v-45725056576d",
+      "src": "/audio/lesson-35/l35-v-45725056576d.mp3",
+      "audioFile": "35-2.mp3",
+      "start": 25.85,
+      "end": 26.55,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-v-51c5262908bf",
+      "src": "/audio/lesson-35/l35-v-51c5262908bf.mp3",
+      "audioFile": "35-2.mp3",
+      "start": 32.04,
+      "end": 32.86,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-v-a3da10bbf925",
+      "src": "/audio/lesson-35/l35-v-a3da10bbf925.mp3",
+      "audioFile": "35-2.mp3",
+      "start": 38.41,
+      "end": 39.3,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-v-6814de2a9411",
+      "src": "/audio/lesson-35/l35-v-6814de2a9411.mp3",
+      "audioFile": "35-2.mp3",
+      "start": 44.93,
+      "end": 45.93,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-v-2c32fb6cee00",
+      "src": "/audio/lesson-35/l35-v-2c32fb6cee00.mp3",
+      "audioFile": "35-2.mp3",
+      "start": 51.78,
+      "end": 52.81,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-v-686e22bdbed9",
+      "src": "/audio/lesson-35/l35-v-686e22bdbed9.mp3",
+      "audioFile": "35-2.mp3",
+      "start": 59.14,
+      "end": 59.99,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-v-634425776cd5",
+      "src": "/audio/lesson-35/l35-v-634425776cd5.mp3",
+      "audioFile": "35-2.mp3",
+      "start": 66.13,
+      "end": 67.18,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-v-db66a747e059",
+      "src": "/audio/lesson-35/l35-v-db66a747e059.mp3",
+      "audioFile": "35-2.mp3",
+      "start": 73.05,
+      "end": 73.85,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-p-31814698c33a",
+      "src": "/audio/lesson-35/l35-p-31814698c33a.mp3",
+      "audioFile": "35-3.mp3",
+      "start": 12.58,
+      "end": 14.0,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-p-ad557d452d99",
+      "src": "/audio/lesson-35/l35-p-ad557d452d99.mp3",
+      "audioFile": "35-3.mp3",
+      "start": 22.11,
+      "end": 24.05,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-p-7de5bc6c3310",
+      "src": "/audio/lesson-35/l35-p-7de5bc6c3310.mp3",
+      "audioFile": "35-3.mp3",
+      "start": 32.36,
+      "end": 34.26,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-p-5a34161b464a",
+      "src": "/audio/lesson-35/l35-p-5a34161b464a.mp3",
+      "audioFile": "35-3.mp3",
+      "start": 41.43,
+      "end": 42.95,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-p-c2799b2b6c10",
+      "src": "/audio/lesson-35/l35-p-c2799b2b6c10.mp3",
+      "audioFile": "35-3.mp3",
+      "start": 52.06,
+      "end": 53.85,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-p-3ddd32d55417",
+      "src": "/audio/lesson-35/l35-p-3ddd32d55417.mp3",
+      "audioFile": "35-3.mp3",
+      "start": 61.36,
+      "end": 63.07,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-p-47ebfef4af62",
+      "src": "/audio/lesson-35/l35-p-47ebfef4af62.mp3",
+      "audioFile": "35-3.mp3",
+      "start": 71.82,
+      "end": 74.0,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-p-1c68ecaf6cb3",
+      "src": "/audio/lesson-35/l35-p-1c68ecaf6cb3.mp3",
+      "audioFile": "35-3.mp3",
+      "start": 83.05,
+      "end": 85.42,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-p-c5272ed80d7f",
+      "src": "/audio/lesson-35/l35-p-c5272ed80d7f.mp3",
+      "audioFile": "35-3.mp3",
+      "start": 93.23,
+      "end": 94.67,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-p-c5182d6d201e",
+      "src": "/audio/lesson-35/l35-p-c5182d6d201e.mp3",
+      "audioFile": "35-3.mp3",
+      "start": 101.63,
+      "end": 103.12,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-p-695fa2146bcf",
+      "src": "/audio/lesson-35/l35-p-695fa2146bcf.mp3",
+      "audioFile": "35-3.mp3",
+      "start": 111.29,
+      "end": 113.22,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-p-cf5e75a10444",
+      "src": "/audio/lesson-35/l35-p-cf5e75a10444.mp3",
+      "audioFile": "35-3.mp3",
+      "start": 121.94,
+      "end": 124.41,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-p-681c9cf17b63",
+      "src": "/audio/lesson-35/l35-p-681c9cf17b63.mp3",
+      "audioFile": "35-3.mp3",
+      "start": 132.41,
+      "end": 133.61,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-p-890aea2ab27a",
+      "src": "/audio/lesson-35/l35-p-890aea2ab27a.mp3",
+      "audioFile": "35-3.mp3",
+      "start": 140.25,
+      "end": 141.51,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-p-d5d0df3895b0",
+      "src": "/audio/lesson-35/l35-p-d5d0df3895b0.mp3",
+      "audioFile": "35-3.mp3",
+      "start": 149.08,
+      "end": 150.84,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-p-50dcee8f7aaa",
+      "src": "/audio/lesson-35/l35-p-50dcee8f7aaa.mp3",
+      "audioFile": "35-3.mp3",
+      "start": 158.59,
+      "end": 160.39,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-p-d12e7a5e8f5f",
+      "src": "/audio/lesson-35/l35-p-d12e7a5e8f5f.mp3",
+      "audioFile": "35-3.mp3",
+      "start": 170.67,
+      "end": 173.25,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-p-31057955e56c",
+      "src": "/audio/lesson-35/l35-p-31057955e56c.mp3",
+      "audioFile": "35-3.mp3",
+      "start": 180.62,
+      "end": 182.43,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-p-7a05807bda5c",
+      "src": "/audio/lesson-35/l35-p-7a05807bda5c.mp3",
+      "audioFile": "35-3.mp3",
+      "start": 190.06,
+      "end": 191.98,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-p-1f545363d77e",
+      "src": "/audio/lesson-35/l35-p-1f545363d77e.mp3",
+      "audioFile": "35-3.mp3",
+      "start": 201.29,
+      "end": 204.09,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-p-5ddbac812935",
+      "src": "/audio/lesson-35/l35-p-5ddbac812935.mp3",
+      "audioFile": "35-3.mp3",
+      "start": 214.05,
+      "end": 216.54,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-p-db005d24a067",
+      "src": "/audio/lesson-35/l35-p-db005d24a067.mp3",
+      "audioFile": "35-3.mp3",
+      "start": 223.87,
+      "end": 225.55,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-p-0382d80bff38",
+      "src": "/audio/lesson-35/l35-p-0382d80bff38.mp3",
+      "audioFile": "35-3.mp3",
+      "start": 232.71,
+      "end": 234.25,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-p-c1faf85b7510",
+      "src": "/audio/lesson-35/l35-p-c1faf85b7510.mp3",
+      "audioFile": "35-3.mp3",
+      "start": 241.47,
+      "end": 242.99,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-c-aba8ca9ed0a5",
+      "src": "/audio/lesson-35/l35-c-aba8ca9ed0a5.mp3",
+      "audioFile": "35-4-1.mp3",
+      "start": 49.39,
+      "end": 50.34,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-c-3fa572f11b7f",
+      "src": "/audio/lesson-35/l35-c-3fa572f11b7f.mp3",
+      "audioFile": "35-4-1.mp3",
+      "start": 51.15,
+      "end": 52.59,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-c-f605c41f48f1",
+      "src": "/audio/lesson-35/l35-c-f605c41f48f1.mp3",
+      "audioFile": "35-4-1.mp3",
+      "start": 52.66,
+      "end": 56.26,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-c-0c7f6904dc3f",
+      "src": "/audio/lesson-35/l35-c-0c7f6904dc3f.mp3",
+      "audioFile": "35-4-1.mp3",
+      "start": 56.28,
+      "end": 58.55,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-c-c8ba32d84479",
+      "src": "/audio/lesson-35/l35-c-c8ba32d84479.mp3",
+      "audioFile": "35-4-1.mp3",
+      "start": 58.6,
+      "end": 60.07,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-c-3cb6f1d9b2ec",
+      "src": "/audio/lesson-35/l35-c-3cb6f1d9b2ec.mp3",
+      "audioFile": "35-4-1.mp3",
+      "start": 60.23,
+      "end": 61.78,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-c-3ab429f4d70e",
+      "src": "/audio/lesson-35/l35-c-3ab429f4d70e.mp3",
+      "audioFile": "35-4-1.mp3",
+      "start": 61.82,
+      "end": 63.73,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-c-23e2ab61229a",
+      "src": "/audio/lesson-35/l35-c-23e2ab61229a.mp3",
+      "audioFile": "35-4-1.mp3",
+      "start": 63.69,
+      "end": 66.07,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-c-5641a104d5a1",
+      "src": "/audio/lesson-35/l35-c-5641a104d5a1.mp3",
+      "audioFile": "35-4-1.mp3",
+      "start": 66.3,
+      "end": 70.63,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-c-d5d82dd0f179",
+      "src": "/audio/lesson-35/l35-c-d5d82dd0f179.mp3",
+      "audioFile": "35-4-1.mp3",
+      "start": 70.57,
+      "end": 72.45,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-c-1a5ccdbc4dd5",
+      "src": "/audio/lesson-35/l35-c-1a5ccdbc4dd5.mp3",
+      "audioFile": "35-4-1.mp3",
+      "start": 72.52,
+      "end": 75.09,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l35-c-072e0a5ce224",
+      "src": "/audio/lesson-35/l35-c-072e0a5ce224.mp3",
+      "audioFile": "35-4-1.mp3",
+      "start": 75.02,
+      "end": 76.48,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-v-f701a3972aa4",
+      "src": "/audio/lesson-36/l36-v-f701a3972aa4.mp3",
+      "audioFile": "36-2.mp3",
+      "start": 10.6,
+      "end": 11.43,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-v-2692acbe4afd",
+      "src": "/audio/lesson-36/l36-v-2692acbe4afd.mp3",
+      "audioFile": "36-2.mp3",
+      "start": 17.96,
+      "end": 18.59,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-v-11c41c56f50d",
+      "src": "/audio/lesson-36/l36-v-11c41c56f50d.mp3",
+      "audioFile": "36-2.mp3",
+      "start": 25.95,
+      "end": 26.74,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-v-5428b2fea2bd",
+      "src": "/audio/lesson-36/l36-v-5428b2fea2bd.mp3",
+      "audioFile": "36-2.mp3",
+      "start": 32.87,
+      "end": 33.67,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-v-8976cbb575fd",
+      "src": "/audio/lesson-36/l36-v-8976cbb575fd.mp3",
+      "audioFile": "36-2.mp3",
+      "start": 39.33,
+      "end": 40.32,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-v-6e096ed07535",
+      "src": "/audio/lesson-36/l36-v-6e096ed07535.mp3",
+      "audioFile": "36-2.mp3",
+      "start": 45.75,
+      "end": 46.56,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-p-aeab60d3a8ad",
+      "src": "/audio/lesson-36/l36-p-aeab60d3a8ad.mp3",
+      "audioFile": "36-3.mp3",
+      "start": 13.05,
+      "end": 14.98,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-p-247a522e916d",
+      "src": "/audio/lesson-36/l36-p-247a522e916d.mp3",
+      "audioFile": "36-3.mp3",
+      "start": 22.8,
+      "end": 24.66,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-p-cf5d99ad3fa9",
+      "src": "/audio/lesson-36/l36-p-cf5d99ad3fa9.mp3",
+      "audioFile": "36-3.mp3",
+      "start": 31.18,
+      "end": 32.36,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-p-cd44aa9a500b",
+      "src": "/audio/lesson-36/l36-p-cd44aa9a500b.mp3",
+      "audioFile": "36-3.mp3",
+      "start": 39.55,
+      "end": 41.19,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-p-90b7c752b7d1",
+      "src": "/audio/lesson-36/l36-p-90b7c752b7d1.mp3",
+      "audioFile": "36-3.mp3",
+      "start": 50.52,
+      "end": 52.8,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-p-18a0fe3fbe1d",
+      "src": "/audio/lesson-36/l36-p-18a0fe3fbe1d.mp3",
+      "audioFile": "36-3.mp3",
+      "start": 60.46,
+      "end": 62.21,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-p-7da911ed4461",
+      "src": "/audio/lesson-36/l36-p-7da911ed4461.mp3",
+      "audioFile": "36-3.mp3",
+      "start": 71.01,
+      "end": 73.24,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-p-f8057bbc53d5",
+      "src": "/audio/lesson-36/l36-p-f8057bbc53d5.mp3",
+      "audioFile": "36-3.mp3",
+      "start": 80.6,
+      "end": 82.1,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-p-5b290945bf26",
+      "src": "/audio/lesson-36/l36-p-5b290945bf26.mp3",
+      "audioFile": "36-3.mp3",
+      "start": 90.4,
+      "end": 92.11,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-p-d0cc59ef06f7",
+      "src": "/audio/lesson-36/l36-p-d0cc59ef06f7.mp3",
+      "audioFile": "36-3.mp3",
+      "start": 99.57,
+      "end": 101.34,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-p-2b33b8284e65",
+      "src": "/audio/lesson-36/l36-p-2b33b8284e65.mp3",
+      "audioFile": "36-3.mp3",
+      "start": 109.34,
+      "end": 111.27,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-p-d32983315ea6",
+      "src": "/audio/lesson-36/l36-p-d32983315ea6.mp3",
+      "audioFile": "36-3.mp3",
+      "start": 118.14,
+      "end": 119.65,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-p-fbdd84ea83e7",
+      "src": "/audio/lesson-36/l36-p-fbdd84ea83e7.mp3",
+      "audioFile": "36-3.mp3",
+      "start": 127.89,
+      "end": 129.23,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-p-a30a7b0a1916",
+      "src": "/audio/lesson-36/l36-p-a30a7b0a1916.mp3",
+      "audioFile": "36-3.mp3",
+      "start": 135.96,
+      "end": 137.2,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-p-14580e4844cd",
+      "src": "/audio/lesson-36/l36-p-14580e4844cd.mp3",
+      "audioFile": "36-3.mp3",
+      "start": 145.02,
+      "end": 146.88,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-p-f34ba989f307",
+      "src": "/audio/lesson-36/l36-p-f34ba989f307.mp3",
+      "audioFile": "36-3.mp3",
+      "start": 154.59,
+      "end": 156.45,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-p-861f05a336d7",
+      "src": "/audio/lesson-36/l36-p-861f05a336d7.mp3",
+      "audioFile": "36-3.mp3",
+      "start": 165.97,
+      "end": 168.2,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-p-975a2778de74",
+      "src": "/audio/lesson-36/l36-p-975a2778de74.mp3",
+      "audioFile": "36-3.mp3",
+      "start": 177.01,
+      "end": 179.39,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-p-2373b6ed15c6",
+      "src": "/audio/lesson-36/l36-p-2373b6ed15c6.mp3",
+      "audioFile": "36-3.mp3",
+      "start": 186.67,
+      "end": 188.22,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-p-34da94cbd68d",
+      "src": "/audio/lesson-36/l36-p-34da94cbd68d.mp3",
+      "audioFile": "36-3.mp3",
+      "start": 196.79,
+      "end": 199.15,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-p-2d7f7ae7712d",
+      "src": "/audio/lesson-36/l36-p-2d7f7ae7712d.mp3",
+      "audioFile": "36-3.mp3",
+      "start": 207.73,
+      "end": 209.48,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-p-12bb2693950f",
+      "src": "/audio/lesson-36/l36-p-12bb2693950f.mp3",
+      "audioFile": "36-3.mp3",
+      "start": 218.4,
+      "end": 220.67,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-p-b4730d886ba7",
+      "src": "/audio/lesson-36/l36-p-b4730d886ba7.mp3",
+      "audioFile": "36-3.mp3",
+      "start": 227.81,
+      "end": 229.38,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-p-af324271c70a",
+      "src": "/audio/lesson-36/l36-p-af324271c70a.mp3",
+      "audioFile": "36-3.mp3",
+      "start": 237.4,
+      "end": 239.54,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-c-48317aba0df8",
+      "src": "/audio/lesson-36/l36-c-48317aba0df8.mp3",
+      "audioFile": "36-4-1.mp3",
+      "start": 42.79,
+      "end": 44.98,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-c-0016bd9c823a",
+      "src": "/audio/lesson-36/l36-c-0016bd9c823a.mp3",
+      "audioFile": "36-4-1.mp3",
+      "start": 45.07,
+      "end": 45.82,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-c-3769dee7f6a6",
+      "src": "/audio/lesson-36/l36-c-3769dee7f6a6.mp3",
+      "audioFile": "36-4-1.mp3",
+      "start": 46.15,
+      "end": 49.59,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-c-1a5985b3d551",
+      "src": "/audio/lesson-36/l36-c-1a5985b3d551.mp3",
+      "audioFile": "36-4-1.mp3",
+      "start": 49.87,
+      "end": 55.96,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-c-44ce151f7270",
+      "src": "/audio/lesson-36/l36-c-44ce151f7270.mp3",
+      "audioFile": "36-4-1.mp3",
+      "start": 56.29,
+      "end": 58.58,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-c-7ac616172b5b",
+      "src": "/audio/lesson-36/l36-c-7ac616172b5b.mp3",
+      "audioFile": "36-4-1.mp3",
+      "start": 58.49,
+      "end": 61.62,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-c-61d5223f0e2a",
+      "src": "/audio/lesson-36/l36-c-61d5223f0e2a.mp3",
+      "audioFile": "36-4-1.mp3",
+      "start": 61.67,
+      "end": 65.35,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-c-2aa6a70c4802",
+      "src": "/audio/lesson-36/l36-c-2aa6a70c4802.mp3",
+      "audioFile": "36-4-1.mp3",
+      "start": 65.15,
+      "end": 66.83,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-c-003d9217fa42",
+      "src": "/audio/lesson-36/l36-c-003d9217fa42.mp3",
+      "audioFile": "36-4-1.mp3",
+      "start": 66.93,
+      "end": 70.56,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-c-cca5225f56f1",
+      "src": "/audio/lesson-36/l36-c-cca5225f56f1.mp3",
+      "audioFile": "36-4-1.mp3",
+      "start": 70.57,
+      "end": 72.6,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l36-c-ad0817a1006e",
+      "src": "/audio/lesson-36/l36-c-ad0817a1006e.mp3",
+      "audioFile": "36-4-1.mp3",
+      "start": 72.67,
+      "end": 73.42,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-v-10aa355fe8df",
+      "src": "/audio/lesson-37/l37-v-10aa355fe8df.mp3",
+      "audioFile": "37-2.mp3",
+      "start": 10.19,
+      "end": 10.94,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-v-fb8343643132",
+      "src": "/audio/lesson-37/l37-v-fb8343643132.mp3",
+      "audioFile": "37-2.mp3",
+      "start": 17.43,
+      "end": 18.36,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-v-a9b9a4217984",
+      "src": "/audio/lesson-37/l37-v-a9b9a4217984.mp3",
+      "audioFile": "37-2.mp3",
+      "start": 23.98,
+      "end": 24.75,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-v-d1ac9359c0b6",
+      "src": "/audio/lesson-37/l37-v-d1ac9359c0b6.mp3",
+      "audioFile": "37-2.mp3",
+      "start": 30.61,
+      "end": 31.66,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-v-f5a2db6ad52a",
+      "src": "/audio/lesson-37/l37-v-f5a2db6ad52a.mp3",
+      "audioFile": "37-2.mp3",
+      "start": 37.26,
+      "end": 38.2,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-v-5e157c3a1bcc",
+      "src": "/audio/lesson-37/l37-v-5e157c3a1bcc.mp3",
+      "audioFile": "37-2.mp3",
+      "start": 44.22,
+      "end": 45.29,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-v-45707908e22b",
+      "src": "/audio/lesson-37/l37-v-45707908e22b.mp3",
+      "audioFile": "37-2.mp3",
+      "start": 51.01,
+      "end": 52.02,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-v-a1525b1e5d7e",
+      "src": "/audio/lesson-37/l37-v-a1525b1e5d7e.mp3",
+      "audioFile": "37-2.mp3",
+      "start": 58.69,
+      "end": 59.51,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-p-8b9d37c502ab",
+      "src": "/audio/lesson-37/l37-p-8b9d37c502ab.mp3",
+      "audioFile": "37-3.mp3",
+      "start": 14.17,
+      "end": 16.27,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-p-b5449a30ac43",
+      "src": "/audio/lesson-37/l37-p-b5449a30ac43.mp3",
+      "audioFile": "37-3.mp3",
+      "start": 23.5,
+      "end": 25.04,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-p-b8352e419e1a",
+      "src": "/audio/lesson-37/l37-p-b8352e419e1a.mp3",
+      "audioFile": "37-3.mp3",
+      "start": 33.85,
+      "end": 36.0,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-p-a5a883565a55",
+      "src": "/audio/lesson-37/l37-p-a5a883565a55.mp3",
+      "audioFile": "37-3.mp3",
+      "start": 44.27,
+      "end": 46.33,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-p-bb84dbb0fb94",
+      "src": "/audio/lesson-37/l37-p-bb84dbb0fb94.mp3",
+      "audioFile": "37-3.mp3",
+      "start": 56.43,
+      "end": 58.98,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-p-5561cf2cc3dc",
+      "src": "/audio/lesson-37/l37-p-5561cf2cc3dc.mp3",
+      "audioFile": "37-3.mp3",
+      "start": 67.07,
+      "end": 69.12,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-p-91f5f52d62a7",
+      "src": "/audio/lesson-37/l37-p-91f5f52d62a7.mp3",
+      "audioFile": "37-3.mp3",
+      "start": 77.32,
+      "end": 79.4,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-p-0a79a1a3028c",
+      "src": "/audio/lesson-37/l37-p-0a79a1a3028c.mp3",
+      "audioFile": "37-3.mp3",
+      "start": 87.59,
+      "end": 89.76,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-p-93652cbd0ebe",
+      "src": "/audio/lesson-37/l37-p-93652cbd0ebe.mp3",
+      "audioFile": "37-3.mp3",
+      "start": 98.56,
+      "end": 100.33,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-p-65d093f7c52d",
+      "src": "/audio/lesson-37/l37-p-65d093f7c52d.mp3",
+      "audioFile": "37-3.mp3",
+      "start": 107.71,
+      "end": 109.36,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-p-51aed458c70a",
+      "src": "/audio/lesson-37/l37-p-51aed458c70a.mp3",
+      "audioFile": "37-3.mp3",
+      "start": 116.6,
+      "end": 118.55,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-p-db14bc5b2a4a",
+      "src": "/audio/lesson-37/l37-p-db14bc5b2a4a.mp3",
+      "audioFile": "37-3.mp3",
+      "start": 127.0,
+      "end": 129.36,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-p-22f37bfc9f35",
+      "src": "/audio/lesson-37/l37-p-22f37bfc9f35.mp3",
+      "audioFile": "37-3.mp3",
+      "start": 138.9,
+      "end": 140.98,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-p-ea5d006b83fa",
+      "src": "/audio/lesson-37/l37-p-ea5d006b83fa.mp3",
+      "audioFile": "37-3.mp3",
+      "start": 148.22,
+      "end": 149.94,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-p-9fbfb4e14b89",
+      "src": "/audio/lesson-37/l37-p-9fbfb4e14b89.mp3",
+      "audioFile": "37-3.mp3",
+      "start": 158.17,
+      "end": 160.28,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-p-fa779b7b95f5",
+      "src": "/audio/lesson-37/l37-p-fa779b7b95f5.mp3",
+      "audioFile": "37-3.mp3",
+      "start": 168.5,
+      "end": 170.52,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-p-64295efebfc9",
+      "src": "/audio/lesson-37/l37-p-64295efebfc9.mp3",
+      "audioFile": "37-3.mp3",
+      "start": 180.81,
+      "end": 183.48,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-p-7e8a017edd7a",
+      "src": "/audio/lesson-37/l37-p-7e8a017edd7a.mp3",
+      "audioFile": "37-3.mp3",
+      "start": 191.78,
+      "end": 194.0,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-p-46cf0c298973",
+      "src": "/audio/lesson-37/l37-p-46cf0c298973.mp3",
+      "audioFile": "37-3.mp3",
+      "start": 202.12,
+      "end": 204.47,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-p-60bf55eb8827",
+      "src": "/audio/lesson-37/l37-p-60bf55eb8827.mp3",
+      "audioFile": "37-3.mp3",
+      "start": 212.55,
+      "end": 214.79,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-p-79ed28277f4c",
+      "src": "/audio/lesson-37/l37-p-79ed28277f4c.mp3",
+      "audioFile": "37-3.mp3",
+      "start": 223.79,
+      "end": 225.71,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-p-deadc4856d42",
+      "src": "/audio/lesson-37/l37-p-deadc4856d42.mp3",
+      "audioFile": "37-3.mp3",
+      "start": 233.55,
+      "end": 235.54,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-p-465acc6ad38e",
+      "src": "/audio/lesson-37/l37-p-465acc6ad38e.mp3",
+      "audioFile": "37-3.mp3",
+      "start": 243.22,
+      "end": 245.01,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-p-c53c0cade477",
+      "src": "/audio/lesson-37/l37-p-c53c0cade477.mp3",
+      "audioFile": "37-3.mp3",
+      "start": 252.82,
+      "end": 254.59,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-c-763258e0238a",
+      "src": "/audio/lesson-37/l37-c-763258e0238a.mp3",
+      "audioFile": "37-4-1.mp3",
+      "start": 290.41,
+      "end": 292.34,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-c-81c48facb4a8",
+      "src": "/audio/lesson-37/l37-c-81c48facb4a8.mp3",
+      "audioFile": "37-4-1.mp3",
+      "start": 292.74,
+      "end": 296.22,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-c-1ab4533f337c",
+      "src": "/audio/lesson-37/l37-c-1ab4533f337c.mp3",
+      "audioFile": "37-4-1.mp3",
+      "start": 296.59,
+      "end": 301.22,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-c-81f8e7f75aa9",
+      "src": "/audio/lesson-37/l37-c-81f8e7f75aa9.mp3",
+      "audioFile": "37-4-1.mp3",
+      "start": 301.14,
+      "end": 303.16,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-c-e06cd6f88909",
+      "src": "/audio/lesson-37/l37-c-e06cd6f88909.mp3",
+      "audioFile": "37-4-1.mp3",
+      "start": 303.49,
+      "end": 307.49,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-c-c0f6f027b905",
+      "src": "/audio/lesson-37/l37-c-c0f6f027b905.mp3",
+      "audioFile": "37-4-1.mp3",
+      "start": 307.5,
+      "end": 310.89,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-c-434f394fa8f9",
+      "src": "/audio/lesson-37/l37-c-434f394fa8f9.mp3",
+      "audioFile": "37-4-1.mp3",
+      "start": 310.95,
+      "end": 312.85,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-c-16dc48962a2e",
+      "src": "/audio/lesson-37/l37-c-16dc48962a2e.mp3",
+      "audioFile": "37-4-1.mp3",
+      "start": 312.92,
+      "end": 314.14,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-c-4673db6a589f",
+      "src": "/audio/lesson-37/l37-c-4673db6a589f.mp3",
+      "audioFile": "37-4-1.mp3",
+      "start": 314.23,
+      "end": 316.97,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-c-1e044b97efc6",
+      "src": "/audio/lesson-37/l37-c-1e044b97efc6.mp3",
+      "audioFile": "37-4-1.mp3",
+      "start": 317.41,
+      "end": 320.75,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l37-c-597c3b90a803",
+      "src": "/audio/lesson-37/l37-c-597c3b90a803.mp3",
+      "audioFile": "37-4-1.mp3",
+      "start": 320.87,
+      "end": 322.31,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-v-7e4681aa60e0",
+      "src": "/audio/lesson-38/l38-v-7e4681aa60e0.mp3",
+      "audioFile": "38-2.mp3",
+      "start": 10.08,
+      "end": 10.84,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-v-46195718a6ad",
+      "src": "/audio/lesson-38/l38-v-46195718a6ad.mp3",
+      "audioFile": "38-2.mp3",
+      "start": 16.31,
+      "end": 16.97,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-v-0e3b4bf8e1ed",
+      "src": "/audio/lesson-38/l38-v-0e3b4bf8e1ed.mp3",
+      "audioFile": "38-2.mp3",
+      "start": 22.79,
+      "end": 23.64,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-v-625d79e0b2cd",
+      "src": "/audio/lesson-38/l38-v-625d79e0b2cd.mp3",
+      "audioFile": "38-2.mp3",
+      "start": 28.91,
+      "end": 29.58,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-v-abbc16f5875c",
+      "src": "/audio/lesson-38/l38-v-abbc16f5875c.mp3",
+      "audioFile": "38-2.mp3",
+      "start": 35.31,
+      "end": 36.02,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-v-bbff391b92a7",
+      "src": "/audio/lesson-38/l38-v-bbff391b92a7.mp3",
+      "audioFile": "38-2.mp3",
+      "start": 41.29,
+      "end": 41.93,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-v-2066c54c451e",
+      "src": "/audio/lesson-38/l38-v-2066c54c451e.mp3",
+      "audioFile": "38-2.mp3",
+      "start": 47.38,
+      "end": 48.09,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-v-1a92f06c6312",
+      "src": "/audio/lesson-38/l38-v-1a92f06c6312.mp3",
+      "audioFile": "38-2.mp3",
+      "start": 54.03,
+      "end": 55.07,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-v-2ccaf61e7a30",
+      "src": "/audio/lesson-38/l38-v-2ccaf61e7a30.mp3",
+      "audioFile": "38-2.mp3",
+      "start": 61.02,
+      "end": 62.08,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-p-09df38862ddc",
+      "src": "/audio/lesson-38/l38-p-09df38862ddc.mp3",
+      "audioFile": "38-3.mp3",
+      "start": 13.45,
+      "end": 15.13,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-p-9839f6628e22",
+      "src": "/audio/lesson-38/l38-p-9839f6628e22.mp3",
+      "audioFile": "38-3.mp3",
+      "start": 21.66,
+      "end": 22.84,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-p-8f3fed317952",
+      "src": "/audio/lesson-38/l38-p-8f3fed317952.mp3",
+      "audioFile": "38-3.mp3",
+      "start": 30.4,
+      "end": 32.04,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-p-17e756278e4b",
+      "src": "/audio/lesson-38/l38-p-17e756278e4b.mp3",
+      "audioFile": "38-3.mp3",
+      "start": 39.36,
+      "end": 40.97,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-p-256c741fdd61",
+      "src": "/audio/lesson-38/l38-p-256c741fdd61.mp3",
+      "audioFile": "38-3.mp3",
+      "start": 50.68,
+      "end": 52.64,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-p-a71906da0ec2",
+      "src": "/audio/lesson-38/l38-p-a71906da0ec2.mp3",
+      "audioFile": "38-3.mp3",
+      "start": 61.39,
+      "end": 63.79,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-p-7d654c54a69b",
+      "src": "/audio/lesson-38/l38-p-7d654c54a69b.mp3",
+      "audioFile": "38-3.mp3",
+      "start": 71.85,
+      "end": 73.84,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-p-57ec9e510731",
+      "src": "/audio/lesson-38/l38-p-57ec9e510731.mp3",
+      "audioFile": "38-3.mp3",
+      "start": 81.5,
+      "end": 83.28,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-p-36d3deec902a",
+      "src": "/audio/lesson-38/l38-p-36d3deec902a.mp3",
+      "audioFile": "38-3.mp3",
+      "start": 91.12,
+      "end": 92.36,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-p-5e4474d8bdc7",
+      "src": "/audio/lesson-38/l38-p-5e4474d8bdc7.mp3",
+      "audioFile": "38-3.mp3",
+      "start": 100.3,
+      "end": 102.15,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-p-9924e294be62",
+      "src": "/audio/lesson-38/l38-p-9924e294be62.mp3",
+      "audioFile": "38-3.mp3",
+      "start": 109.83,
+      "end": 111.98,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-p-83899298b1b7",
+      "src": "/audio/lesson-38/l38-p-83899298b1b7.mp3",
+      "audioFile": "38-3.mp3",
+      "start": 119.52,
+      "end": 121.57,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-p-2817061a6404",
+      "src": "/audio/lesson-38/l38-p-2817061a6404.mp3",
+      "audioFile": "38-3.mp3",
+      "start": 129.59,
+      "end": 131.06,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-p-feb556450154",
+      "src": "/audio/lesson-38/l38-p-feb556450154.mp3",
+      "audioFile": "38-3.mp3",
+      "start": 137.75,
+      "end": 139.08,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-p-c6ea9b4526f9",
+      "src": "/audio/lesson-38/l38-p-c6ea9b4526f9.mp3",
+      "audioFile": "38-3.mp3",
+      "start": 146.86,
+      "end": 148.82,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-p-8d63e73df5da",
+      "src": "/audio/lesson-38/l38-p-8d63e73df5da.mp3",
+      "audioFile": "38-3.mp3",
+      "start": 156.53,
+      "end": 158.47,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-p-8027bfc44ac2",
+      "src": "/audio/lesson-38/l38-p-8027bfc44ac2.mp3",
+      "audioFile": "38-3.mp3",
+      "start": 167.23,
+      "end": 168.86,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-p-27419d9cc24d",
+      "src": "/audio/lesson-38/l38-p-27419d9cc24d.mp3",
+      "audioFile": "38-3.mp3",
+      "start": 177.09,
+      "end": 179.28,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-p-d5017d4696b2",
+      "src": "/audio/lesson-38/l38-p-d5017d4696b2.mp3",
+      "audioFile": "38-3.mp3",
+      "start": 187.01,
+      "end": 189.07,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-p-ccf8e99025ee",
+      "src": "/audio/lesson-38/l38-p-ccf8e99025ee.mp3",
+      "audioFile": "38-3.mp3",
+      "start": 196.77,
+      "end": 198.58,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-p-d1bcd86d4ff7",
+      "src": "/audio/lesson-38/l38-p-d1bcd86d4ff7.mp3",
+      "audioFile": "38-3.mp3",
+      "start": 207.34,
+      "end": 209.1,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-p-bfe39768bf4e",
+      "src": "/audio/lesson-38/l38-p-bfe39768bf4e.mp3",
+      "audioFile": "38-3.mp3",
+      "start": 216.74,
+      "end": 218.44,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-p-363910137d04",
+      "src": "/audio/lesson-38/l38-p-363910137d04.mp3",
+      "audioFile": "38-3.mp3",
+      "start": 225.61,
+      "end": 227.14,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-p-b9279d8de68f",
+      "src": "/audio/lesson-38/l38-p-b9279d8de68f.mp3",
+      "audioFile": "38-3.mp3",
+      "start": 234.58,
+      "end": 236.19,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-c-75d0cfca1788",
+      "src": "/audio/lesson-38/l38-c-75d0cfca1788.mp3",
+      "audioFile": "38-4-1.mp3",
+      "start": 190.77,
+      "end": 192.75,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-c-741fe69e2fc7",
+      "src": "/audio/lesson-38/l38-c-741fe69e2fc7.mp3",
+      "audioFile": "38-4-1.mp3",
+      "start": 192.67,
+      "end": 194.03,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-c-9d57a68ec629",
+      "src": "/audio/lesson-38/l38-c-9d57a68ec629.mp3",
+      "audioFile": "38-4-1.mp3",
+      "start": 194.24,
+      "end": 195.98,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-c-84757871487a",
+      "src": "/audio/lesson-38/l38-c-84757871487a.mp3",
+      "audioFile": "38-4-1.mp3",
+      "start": 195.93,
+      "end": 197.97,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-c-d77e70b96bc3",
+      "src": "/audio/lesson-38/l38-c-d77e70b96bc3.mp3",
+      "audioFile": "38-4-1.mp3",
+      "start": 198.09,
+      "end": 199.22,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-c-218c5dc5b83f",
+      "src": "/audio/lesson-38/l38-c-218c5dc5b83f.mp3",
+      "audioFile": "38-4-1.mp3",
+      "start": 199.05,
+      "end": 199.75,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-c-ac1dae1c9194",
+      "src": "/audio/lesson-38/l38-c-ac1dae1c9194.mp3",
+      "audioFile": "38-4-1.mp3",
+      "start": 199.87,
+      "end": 202.8,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-c-23bce7c765ef",
+      "src": "/audio/lesson-38/l38-c-23bce7c765ef.mp3",
+      "audioFile": "38-4-1.mp3",
+      "start": 202.7,
+      "end": 204.6,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-c-bab1ecb2d673",
+      "src": "/audio/lesson-38/l38-c-bab1ecb2d673.mp3",
+      "audioFile": "38-4-1.mp3",
+      "start": 204.56,
+      "end": 205.53,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-c-bd1061cadefd",
+      "src": "/audio/lesson-38/l38-c-bd1061cadefd.mp3",
+      "audioFile": "38-4-1.mp3",
+      "start": 205.6,
+      "end": 207.1,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l38-c-fcf3b918d1bd",
+      "src": "/audio/lesson-38/l38-c-fcf3b918d1bd.mp3",
+      "audioFile": "38-4-1.mp3",
+      "start": 207.05,
+      "end": 209.13,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-v-436f29cf7d53",
+      "src": "/audio/lesson-39/l39-v-436f29cf7d53.mp3",
+      "audioFile": "39-2.mp3",
+      "start": 10.88,
+      "end": 11.61,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-v-a4cd4360c093",
+      "src": "/audio/lesson-39/l39-v-a4cd4360c093.mp3",
+      "audioFile": "39-2.mp3",
+      "start": 17.61,
+      "end": 18.39,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-v-8488eaefa8ae",
+      "src": "/audio/lesson-39/l39-v-8488eaefa8ae.mp3",
+      "audioFile": "39-2.mp3",
+      "start": 25.24,
+      "end": 26.14,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-v-54bfedf5bf8b",
+      "src": "/audio/lesson-39/l39-v-54bfedf5bf8b.mp3",
+      "audioFile": "39-2.mp3",
+      "start": 31.86,
+      "end": 32.8,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-v-14c6bb469a99",
+      "src": "/audio/lesson-39/l39-v-14c6bb469a99.mp3",
+      "audioFile": "39-2.mp3",
+      "start": 38.12,
+      "end": 38.68,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-v-1ef10c08eade",
+      "src": "/audio/lesson-39/l39-v-1ef10c08eade.mp3",
+      "audioFile": "39-2.mp3",
+      "start": 44.2,
+      "end": 44.9,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-v-d08d1f168694",
+      "src": "/audio/lesson-39/l39-v-d08d1f168694.mp3",
+      "audioFile": "39-2.mp3",
+      "start": 51.45,
+      "end": 52.28,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-v-5eadb0a1dd15",
+      "src": "/audio/lesson-39/l39-v-5eadb0a1dd15.mp3",
+      "audioFile": "39-2.mp3",
+      "start": 58.07,
+      "end": 58.74,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-p-8aa0c7ddfb56",
+      "src": "/audio/lesson-39/l39-p-8aa0c7ddfb56.mp3",
+      "audioFile": "39-3.mp3",
+      "start": 12.91,
+      "end": 14.59,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-p-d96e7be18b69",
+      "src": "/audio/lesson-39/l39-p-d96e7be18b69.mp3",
+      "audioFile": "39-3.mp3",
+      "start": 21.05,
+      "end": 22.31,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-p-9cf2c494385b",
+      "src": "/audio/lesson-39/l39-p-9cf2c494385b.mp3",
+      "audioFile": "39-3.mp3",
+      "start": 29.51,
+      "end": 30.89,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-p-039d359aae36",
+      "src": "/audio/lesson-39/l39-p-039d359aae36.mp3",
+      "audioFile": "39-3.mp3",
+      "start": 38.15,
+      "end": 39.85,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-p-a708588b75fe",
+      "src": "/audio/lesson-39/l39-p-a708588b75fe.mp3",
+      "audioFile": "39-3.mp3",
+      "start": 50.35,
+      "end": 52.83,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-p-bd677ff4d6a7",
+      "src": "/audio/lesson-39/l39-p-bd677ff4d6a7.mp3",
+      "audioFile": "39-3.mp3",
+      "start": 62.86,
+      "end": 65.83,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-p-e7ce538618ca",
+      "src": "/audio/lesson-39/l39-p-e7ce538618ca.mp3",
+      "audioFile": "39-3.mp3",
+      "start": 73.82,
+      "end": 75.86,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-p-19874bd7f302",
+      "src": "/audio/lesson-39/l39-p-19874bd7f302.mp3",
+      "audioFile": "39-3.mp3",
+      "start": 83.3,
+      "end": 84.93,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-p-d0a26ad7cc68",
+      "src": "/audio/lesson-39/l39-p-d0a26ad7cc68.mp3",
+      "audioFile": "39-3.mp3",
+      "start": 93.55,
+      "end": 95.0,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-p-5dffc3f6b9df",
+      "src": "/audio/lesson-39/l39-p-5dffc3f6b9df.mp3",
+      "audioFile": "39-3.mp3",
+      "start": 102.05,
+      "end": 103.85,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-p-6cf880652241",
+      "src": "/audio/lesson-39/l39-p-6cf880652241.mp3",
+      "audioFile": "39-3.mp3",
+      "start": 112.41,
+      "end": 114.52,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-p-cb0d0161cdd1",
+      "src": "/audio/lesson-39/l39-p-cb0d0161cdd1.mp3",
+      "audioFile": "39-3.mp3",
+      "start": 123.55,
+      "end": 125.73,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-p-6f1dfdafc895",
+      "src": "/audio/lesson-39/l39-p-6f1dfdafc895.mp3",
+      "audioFile": "39-3.mp3",
+      "start": 134.13,
+      "end": 135.65,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-p-4f0b6b8546cc",
+      "src": "/audio/lesson-39/l39-p-4f0b6b8546cc.mp3",
+      "audioFile": "39-3.mp3",
+      "start": 142.1,
+      "end": 143.43,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-p-c2b6c579f38c",
+      "src": "/audio/lesson-39/l39-p-c2b6c579f38c.mp3",
+      "audioFile": "39-3.mp3",
+      "start": 151.4,
+      "end": 153.23,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-p-4001400277f9",
+      "src": "/audio/lesson-39/l39-p-4001400277f9.mp3",
+      "audioFile": "39-3.mp3",
+      "start": 162.59,
+      "end": 165.23,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-p-ecd2b7369ffb",
+      "src": "/audio/lesson-39/l39-p-ecd2b7369ffb.mp3",
+      "audioFile": "39-3.mp3",
+      "start": 174.21,
+      "end": 176.3,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-p-a9ad731921ef",
+      "src": "/audio/lesson-39/l39-p-a9ad731921ef.mp3",
+      "audioFile": "39-3.mp3",
+      "start": 184.14,
+      "end": 186.0,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-p-3928ff38282c",
+      "src": "/audio/lesson-39/l39-p-3928ff38282c.mp3",
+      "audioFile": "39-3.mp3",
+      "start": 194.14,
+      "end": 196.31,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-p-9146e77ccde6",
+      "src": "/audio/lesson-39/l39-p-9146e77ccde6.mp3",
+      "audioFile": "39-3.mp3",
+      "start": 204.36,
+      "end": 206.29,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-p-d674958f8956",
+      "src": "/audio/lesson-39/l39-p-d674958f8956.mp3",
+      "audioFile": "39-3.mp3",
+      "start": 214.98,
+      "end": 216.6,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-p-6d01c26fb7a1",
+      "src": "/audio/lesson-39/l39-p-6d01c26fb7a1.mp3",
+      "audioFile": "39-3.mp3",
+      "start": 224.43,
+      "end": 226.21,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-p-e109fa230714",
+      "src": "/audio/lesson-39/l39-p-e109fa230714.mp3",
+      "audioFile": "39-3.mp3",
+      "start": 229.28,
+      "end": 230.93,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-p-a3da0ca4bf0b",
+      "src": "/audio/lesson-39/l39-p-a3da0ca4bf0b.mp3",
+      "audioFile": "39-3.mp3",
+      "start": 243.03,
+      "end": 244.59,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-c-2c9a1669cffd",
+      "src": "/audio/lesson-39/l39-c-2c9a1669cffd.mp3",
+      "audioFile": "39-4-1.mp3",
+      "start": 294.5,
+      "end": 297.63,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-c-092b64fdbe5a",
+      "src": "/audio/lesson-39/l39-c-092b64fdbe5a.mp3",
+      "audioFile": "39-4-1.mp3",
+      "start": 297.87,
+      "end": 298.68,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-c-24f7cac6e619",
+      "src": "/audio/lesson-39/l39-c-24f7cac6e619.mp3",
+      "audioFile": "39-4-1.mp3",
+      "start": 299.04,
+      "end": 300.35,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-c-61b78b4082c4",
+      "src": "/audio/lesson-39/l39-c-61b78b4082c4.mp3",
+      "audioFile": "39-4-1.mp3",
+      "start": 300.75,
+      "end": 301.35,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-c-fcbf44c52cb9",
+      "src": "/audio/lesson-39/l39-c-fcbf44c52cb9.mp3",
+      "audioFile": "39-4-1.mp3",
+      "start": 301.45,
+      "end": 302.35,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-c-750a5ac9ebf2",
+      "src": "/audio/lesson-39/l39-c-750a5ac9ebf2.mp3",
+      "audioFile": "39-4-1.mp3",
+      "start": 302.82,
+      "end": 306.51,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-c-c4325ae3ceaa",
+      "src": "/audio/lesson-39/l39-c-c4325ae3ceaa.mp3",
+      "audioFile": "39-4-1.mp3",
+      "start": 306.68,
+      "end": 309.64,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-c-3f5161471f9b",
+      "src": "/audio/lesson-39/l39-c-3f5161471f9b.mp3",
+      "audioFile": "39-4-1.mp3",
+      "start": 309.9,
+      "end": 312.72,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-c-5918372be816",
+      "src": "/audio/lesson-39/l39-c-5918372be816.mp3",
+      "audioFile": "39-4-1.mp3",
+      "start": 312.79,
+      "end": 313.83,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-c-d0e451787373",
+      "src": "/audio/lesson-39/l39-c-d0e451787373.mp3",
+      "audioFile": "39-4-1.mp3",
+      "start": 314.21,
+      "end": 322.32,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-c-048162ac481b",
+      "src": "/audio/lesson-39/l39-c-048162ac481b.mp3",
+      "audioFile": "39-4-1.mp3",
+      "start": 322.79,
+      "end": 325.07,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l39-c-3bef6b5c6eb1",
+      "src": "/audio/lesson-39/l39-c-3bef6b5c6eb1.mp3",
+      "audioFile": "39-4-1.mp3",
+      "start": 325.31,
+      "end": 328.87,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-v-40c96e56b261",
+      "src": "/audio/lesson-40/l40-v-40c96e56b261.mp3",
+      "audioFile": "40-2.mp3",
+      "start": 12.86,
+      "end": 13.58,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-v-59ddb81a8146",
+      "src": "/audio/lesson-40/l40-v-59ddb81a8146.mp3",
+      "audioFile": "40-2.mp3",
+      "start": 21.55,
+      "end": 22.55,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-v-f46ca39d257d",
+      "src": "/audio/lesson-40/l40-v-f46ca39d257d.mp3",
+      "audioFile": "40-2.mp3",
+      "start": 28.45,
+      "end": 29.37,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-v-1d92e5a8f96b",
+      "src": "/audio/lesson-40/l40-v-1d92e5a8f96b.mp3",
+      "audioFile": "40-2.mp3",
+      "start": 34.86,
+      "end": 35.69,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-v-821eacd957a0",
+      "src": "/audio/lesson-40/l40-v-821eacd957a0.mp3",
+      "audioFile": "40-2.mp3",
+      "start": 41.88,
+      "end": 42.92,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-v-1d17a35b1d3e",
+      "src": "/audio/lesson-40/l40-v-1d17a35b1d3e.mp3",
+      "audioFile": "40-2.mp3",
+      "start": 49.4,
+      "end": 50.29,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-p-004f895de247",
+      "src": "/audio/lesson-40/l40-p-004f895de247.mp3",
+      "audioFile": "40-3.mp3",
+      "start": 14.82,
+      "end": 17.18,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-p-d0d967993b12",
+      "src": "/audio/lesson-40/l40-p-d0d967993b12.mp3",
+      "audioFile": "40-3.mp3",
+      "start": 24.88,
+      "end": 26.3,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-p-328f52bcc381",
+      "src": "/audio/lesson-40/l40-p-328f52bcc381.mp3",
+      "audioFile": "40-3.mp3",
+      "start": 33.18,
+      "end": 34.7,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-p-3f74a3b01bc4",
+      "src": "/audio/lesson-40/l40-p-3f74a3b01bc4.mp3",
+      "audioFile": "40-3.mp3",
+      "start": 42.39,
+      "end": 44.03,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-p-abeaceb138ac",
+      "src": "/audio/lesson-40/l40-p-abeaceb138ac.mp3",
+      "audioFile": "40-3.mp3",
+      "start": 53.56,
+      "end": 55.58,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-p-3a220809cf6d",
+      "src": "/audio/lesson-40/l40-p-3a220809cf6d.mp3",
+      "audioFile": "40-3.mp3",
+      "start": 65.16,
+      "end": 67.61,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-p-85a727933925",
+      "src": "/audio/lesson-40/l40-p-85a727933925.mp3",
+      "audioFile": "40-3.mp3",
+      "start": 75.33,
+      "end": 77.05,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-p-34c2f3d58d6b",
+      "src": "/audio/lesson-40/l40-p-34c2f3d58d6b.mp3",
+      "audioFile": "40-3.mp3",
+      "start": 85.4,
+      "end": 87.27,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-p-fb3a1131a8b0",
+      "src": "/audio/lesson-40/l40-p-fb3a1131a8b0.mp3",
+      "audioFile": "40-3.mp3",
+      "start": 96.57,
+      "end": 98.49,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-p-36243f3c5567",
+      "src": "/audio/lesson-40/l40-p-36243f3c5567.mp3",
+      "audioFile": "40-3.mp3",
+      "start": 105.84,
+      "end": 107.48,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-p-a9b2b1f5b917",
+      "src": "/audio/lesson-40/l40-p-a9b2b1f5b917.mp3",
+      "audioFile": "40-3.mp3",
+      "start": 115.35,
+      "end": 117.15,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-p-39ef06b35a77",
+      "src": "/audio/lesson-40/l40-p-39ef06b35a77.mp3",
+      "audioFile": "40-3.mp3",
+      "start": 124.81,
+      "end": 126.61,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-p-84fd203c0682",
+      "src": "/audio/lesson-40/l40-p-84fd203c0682.mp3",
+      "audioFile": "40-3.mp3",
+      "start": 136.66,
+      "end": 138.7,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-p-ae3820847bf2",
+      "src": "/audio/lesson-40/l40-p-ae3820847bf2.mp3",
+      "audioFile": "40-3.mp3",
+      "start": 146.29,
+      "end": 147.81,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-p-8b3a1924ca51",
+      "src": "/audio/lesson-40/l40-p-8b3a1924ca51.mp3",
+      "audioFile": "40-3.mp3",
+      "start": 156.53,
+      "end": 158.69,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-p-1c1c343a626b",
+      "src": "/audio/lesson-40/l40-p-1c1c343a626b.mp3",
+      "audioFile": "40-3.mp3",
+      "start": 167.33,
+      "end": 169.38,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-p-475f58f50c19",
+      "src": "/audio/lesson-40/l40-p-475f58f50c19.mp3",
+      "audioFile": "40-3.mp3",
+      "start": 178.77,
+      "end": 180.74,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-p-1ffa76844595",
+      "src": "/audio/lesson-40/l40-p-1ffa76844595.mp3",
+      "audioFile": "40-3.mp3",
+      "start": 188.52,
+      "end": 190.53,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-p-ff7cb47f589e",
+      "src": "/audio/lesson-40/l40-p-ff7cb47f589e.mp3",
+      "audioFile": "40-3.mp3",
+      "start": 198.44,
+      "end": 200.36,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-p-a9116c48ad24",
+      "src": "/audio/lesson-40/l40-p-a9116c48ad24.mp3",
+      "audioFile": "40-3.mp3",
+      "start": 208.51,
+      "end": 210.6,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-p-e8209d938553",
+      "src": "/audio/lesson-40/l40-p-e8209d938553.mp3",
+      "audioFile": "40-3.mp3",
+      "start": 219.91,
+      "end": 221.71,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-p-140d83f71df5",
+      "src": "/audio/lesson-40/l40-p-140d83f71df5.mp3",
+      "audioFile": "40-3.mp3",
+      "start": 229.52,
+      "end": 231.34,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-p-04d59461e577",
+      "src": "/audio/lesson-40/l40-p-04d59461e577.mp3",
+      "audioFile": "40-3.mp3",
+      "start": 238.9,
+      "end": 240.44,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-p-41ce9ef2d637",
+      "src": "/audio/lesson-40/l40-p-41ce9ef2d637.mp3",
+      "audioFile": "40-3.mp3",
+      "start": 248.19,
+      "end": 249.77,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-c-c87391945ba8",
+      "src": "/audio/lesson-40/l40-c-c87391945ba8.mp3",
+      "audioFile": "40-4-1.mp3",
+      "start": 56.41,
+      "end": 57.5,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-c-5895ae28ecc4",
+      "src": "/audio/lesson-40/l40-c-5895ae28ecc4.mp3",
+      "audioFile": "40-4-1.mp3",
+      "start": 57.45,
+      "end": 57.99,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-c-266194c5344f",
+      "src": "/audio/lesson-40/l40-c-266194c5344f.mp3",
+      "audioFile": "40-4-1.mp3",
+      "start": 58.51,
+      "end": 60.63,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-c-0d2ab528cf84",
+      "src": "/audio/lesson-40/l40-c-0d2ab528cf84.mp3",
+      "audioFile": "40-4-1.mp3",
+      "start": 60.89,
+      "end": 64.85,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-c-5fe9fc228dc3",
+      "src": "/audio/lesson-40/l40-c-5fe9fc228dc3.mp3",
+      "audioFile": "40-4-1.mp3",
+      "start": 65.03,
+      "end": 67.31,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-c-55a69d0ba6fe",
+      "src": "/audio/lesson-40/l40-c-55a69d0ba6fe.mp3",
+      "audioFile": "40-4-1.mp3",
+      "start": 67.66,
+      "end": 75.41,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-c-2f81c853d2e7",
+      "src": "/audio/lesson-40/l40-c-2f81c853d2e7.mp3",
+      "audioFile": "40-4-1.mp3",
+      "start": 75.57,
+      "end": 78.27,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-c-7bdc44308ecd",
+      "src": "/audio/lesson-40/l40-c-7bdc44308ecd.mp3",
+      "audioFile": "40-4-1.mp3",
+      "start": 78.47,
+      "end": 81.88,
+      "confidence": "high"
+    },
+    {
+      "sourceItemId": "l40-c-0d60bc97a879",
+      "src": "/audio/lesson-40/l40-c-0d60bc97a879.mp3",
+      "audioFile": "40-4-1.mp3",
+      "start": 81.72,
+      "end": 84.16,
+      "confidence": "high"
     }
-  ]
+  ],
+  "review": []
 }

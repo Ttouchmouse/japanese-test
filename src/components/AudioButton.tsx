@@ -4,7 +4,7 @@ interface AudioButtonProps {
   src: string;
 }
 
-export function AudioButton({ src }: AudioButtonProps) {
+export function useAudioPlayback(src: string | undefined, playbackKey = src) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [failed, setFailed] = useState(false);
@@ -13,46 +13,74 @@ export function AudioButton({ src }: AudioButtonProps) {
     setIsPlaying(false);
     setFailed(false);
     return () => {
-      audioRef.current?.pause();
+      const audio = audioRef.current;
       audioRef.current = null;
+      if (audio) {
+        audio.onended = null;
+        audio.onerror = null;
+        audio.pause();
+      }
     };
-  }, [src]);
+  }, [src, playbackKey]);
 
-  const togglePlayback = async () => {
-    if (failed) return;
-
-    if (audioRef.current && !audioRef.current.paused) {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
-      setIsPlaying(false);
-      return;
+  const stop = () => {
+    const audio = audioRef.current;
+    audioRef.current = null;
+    if (audio) {
+      audio.onended = null;
+      audio.onerror = null;
+      audio.pause();
     }
+    setIsPlaying(false);
+  };
+
+  const play = async () => {
+    if (!src || audioRef.current) return;
 
     const audio = new Audio(src);
     audio.preload = "none";
-    audio.onended = () => setIsPlaying(false);
+    audio.loop = false;
+    audio.onended = () => {
+      if (audioRef.current === audio) stop();
+    };
     audio.onerror = () => {
-      setIsPlaying(false);
+      if (audioRef.current !== audio) return;
+      stop();
       setFailed(true);
     };
     audioRef.current = audio;
+    setFailed(false);
+    setIsPlaying(true);
 
     try {
       await audio.play();
-      setIsPlaying(true);
     } catch {
-      setIsPlaying(false);
-      setFailed(true);
+      // Browser autoplay restrictions must not disable manual playback.
+      if (audioRef.current === audio) stop();
     }
   };
 
+  const togglePlayback = () => {
+    if (audioRef.current) stop();
+    else void play();
+  };
+
+  return { isPlaying, failed, play, togglePlayback };
+}
+
+export function AudioButton({ src }: AudioButtonProps) {
+  const playback = useAudioPlayback(src);
+  return <AudioPlaybackButton playback={playback} />;
+}
+
+export function AudioPlaybackButton({ playback }: { playback: ReturnType<typeof useAudioPlayback> }) {
+  const { isPlaying, failed, togglePlayback } = playback;
   const label = failed ? "재생할 수 없어요" : isPlaying ? "재생 중" : "듣기";
 
   return (
     <button
       className={`audio-button${isPlaying ? " is-playing" : ""}`}
       type="button"
-      disabled={failed}
       aria-label={failed ? label : isPlaying ? "일본어 음성 정지" : "일본어 음성 재생"}
       onClick={togglePlayback}
     >
@@ -65,4 +93,3 @@ export function AudioButton({ src }: AudioButtonProps) {
     </button>
   );
 }
-

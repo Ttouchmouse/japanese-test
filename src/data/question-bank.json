@@ -11162,9 +11162,9 @@
           "id": "l31-v-9b91461ad7fe",
           "lessonId": 31,
           "type": "vocabulary",
-          "japanese": "降りる 1",
+          "japanese": "降りる",
           "reading": "おりる",
-          "korean": "(버스, 전철 등에서) 내리",
+          "korean": "(버스, 전철 등에서) 내리다",
           "sourcePage": 94
         },
         {
@@ -11211,6 +11211,15 @@
           "reading": "おそく",
           "korean": "늦게",
           "sourcePage": 94
+        },
+        {
+          "id": "l31-v-8ca1d144ed20",
+          "lessonId": 31,
+          "type": "vocabulary",
+          "japanese": "単語",
+          "korean": "단어",
+          "sourcePage": 94,
+          "reading": "たんご"
         },
         {
           "id": "l31-v-6f460a9d6688",
@@ -11423,12 +11432,48 @@
           "sourcePage": 95
         },
         {
+          "id": "l31-c-cebf892944e2",
+          "lessonId": 31,
+          "type": "conversation",
+          "japanese": "はい、上田です。",
+          "korean": "네, 우에다입니다.",
+          "sourcePage": 96,
+          "reading": "上田(うえだ)"
+        },
+        {
+          "id": "l31-c-de54c55822ed",
+          "lessonId": 31,
+          "type": "conversation",
+          "japanese": "もしもし、私。陸はもう起きた?",
+          "korean": "여보세요, 나야. 리쿠는 이제 일어났어?",
+          "sourcePage": 96,
+          "reading": "陸(りく)"
+        },
+        {
           "id": "l31-c-fb0cdee4d48b",
           "lessonId": 31,
           "type": "conversation",
           "japanese": "ううん、まだ。",
           "korean": "아니, 아직.",
           "sourcePage": 96
+        },
+        {
+          "id": "l31-c-80cf83a0e0b4",
+          "lessonId": 31,
+          "type": "conversation",
+          "japanese": "陸は夕べ早く寝なかったから......。七海は起きた?",
+          "korean": "리쿠는 어젯밤에 일찍 안 잤으니까……. 나나미는 일어났어?",
+          "sourcePage": 96,
+          "reading": "陸(りく) · 七海(ななみ)"
+        },
+        {
+          "id": "l31-c-fbb6670c72f9",
+          "lessonId": 31,
+          "type": "conversation",
+          "japanese": "うん、七海はもう出かけた。",
+          "korean": "응, 나나미는 벌써 나갔어.",
+          "sourcePage": 96,
+          "reading": "七海(ななみ)"
         },
         {
           "id": "l31-c-6345f3643dd7",
@@ -11563,6 +11608,14 @@
           "type": "pattern",
           "japanese": "夕べ、11時半に寝ました。",
           "korean": "어젯밤에 11시 반에 잤습니다.",
+          "sourcePage": 97
+        },
+        {
+          "id": "l32-p-ceee681ed6f8",
+          "lessonId": 32,
+          "type": "pattern",
+          "japanese": "3時にタクシーを降りました。",
+          "korean": "3시에 택시에서 내렸어요.",
           "sourcePage": 97
         },
         {
@@ -11754,7 +11807,7 @@
           "lessonId": 32,
           "type": "conversation",
           "japanese": "シムさん、目が赤いですよ。夕べ、遅く寝ましたか。",
-          "korean": "심 (근석)씨, 눈이 빨개요. 어젯밤에 늦게 잤어요?",
+          "korean": "심(근석)씨, 눈이 빨개요. 어젯밤에 늦게 잤어요?",
           "sourcePage": 99
         },
         {
@@ -11879,7 +11932,7 @@
           "type": "vocabulary",
           "japanese": "お兄さん",
           "reading": "おにいさん",
-          "korean": "형, 오빠(높이는 호",
+          "korean": "형, 오빠(높이는 호칭)",
           "sourcePage": 100
         },
         {
@@ -11928,20 +11981,21 @@
           "sourcePage": 100
         },
         {
+          "id": "l33-v-7b1fcafc603f",
+          "lessonId": 33,
+          "type": "vocabulary",
+          "japanese": "期末",
+          "korean": "기말",
+          "sourcePage": 100,
+          "reading": "きまつ"
+        },
+        {
           "id": "l33-v-6e16a90c0eb5",
           "lessonId": 33,
           "type": "vocabulary",
           "japanese": "準備",
           "reading": "じゅんび",
           "korean": "준비",
-          "sourcePage": 100
-        },
-        {
-          "id": "l33-p-62b8d7c50b78",
-          "lessonId": 33,
-          "type": "pattern",
-          "japanese": "した。",
-          "korean": "했어.",
           "sourcePage": 100
         },
         {
@@ -11977,14 +12031,6 @@
           "sourcePage": 100
         },
         {
-          "id": "l33-p-9bd1ba8335b2",
-          "lessonId": 33,
-          "type": "pattern",
-          "japanese": "しなかった。",
-          "korean": "하지 않았어.",
-          "sourcePage": 100
-        },
-        {
           "id": "l33-p-936fd20d4ed2",
           "lessonId": 33,
           "type": "pattern",
@@ -12015,14 +12061,6 @@
           "japanese": "期末試験の準備をしなかった。",
           "korean": "기말고사(의) 준비를 안 했어.",
           "sourcePage": 100
-        },
-        {
-          "id": "l33-p-1b52613f7b00",
-          "lessonId": 33,
-          "type": "pattern",
-          "japanese": "した?",
-          "korean": "했어?",
-          "sourcePage": 101
         },
         {
           "id": "l33-p-114763c22c22",
@@ -12089,14 +12127,6 @@
           "sourcePage": 101
         },
         {
-          "id": "l33-p-894701556ae3",
-          "lessonId": 33,
-          "type": "pattern",
-          "japanese": "しなかった?",
-          "korean": "하지 않았어?",
-          "sourcePage": 101
-        },
-        {
           "id": "l33-p-4b64919acb43",
           "lessonId": 33,
           "type": "pattern",
@@ -12145,6 +12175,31 @@
           "sourcePage": 101
         },
         {
+          "id": "l33-p-f38544b36b2b",
+          "lessonId": 33,
+          "type": "pattern",
+          "japanese": "うん、説明しなかった。",
+          "korean": "응, 설명하지 않았어.",
+          "sourcePage": 102
+        },
+        {
+          "id": "l33-p-bf20f1dddcc8",
+          "lessonId": 33,
+          "type": "pattern",
+          "japanese": "ううん、した。",
+          "korean": "아니, 했어.",
+          "sourcePage": 102
+        },
+        {
+          "id": "l33-c-a0c73cb61383",
+          "lessonId": 33,
+          "type": "conversation",
+          "japanese": "嵩、今日は宿題、持って来た?",
+          "korean": "다카시, 오늘은 숙제 가져왔어?",
+          "sourcePage": 102,
+          "reading": "嵩(たかし)"
+        },
+        {
           "id": "l33-c-afc41d1f7c88",
           "lessonId": 33,
           "type": "conversation",
@@ -12153,12 +12208,48 @@
           "sourcePage": 102
         },
         {
+          "id": "l33-c-d486fd79efac",
+          "lessonId": 33,
+          "type": "conversation",
+          "japanese": "そう。よかった。昨日、嵩、宿題持って来なかったから。",
+          "korean": "그래. 다행이다. 어제 다카시 숙제 안 가져왔으니까 (걱정돼서).",
+          "sourcePage": 102,
+          "reading": "嵩(たかし)"
+        },
+        {
           "id": "l33-c-1ad3feecb190",
           "lessonId": 33,
           "type": "conversation",
           "japanese": "ねえ、中間試験の準備、した?",
           "korean": "있잖아, 중간고사 준비했어?",
           "sourcePage": 102
+        },
+        {
+          "id": "l33-c-45bf508cd9d0",
+          "lessonId": 33,
+          "type": "conversation",
+          "japanese": "中間試験の準備?桃子のノート、コピーした。",
+          "korean": "중간고사 준비? 모모코의 노트 복사했어.",
+          "sourcePage": 102,
+          "reading": "桃子(ももこ)"
+        },
+        {
+          "id": "l33-c-7b47f5b82f5b",
+          "lessonId": 33,
+          "type": "conversation",
+          "japanese": "桃子のノート?",
+          "korean": "모모코의 노트라고?",
+          "sourcePage": 102,
+          "reading": "桃子(ももこ)"
+        },
+        {
+          "id": "l33-c-b2b179aed4ef",
+          "lessonId": 33,
+          "type": "conversation",
+          "japanese": "うん。桃子のノートが一番いいから。嵩もコピーする?",
+          "korean": "응. 모모코의 노트가 가장 좋으니까. 다카시도 복사할래?",
+          "sourcePage": 102,
+          "reading": "桃子(ももこ) · 嵩(たかし)"
         },
         {
           "id": "l33-c-0fe35a9feb1f",
@@ -12183,7 +12274,7 @@
           "type": "vocabulary",
           "japanese": "病院",
           "reading": "びょういん",
-          "korean": "병원 姉[",
+          "korean": "병원",
           "sourcePage": 103
         },
         {
@@ -12192,7 +12283,7 @@
           "type": "vocabulary",
           "japanese": "大阪",
           "reading": "おおさか",
-          "korean": "오사카(지명) お姉",
+          "korean": "오사카(지명)",
           "sourcePage": 103
         },
         {
@@ -12201,7 +12292,7 @@
           "type": "vocabulary",
           "japanese": "京都",
           "reading": "きょうと",
-          "korean": "교토(지명) 練習",
+          "korean": "교토(지명)",
           "sourcePage": 103
         },
         {
@@ -12210,14 +12301,23 @@
           "type": "vocabulary",
           "japanese": "百貨店",
           "reading": "ひゃっかてん",
-          "korean": "백화점 先月",
+          "korean": "백화점",
           "sourcePage": 103
+        },
+        {
+          "id": "l34-v-2d185bfec49f",
+          "lessonId": 34,
+          "type": "vocabulary",
+          "japanese": "姉",
+          "korean": "누나, 언니(높이지 않는 호칭)",
+          "sourcePage": 103,
+          "reading": "あね"
         },
         {
           "id": "l34-v-700fc822da8e",
           "lessonId": 34,
           "type": "vocabulary",
-          "japanese": "姉さん",
+          "japanese": "お姉さん",
           "reading": "おねえさん",
           "korean": "누나, 언니(높이는 호칭)",
           "sourcePage": 103
@@ -12226,7 +12326,7 @@
           "id": "l34-v-23b3a16d8291",
           "lessonId": 34,
           "type": "vocabulary",
-          "japanese": "習",
+          "japanese": "練習",
           "reading": "れんしゅう",
           "korean": "연습",
           "sourcePage": 103
@@ -12235,17 +12335,9 @@
           "id": "l34-v-1bbb3220b596",
           "lessonId": 34,
           "type": "vocabulary",
-          "japanese": "月",
+          "japanese": "先月",
           "reading": "せんげつ",
           "korean": "지난달",
-          "sourcePage": 103
-        },
-        {
-          "id": "l34-p-3aa4755d94cd",
-          "lessonId": 34,
-          "type": "pattern",
-          "japanese": "しました。",
-          "korean": "했습니다.",
           "sourcePage": 103
         },
         {
@@ -12283,14 +12375,6 @@
           "sourcePage": 103
         },
         {
-          "id": "l34-p-9c2ef1a3fd3e",
-          "lessonId": 34,
-          "type": "pattern",
-          "japanese": "しませんでした。",
-          "korean": "하지 않았습니다.",
-          "sourcePage": 103
-        },
-        {
           "id": "l34-p-befc212de042",
           "lessonId": 34,
           "type": "pattern",
@@ -12323,14 +12407,6 @@
           "japanese": "友達とうちで歌を練習しませんでした。",
           "korean": "친구랑 집에서 노래를 연습하지 않았어요.",
           "sourcePage": 103
-        },
-        {
-          "id": "l34-p-f3a979d69e1b",
-          "lessonId": 34,
-          "type": "pattern",
-          "japanese": "しましたか。",
-          "korean": "했습니까?",
-          "sourcePage": 104
         },
         {
           "id": "l34-p-b65ced90cc6c",
@@ -12399,14 +12475,6 @@
           "sourcePage": 104
         },
         {
-          "id": "l34-p-d76daec211da",
-          "lessonId": 34,
-          "type": "pattern",
-          "japanese": "しませんでしたか。",
-          "korean": "하지 않았습니까?",
-          "sourcePage": 104
-        },
-        {
           "id": "l34-p-bd20081e1f5f",
           "lessonId": 34,
           "type": "pattern",
@@ -12449,6 +12517,30 @@
           "sourcePage": 104
         },
         {
+          "id": "l34-p-6ba41508f315",
+          "lessonId": 34,
+          "type": "pattern",
+          "japanese": "いいえ、行って来ました。",
+          "korean": "아니요, 갔다 왔어요.",
+          "sourcePage": 105
+        },
+        {
+          "id": "l34-p-972452fc2919",
+          "lessonId": 34,
+          "type": "pattern",
+          "japanese": "はい、しませんでした。",
+          "korean": "네, 안 했습니다.",
+          "sourcePage": 105
+        },
+        {
+          "id": "l34-p-410d913a034e",
+          "lessonId": 34,
+          "type": "pattern",
+          "japanese": "いいえ、しました。",
+          "korean": "아니요, 했어요.",
+          "sourcePage": 105
+        },
+        {
           "id": "l34-c-b7db676074d8",
           "lessonId": 34,
           "type": "conversation",
@@ -12471,6 +12563,33 @@
           "japanese": "どこへ行って来ましたか。",
           "korean": "어디로 갔다 왔어요?",
           "sourcePage": 105
+        },
+        {
+          "id": "l34-c-163356c66a83",
+          "lessonId": 34,
+          "type": "conversation",
+          "japanese": "大阪へ行って来ました。",
+          "korean": "오사카로 갔다 왔습니다.",
+          "sourcePage": 105,
+          "reading": "大阪(おおさか)"
+        },
+        {
+          "id": "l34-c-a3df430d9f07",
+          "lessonId": 34,
+          "type": "conversation",
+          "japanese": "そうですか。大阪はどうでしたか。",
+          "korean": "그렇군요. 오사카는 어땠어요?",
+          "sourcePage": 105,
+          "reading": "大阪(おおさか)"
+        },
+        {
+          "id": "l34-c-6eb5c313a522",
+          "lessonId": 34,
+          "type": "conversation",
+          "japanese": "とても賑やかでした。阿部さんはどこへ行って来ましたか。",
+          "korean": "아주 번화했습니다. 아베 씨는 어디로 갔다 왔습니까?",
+          "sourcePage": 105,
+          "reading": "阿部(あべ)"
         },
         {
           "id": "l34-c-648575305ee7",
@@ -12533,7 +12652,7 @@
           "id": "l35-v-61da3e76986d",
           "lessonId": 35,
           "type": "vocabulary",
-          "japanese": "はく 5",
+          "japanese": "はく",
           "reading": "",
           "korean": "(바지, 치마 등을)입다, (신발을)신다",
           "sourcePage": 107
@@ -12625,6 +12744,14 @@
           "type": "pattern",
           "japanese": "ズボンをはいた。",
           "korean": "바지를 입었어.",
+          "sourcePage": 107
+        },
+        {
+          "id": "l35-p-ad557d452d99",
+          "lessonId": 35,
+          "type": "pattern",
+          "japanese": "5時に空港に着いた。",
+          "korean": "5시에 공항에 도착했어.",
           "sourcePage": 107
         },
         {
@@ -12812,6 +12939,15 @@
           "sourcePage": 109
         },
         {
+          "id": "l35-c-3fa572f11b7f",
+          "lessonId": 35,
+          "type": "conversation",
+          "japanese": "あ、拓海?",
+          "korean": "어, 다쿠미야?",
+          "sourcePage": 109,
+          "reading": "拓海(たくみ)"
+        },
+        {
           "id": "l35-c-f605c41f48f1",
           "lessonId": 35,
           "type": "conversation",
@@ -12864,7 +13000,7 @@
           "lessonId": 35,
           "type": "conversation",
           "japanese": "ううん、明日から。明日の10時から会議がある。",
-          "korean": "아 니, 내일부터야. 내일 10시부터 회의가 있어.",
+          "korean": "아니, 내일부터야. 내일 10시부터 회의가 있어.",
           "sourcePage": 109
         },
         {
@@ -12913,7 +13049,7 @@
           "id": "l36-v-2692acbe4afd",
           "lessonId": 36,
           "type": "vocabulary",
-          "japanese": "降る 5",
+          "japanese": "降る",
           "reading": "ふる",
           "korean": "(비, 눈 등이)내리다",
           "sourcePage": 110
@@ -12922,7 +13058,7 @@
           "id": "l36-v-11c41c56f50d",
           "lessonId": 36,
           "type": "vocabulary",
-          "japanese": "かぶる 5",
+          "japanese": "かぶる",
           "reading": "",
           "korean": "(머리에)쓰다, 뒤집어쓰다",
           "sourcePage": 110
@@ -13193,6 +13329,33 @@
           "japanese": "うん。下の子は女の子だから......。",
           "korean": "응. 작은 애는 여자 애라서.......",
           "sourcePage": 112
+        },
+        {
+          "id": "l36-c-61d5223f0e2a",
+          "lessonId": 36,
+          "type": "conversation",
+          "japanese": "そうだね。科学館で森田さんに会わなかった?",
+          "korean": "그러네. 과학관에서 모리타 씨를 만나지 않았어?",
+          "sourcePage": 112,
+          "reading": "森田(もりた)"
+        },
+        {
+          "id": "l36-c-2aa6a70c4802",
+          "lessonId": 36,
+          "type": "conversation",
+          "japanese": "森田さん?",
+          "korean": "모리타 씨?",
+          "sourcePage": 112,
+          "reading": "森田(もりた)"
+        },
+        {
+          "id": "l36-c-003d9217fa42",
+          "lessonId": 36,
+          "type": "conversation",
+          "japanese": "うん。森田さんも昨日、科学館に行ったから。",
+          "korean": "응. 모리타 씨도 어제 과학관에 갔거든.",
+          "sourcePage": 112,
+          "reading": "森田(もりた)"
         },
         {
           "id": "l36-c-cca5225f56f1",
@@ -13484,11 +13647,29 @@
           "sourcePage": 114
         },
         {
+          "id": "l37-c-763258e0238a",
+          "lessonId": 37,
+          "type": "conversation",
+          "japanese": "はい、中野でございます。",
+          "korean": "네, 나카노입니다.",
+          "sourcePage": 115,
+          "reading": "中野(なかの)"
+        },
+        {
+          "id": "l37-c-81c48facb4a8",
+          "lessonId": 37,
+          "type": "conversation",
+          "japanese": "中野さん、こんにちは。ホ・ヨナです。",
+          "korean": "나카노 씨, 안녕하세요(낮 인사). 허연아입니다.",
+          "sourcePage": 115,
+          "reading": "中野(なかの)"
+        },
+        {
           "id": "l37-c-1ab4533f337c",
           "lessonId": 37,
           "type": "conversation",
           "japanese": "ああ、こんにちは。息子さん、ちょうど今、着きましたよ。",
-          "korean": "아 ~, 안녕하세요. 아드님, 마침 지금 도착했어요.",
+          "korean": "아~, 안녕하세요. 아드님, 마침 지금 도착했어요.",
           "sourcePage": 115
         },
         {
@@ -13496,7 +13677,7 @@
           "lessonId": 37,
           "type": "conversation",
           "japanese": "ああ、そうですか。",
-          "korean": "아 ~, 그래요?",
+          "korean": "아~, 그래요?",
           "sourcePage": 115
         },
         {
@@ -13504,7 +13685,7 @@
           "lessonId": 37,
           "type": "conversation",
           "japanese": "今日、雪が降りましたから、ちょっと時間がかかりました。",
-          "korean": "오 늘 눈이 내렸기 때문에, 좀 시간이 걸렸습니다.",
+          "korean": "오늘 눈이 내렸기 때문에, 좀 시간이 걸렸습니다.",
           "sourcePage": 115
         },
         {
@@ -13512,7 +13693,7 @@
           "lessonId": 37,
           "type": "conversation",
           "japanese": "そうですか。もう雪が降りましたか。",
-          "korean": "그 렇군요. 벌써 눈이 내렸어요?",
+          "korean": "그렇군요. 벌써 눈이 내렸어요?",
           "sourcePage": 115
         },
         {
@@ -13538,6 +13719,15 @@
           "japanese": "ええ、この冬は早く降りました。",
           "korean": "네, 이번 겨울은 일찍 내렸어요.",
           "sourcePage": 115
+        },
+        {
+          "id": "l37-c-1e044b97efc6",
+          "lessonId": 37,
+          "type": "conversation",
+          "japanese": "中野さん、息子をよろしくお願いします。",
+          "korean": "나카노 씨, 아들을 잘 부탁드리겠습니다.",
+          "sourcePage": 115,
+          "reading": "中野(なかの)"
         },
         {
           "id": "l37-c-597c3b90a803",
@@ -13862,6 +14052,14 @@
           "sourcePage": 118
         },
         {
+          "id": "l38-c-d77e70b96bc3",
+          "lessonId": 38,
+          "type": "conversation",
+          "japanese": "1時間?!",
+          "korean": "한 시간?!",
+          "sourcePage": 118
+        },
+        {
           "id": "l38-c-218c5dc5b83f",
           "lessonId": 38,
           "type": "conversation",
@@ -13931,7 +14129,7 @@
           "id": "l39-v-a4cd4360c093",
           "lessonId": 39,
           "type": "vocabulary",
-          "japanese": "さす 5",
+          "japanese": "さす",
           "reading": "",
           "korean": "(우산을)쓰다",
           "sourcePage": 119
@@ -14183,6 +14381,15 @@
           "sourcePage": 120
         },
         {
+          "id": "l39-c-2c9a1669cffd",
+          "lessonId": 39,
+          "type": "conversation",
+          "japanese": "おはよう。あれ?陽子さんは?",
+          "korean": "안녕(아침 인사). 어라? 요코 씨는?",
+          "sourcePage": 121,
+          "reading": "陽子(ようこ)"
+        },
+        {
           "id": "l39-c-092b64fdbe5a",
           "lessonId": 39,
           "type": "conversation",
@@ -14219,8 +14426,17 @@
           "lessonId": 39,
           "type": "conversation",
           "japanese": "昨日、電車で妻が大きな声を出したから。",
-          "korean": "어 제 전철에서 아내가 큰 소리를 냈거든.",
+          "korean": "어제 전철에서 아내가 큰 소리를 냈거든.",
           "sourcePage": 121
+        },
+        {
+          "id": "l39-c-c4325ae3ceaa",
+          "lessonId": 39,
+          "type": "conversation",
+          "japanese": "何で陽子さん、大きな声出したの?",
+          "korean": "왜 요코 씨, 큰 소리 낸 거야?",
+          "sourcePage": 121,
+          "reading": "陽子(ようこ)"
         },
         {
           "id": "l39-c-3f5161471f9b",
@@ -14243,8 +14459,17 @@
           "lessonId": 39,
           "type": "conversation",
           "japanese": "うん。電車の中が静かだったから、僕、すごく恥ずかしかったんだ。それで、すぐに電車を降りた。",
-          "korean": "응. 전철 안이 조용했기 때문에, 나 엄청 민망했거든. 그래서, 바로 전철에서 내렸 어.",
+          "korean": "응. 전철 안이 조용했기 때문에, 나 엄청 민망했거든. 그래서, 바로 전철에서 내렸어.",
           "sourcePage": 121
+        },
+        {
+          "id": "l39-c-048162ac481b",
+          "lessonId": 39,
+          "type": "conversation",
+          "japanese": "陽子さんとよく話した?",
+          "korean": "요코 씨와 잘 이야기했어?",
+          "sourcePage": 121,
+          "reading": "陽子(ようこ)"
         },
         {
           "id": "l39-c-3bef6b5c6eb1",
@@ -14294,7 +14519,7 @@
           "id": "l40-v-1d92e5a8f96b",
           "lessonId": 40,
           "type": "vocabulary",
-          "japanese": ") 切符",
+          "japanese": "切符",
           "reading": "きっぷ",
           "korean": "표",
           "sourcePage": 122
@@ -14548,6 +14773,24 @@
           "japanese": "これ、さっき落としましたよ。",
           "korean": "이거, 좀 전에 떨어뜨렸어요.",
           "sourcePage": 124
+        },
+        {
+          "id": "l40-c-55a69d0ba6fe",
+          "lessonId": 40,
+          "type": "conversation",
+          "japanese": "あ、ありがとうございます。すみません。あのう、上野行きは何番線ですか。",
+          "korean": "아, 감사합니다. 잠깐만요. 저어, 우에노행은 몇 번 승강장이에요?",
+          "sourcePage": 124,
+          "reading": "上野(うえの)"
+        },
+        {
+          "id": "l40-c-2f81c853d2e7",
+          "lessonId": 40,
+          "type": "conversation",
+          "japanese": "上野ですか。2番線ですよ。",
+          "korean": "우에노요? 2번 승강장이에요.",
+          "sourcePage": 124,
+          "reading": "上野(うえの)"
         },
         {
           "id": "l40-c-7bdc44308ecd",

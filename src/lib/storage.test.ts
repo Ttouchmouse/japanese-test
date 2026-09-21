@@ -1,10 +1,33 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import questionBankData from "../data/question-bank.json";
 import type { QuestionBank } from "../types";
 import { ITEM_ID_MIGRATIONS } from "./item-id-migrations";
-import { migrateConfusionMarks, migrateLearningProgress } from "./storage";
+import { loadSession, migrateConfusionMarks, migrateLearningProgress } from "./storage";
+import { generateQuiz } from "./quiz";
 
 const bank = questionBankData as QuestionBank;
+
+it("rejects stale textbook sessions without clearing separately saved learning records", () => {
+  const questions = generateQuiz(bank, [34], Math.random, {}, new Date(), 8, "write", "vocabulary");
+  const data = new Map<string, string>();
+  const session = { version: 5, selectedLessonIds: [34], mode: "write", category: "vocabulary",
+    countOption: 10, questionCount: questions.length, questions, answers: {},
+    confusedSourceItemIds: [], currentIndex: 0, status: "quiz", startedAt: new Date().toISOString() };
+  data.set("nihongo-review-session-v5", JSON.stringify(session));
+  data.set("nihongo-review-confusions-v1", "keep");
+  vi.stubGlobal("window", { localStorage: { getItem: (key: string) => data.get(key) ?? null,
+    removeItem: (key: string) => data.delete(key) } });
+  try {
+    const current = new Map(bank.lessons.flatMap((lesson) => lesson.items.map((item) => [item.id, item] as const)));
+    expect(loadSession(new Set(current.keys()), current)).not.toBeNull();
+    session.questions[0].korean = "병원 姉[";
+    data.set("nihongo-review-session-v5", JSON.stringify(session));
+    expect(loadSession(new Set(current.keys()), current)).toBeNull();
+    expect(data.get("nihongo-review-confusions-v1")).toBe("keep");
+  } finally {
+    vi.unstubAllGlobals();
+  }
+});
 
 describe("stored confusion migration", () => {
   it("maps every repaired id to an item in the current bank", () => {

@@ -5,8 +5,8 @@ import { audioCueFor, audioCues } from "./audio";
 
 const bank = questionBankData as QuestionBank;
 
-describe("lesson 1–30 audio cues", () => {
-  const lessons = bank.lessons.filter((lesson) => lesson.id <= 30);
+describe("lesson 1–40 audio cues", () => {
+  const lessons = bank.lessons.filter((lesson) => lesson.id <= 40);
   const lessonItems = lessons.flatMap((lesson) => lesson.items);
   const lessonItemIds = new Set(lessonItems.map((item) => item.id));
 
@@ -21,7 +21,7 @@ describe("lesson 1–30 audio cues", () => {
     expect(new Set(audioCues.map((cue) => cue.src)).size).toBe(audioCues.length);
     expect(audioCues.every((cue) => cue.start >= 0 && cue.end > cue.start)).toBe(true);
     expect(
-      audioCues.every((cue) => /^\/audio\/lesson-(0[1-9]|[12][0-9]|30)\//.test(cue.src)),
+      audioCues.every((cue) => /^\/audio\/lesson-(0[1-9]|[123][0-9]|40)\//.test(cue.src)),
     ).toBe(true);
   });
 });

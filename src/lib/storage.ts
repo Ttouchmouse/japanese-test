@@ -7,6 +7,7 @@ import type {
   QuizCountOption,
   QuizMode,
   QuizSession,
+  StudyItem,
 } from "../types";
 import { ITEM_ID_MIGRATIONS } from "./item-id-migrations";
 
@@ -28,7 +29,10 @@ const CONFUSION_STORAGE_KEY = "nihongo-review-confusions-v1";
 
 const QUIZ_COUNTS: QuizCount[] = [10, 20, 30, 100, 200];
 
-export function loadSession(validSourceItemIds?: ReadonlySet<string>): QuizSession | null {
+export function loadSession(
+  validSourceItemIds?: ReadonlySet<string>,
+  currentItems?: ReadonlyMap<string, StudyItem>,
+): QuizSession | null {
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
     if (!raw) return null;
@@ -62,6 +66,20 @@ export function loadSession(validSourceItemIds?: ReadonlySet<string>): QuizSessi
       stored.confusedSourceItemIds.every((id) => typeof id === "string") &&
       (stored.status === "quiz" || stored.status === "result");
     if (!valid) throw new Error("Invalid session");
+    if (currentItems) {
+      // Do not pair repaired audio with stale question/answer text saved before
+      // a textbook correction. Confusion marks and progress are separate keys.
+      const japaneseAnswers = new Set([...currentItems.values()].map((item) => item.japanese));
+      const koreanAnswers = new Set([...currentItems.values()].map((item) => item.korean));
+      const current = stored.questions.every((question) => {
+        const item = currentItems.get(question.sourceItemId);
+        const answers = question.direction === "ja-ko" ? koreanAnswers : japaneseAnswers;
+        return item && item.japanese === question.japanese && item.korean === question.korean &&
+          (item.reading ?? "") === (question.reading ?? "") &&
+          question.options.every((option) => answers.has(option));
+      });
+      if (!current) throw new Error("Outdated textbook content");
+    }
     return stored;
   } catch {
     window.localStorage.removeItem(STORAGE_KEY);

@@ -829,7 +829,9 @@ def apply_known_corrections(lesson: int, items: list[dict[str, Any]]) -> list[di
                 len(corrected),
             )
         corrected.insert(insert_at, new_item)
-    return corrected
+    from reviewed_lessons_31_40 import apply_reviewed_corrections
+
+    return apply_reviewed_corrections(lesson, corrected, stable_id)
 
 
 def extract(source: Path) -> dict[str, Any]:

@@ -3,6 +3,53 @@ import questionBankData from "../data/question-bank.json";
 import type { QuestionBank, StudyItem } from "../types";
 
 const bank = questionBankData as QuestionBank;
+
+describe("lesson 31–40 source-checked textbook data", () => {
+  const reviewedLessons = bank.lessons.filter((lesson) => lesson.id >= 31 && lesson.id <= 40);
+  const expectedCounts = [
+    [11, 24, 12], [6, 24, 13], [11, 24, 8], [8, 24, 12], [10, 24, 12],
+    [6, 24, 11], [8, 24, 11], [9, 24, 11], [8, 24, 12], [6, 24, 9],
+  ];
+
+  it("contains all vocabulary rows, 24 examples per lesson, and complete dialogue turns", () => {
+    reviewedLessons.forEach((lesson, index) => {
+      expect(["vocabulary", "pattern", "conversation"].map((type) =>
+        lesson.items.filter((item) => item.type === type).length,
+      )).toEqual(expectedCounts[index]);
+    });
+    expect(reviewedLessons.flatMap((lesson) => lesson.items)).toHaveLength(434);
+  });
+
+  it("restores number-leading examples and cross-page continuation rows in audio order", () => {
+    expect(bank.lessons[31].items.filter((i) => i.type === "pattern")[2].japanese)
+      .toBe("3時にタクシーを降りました。");
+    expect(bank.lessons[34].items.filter((i) => i.type === "pattern")[1].japanese)
+      .toBe("5時に空港に着いた。");
+    expect(bank.lessons[32].items.filter((i) => i.type === "pattern").slice(-2).map((i) => i.japanese))
+      .toEqual(["うん、説明しなかった。", "ううん、した。"]);
+    expect(findItem(38, "1時間?!").korean).toBe("한 시간?!");
+  });
+
+  it("keeps original IDs for repaired words and uses source-provided name readings", () => {
+    expect(findItem(31, "降りる").id).toBe("l31-v-9b91461ad7fe");
+    expect(findItem(34, "練習").id).toBe("l34-v-23b3a16d8291");
+    expect(findItem(40, "切符").id).toBe("l40-v-1d92e5a8f96b");
+    expect(findItem(33, "嵩、今日は宿題、持って来た?").reading).toBe("嵩(たかし)");
+    expect(findItem(37, "はい、中野でございます。").korean).toBe("네, 나카노입니다.");
+    expect(findItem(40, "上野ですか。2番線ですよ。").korean).toBe("우에노요? 2번 승강장이에요.");
+  });
+
+  it("does not expose grammar headings or broken two-column fragments as questions", () => {
+    for (const lesson of reviewedLessons) {
+      for (const item of lesson.items) {
+        expect(item.japanese).not.toMatch(/ [1-5]$|^\)/);
+        expect(item.korean).not.toMatch(/오 늘|어 제|그 렇|내렸 어|아 니|[ぁ-ヿ一-龯]/);
+      }
+    }
+    expect(bank.lessons[32].items.some((i) => i.japanese === "した。")).toBe(false);
+    expect(bank.lessons[33].items.some((i) => i.japanese === "しました。")).toBe(false);
+  });
+});
 const lessons = bank.lessons.filter((lesson) => lesson.id >= 19 && lesson.id <= 24);
 const items = lessons.flatMap((lesson) => lesson.items);
 

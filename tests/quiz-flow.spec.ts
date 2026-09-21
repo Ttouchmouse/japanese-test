@@ -36,9 +36,11 @@ test("direct input accepts a saved hiragana reading and survives refresh", async
   await page.getByRole("textbox", { name: "일본어 답" }).fill(reading);
   await page.getByRole("button", { name: "정답 확인" }).click();
   await expect(page.locator(".answer-reveal")).toBeVisible();
+  await expect(page.getByRole("button", { name: "일본어 음성 정지" })).toBeVisible();
   await page.getByRole("button", { name: "헷갈려요" }).click();
   await page.reload();
   await expect(page.locator(".answer-reveal")).toBeVisible();
+  await expect(page.getByRole("button", { name: "일본어 음성 재생" })).toBeVisible();
   await expect(page.getByRole("button", { name: "헷갈려요" })).toHaveAttribute("aria-pressed", "true");
 
   page.once("dialog", (dialog) => dialog.accept());
@@ -185,18 +187,23 @@ test("lesson 12 reveals and plays the matched book audio", async ({ page }) => {
   await page.getByRole("button", { name: "복습 시작" }).click();
 
   await expect(page.getByRole("button", { name: "일본어 음성 재생" })).toHaveCount(0);
-  await page.getByRole("button", { name: "정답 확인" }).click();
-
-  const audioButton = page.getByRole("button", { name: "일본어 음성 재생" });
-  await expect(audioButton).toBeVisible();
   const audioResponse = page.waitForResponse(
     (response) => response.url().includes("/audio/lesson-12/") && response.request().method() === "GET",
   );
-  await audioButton.click();
+  await page.getByRole("button", { name: "정답 확인" }).click();
   const response = await audioResponse;
 
   expect([200, 206]).toContain(response.status());
   expect(response.headers()["content-type"]).toContain("audio/mpeg");
   await expect(page.getByRole("button", { name: "일본어 음성 정지" })).toContainText("재생 중");
+  await page.getByRole("button", { name: "일본어 음성 정지" }).click();
+  await page.getByRole("button", { name: "일본어 음성 재생" }).click();
+  await expect(page.getByRole("button", { name: "일본어 음성 정지" })).toBeVisible();
+  await page.getByRole("button", { name: "다음 문제" }).click();
+  await page.getByRole("button", { name: "이전 문제" }).click();
+  await expect(page.getByRole("button", { name: "일본어 음성 재생" })).toBeVisible();
+  await expect(page.getByRole("button", { name: "일본어 음성 정지" })).toHaveCount(0);
+  await page.reload();
+  await expect(page.getByRole("button", { name: "일본어 음성 재생" })).toBeVisible();
   expect(browserErrors).toEqual([]);
 });

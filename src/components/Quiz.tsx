@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { AudioButton } from "./AudioButton";
+import { AudioButton, AudioPlaybackButton, useAudioPlayback } from "./AudioButton";
 import { isAnswerCorrect, RECALL_REMEMBERED } from "../lib/answer";
 import { audioCueFor } from "../lib/audio";
 import type { QuizAnswers, QuizQuestion } from "../types";
@@ -61,6 +61,8 @@ export function Quiz({
   const isCorrect = isAnswerCorrect(question, selectedAnswer);
   const isConfused = confusedSourceItemIds.includes(question.sourceItemId);
   const audioCue = audioCueFor(question.sourceItemId);
+  const answerAudio = useAudioPlayback(audioCue?.src, question.id);
+  const revealedQuestionRef = useRef<string | null>(null);
   const allAnswered = questions.every((item) => answers[item.id] !== undefined);
   const isLast = currentIndex === questions.length - 1;
 
@@ -83,11 +85,19 @@ export function Quiz({
     return "answer-option is-muted";
   };
 
+  const revealAnswer = (answer: string) => {
+    if (answered || revealedQuestionRef.current === question.id) return;
+    revealedQuestionRef.current = question.id;
+    // Start in the user's click/submit event, not an effect or restored session.
+    void answerAudio.play();
+    onAnswer(answer);
+  };
+
   const submitTextAnswer = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const answer = draftAnswer.trim();
     if (!answer || answered) return;
-    onAnswer(answer);
+    revealAnswer(answer);
   };
 
   return (
@@ -133,7 +143,7 @@ export function Quiz({
                 <span lang="ja">{question.reading}</span>
               )}
             </div>
-            {audioCue && <AudioButton src={audioCue.src} />}
+            {audioCue && <AudioPlaybackButton playback={answerAudio} />}
           </div>
         )}
 
@@ -194,7 +204,7 @@ export function Quiz({
             <button
               className="primary-button"
               type="button"
-              onClick={() => onAnswer(RECALL_REMEMBERED)}
+              onClick={() => revealAnswer(RECALL_REMEMBERED)}
             >
               정답 확인
             </button>

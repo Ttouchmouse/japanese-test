@@ -38,6 +38,9 @@ const questionBank = questionBankData as QuestionBank;
 const sourceItemIds = new Set(
   questionBank.lessons.flatMap((lesson) => lesson.items.map((item) => item.id)),
 );
+const sourceItems = new Map(
+  questionBank.lessons.flatMap((lesson) => lesson.items.map((item) => [item.id, item] as const)),
+);
 
 function mergeStoredConfusions(
   session: QuizSession | null,
@@ -147,7 +150,7 @@ function createSession(
 
 export default function App() {
   const [session, setSession] = useState<QuizSession | null>(() =>
-    loadSession(sourceItemIds),
+    loadSession(sourceItemIds, sourceItems),
   );
   const [mode, setMode] = useState<QuizMode>(() => session?.mode ?? loadMode());
   const [category, setCategory] = useState<QuizCategory>(

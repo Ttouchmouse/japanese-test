@@ -26,6 +26,7 @@ import sys
 import unicodedata
 from dataclasses import asdict, dataclass
 from difflib import SequenceMatcher
+from functools import lru_cache
 from pathlib import Path
 from typing import Iterable, Sequence
 
@@ -66,6 +67,16 @@ MANUAL_CUES = {
     "l29-c-6aa63edf1fbf": ("29-4-1.mp3", 259.30, 263.76),
     "l29-c-3dd6be364def": ("29-4-1.mp3", 268.97, 270.34),
     "l30-c-4342ed92c569": ("30-4-1.mp3", 263.07, 265.98),
+    # Source-checked short fillers / long intra-turn pauses, PDF pp.96,118,124.
+    "l31-c-fb0cdee4d48b": ("31-4-1.mp3", 53.340068, 54.425782),
+    # Use the clearer first repetition for these short negative replies.
+    "l33-p-87e92bab8fd6": ("33-3.mp3", 262.720227, 264.170635),
+    "l33-p-bf20f1dddcc8": ("33-3.mp3", 282.436939, 283.449660),
+    "l39-p-e109fa230714": ("39-3.mp3", 229.431293, 230.776304),
+    "l38-c-bd1061cadefd": ("38-4-1.mp3", 205.754, 206.95),
+    "l40-c-c87391945ba8": ("40-4-1.mp3", 56.561, 57.350),
+    "l40-c-55a69d0ba6fe": ("40-4-1.mp3", 67.812, 75.259),
+    "l40-c-0d60bc97a879": ("40-4-1.mp3", 81.866, 84.010),
 }
 JAPANESE_RE = re.compile(r"[\u3040-\u30ff\u3400-\u9fff々〆ヶー0-9A-Za-z]")
 HANGUL_RE = re.compile(r"[\uac00-\ud7af]")
@@ -88,6 +99,7 @@ class Candidate:
     transcript: str
 
 
+@lru_cache(maxsize=100_000)
 def normalize(value: str) -> str:
     value = unicodedata.normalize("NFKC", value)
     # Compare by reading so kana and kanji spellings such as まじめ/真面目 match.
@@ -100,6 +112,14 @@ def normalize(value: str) -> str:
         if JAPANESE_RE.match(char):
             chars.append(char.lower())
     return "".join(chars)
+
+
+def alignment_text(item: dict) -> str:
+    """Use only explicit PDF readings for ambiguous names during ASR matching."""
+    text = item["japanese"]
+    for surface, reading in re.findall(r"([^\s()·]+)\(([ぁ-んァ-ンー]+)\)", item.get("reading", "")):
+        text = text.replace(surface, reading)
+    return text
 
 
 def load_question_bank(path: Path) -> dict:
@@ -270,11 +290,13 @@ def japanese_runs(words: Sequence[Word], cursor: float) -> list[list[Word]]:
     return runs
 
 
-def candidate_windows(run: Sequence[Word], target: str) -> Iterable[Candidate]:
+def candidate_windows(run: Sequence[Word], target: str, max_start: float | None = None) -> Iterable[Candidate]:
     target_length = len(target)
     if not target_length:
         return
     for start_index in range(len(run)):
+        if max_start is not None and run[start_index].start > max_start:
+            break
         raw_combined = ""
         transcript_parts: list[str] = []
         for end_index in range(start_index, min(len(run), start_index + target_length * 2 + 8)):
@@ -313,7 +335,7 @@ def best_candidate(
 
     candidates: list[Candidate] = []
     for run in japanese_runs(words, cursor):
-        candidates.extend(candidate_windows(run, target))
+        candidates.extend(candidate_windows(run, target, max_start=max_start))
     if max_start is not None:
         candidates = [candidate for candidate in candidates if candidate.start <= max_start]
     if not candidates:
@@ -350,7 +372,7 @@ def confidence_for(score: float) -> str:
 
 def conversation_start(words: Sequence[Word], items: Sequence[dict]) -> Candidate:
     """Pick the first turn from the dialogue block that matches the most later turns."""
-    target = normalize(items[0]["japanese"])
+    target = normalize(alignment_text(items[0]))
     first_candidates: list[Candidate] = []
     for run in japanese_runs(words, 0.0):
         first_candidates.extend(candidate_windows(run, target))
@@ -379,7 +401,7 @@ def conversation_start(words: Sequence[Word], items: Sequence[dict]) -> Candidat
             try:
                 candidate = best_candidate(
                     words,
-                    item["japanese"],
+                    alignment_text(item),
                     cursor,
                     prefer_nearby=True,
                     max_start=cursor + 18.0,
@@ -428,6 +450,48 @@ def export_clip(source: Path, destination: Path, start: float, end: float) -> No
     )
 
 
+@lru_cache(maxsize=40)
+def source_silences(source: Path) -> tuple[tuple[float, float], ...]:
+    """Fine silence boundaries: ASR often starts a turn at the PREVIOUS turn's end."""
+    process = subprocess.run(
+        ["ffmpeg", "-hide_banner", "-i", str(source), "-af",
+         "silencedetect=noise=-42dB:d=0.10", "-f", "null", "-"],
+        capture_output=True, text=True, check=True,
+    )
+    silences = []
+    start = None
+    for line in process.stderr.splitlines():
+        match = re.search(r"silence_start: ([0-9.]+)", line)
+        if match:
+            start = float(match[1])
+        match = re.search(r"silence_end: ([0-9.]+)", line)
+        if match and start is not None:
+            silences.append((start, float(match[1])))
+            start = None
+    return tuple(silences)
+
+
+def snap_dialogue_boundaries(source: Path, candidate: Candidate, previous_end: float | None = None) -> Candidate:
+    silences = source_silences(source)
+    starts = [end for _, end in silences if candidate.start - .2 <= end <= candidate.start + .65]
+    ends = [start for start, _ in silences if candidate.end - .25 <= start <= candidate.end + .6]
+    start = min(starts, key=lambda value: abs(value - candidate.start)) if starts else candidate.start
+    end = min(ends, key=lambda value: abs(value - candidate.end)) if ends else candidate.end
+    if previous_end is not None and candidate.start < previous_end + .1:
+        # When ASR stretches a first token over the preceding silence, use the
+        # silence immediately AFTER the previous verified utterance, not its tail.
+        following_gaps = [
+            gap_end for gap_start, gap_end in silences
+            if abs(gap_start - previous_end) < .04
+            and candidate.start - .2 <= gap_end < min(candidate.end, candidate.start + 1.5)
+        ]
+        if following_gaps:
+            start = min(following_gaps)
+    if end <= start:
+        return candidate
+    return Candidate(start, end, candidate.score, candidate.transcript)
+
+
 def parse_lessons(value: str) -> list[int]:
     lesson_ids: set[int] = set()
     for part in value.split(","):
@@ -452,6 +516,8 @@ def main() -> int:
     parser.add_argument("--lessons", default="1-18")
     parser.add_argument("--model", default="large-v3-turbo")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--types", default=",".join(TYPE_TRACK), help="Comma-separated item types")
+    parser.add_argument("--merge", action="store_true", help="Preserve other lessons/types in an existing manifest")
     args = parser.parse_args()
 
     try:
@@ -461,14 +527,19 @@ def main() -> int:
         return 2
 
     lesson_ids = parse_lessons(args.lessons)
+    item_types = args.types.split(",")
+    if not item_types or set(item_types) - TYPE_TRACK.keys():
+        raise ValueError(f"Invalid item types: {args.types}")
     bank = load_question_bank(args.question_bank)
     lessons = {lesson["id"]: lesson for lesson in bank["lessons"]}
     missing = [lesson_id for lesson_id in lesson_ids if lesson_id not in lessons]
     if missing:
         raise ValueError(f"Lessons not present in question bank: {missing}")
 
-    print(f"Loading local speech model: {args.model}", flush=True)
-    model = WhisperModel(args.model, device="cpu", compute_type="int8", cpu_threads=8)
+    model = None
+    if "conversation" in item_types:
+        print(f"Loading local speech model: {args.model}", flush=True)
+        model = WhisperModel(args.model, device="cpu", compute_type="int8", cpu_threads=8)
 
     cues: list[dict] = []
     reviews: list[dict] = []
@@ -477,7 +548,7 @@ def main() -> int:
         print(f"Lesson {lesson_id}: {len(lesson['items'])} items", flush=True)
         by_type = {
             item_type: [item for item in lesson["items"] if item["type"] == item_type]
-            for item_type in TYPE_TRACK
+            for item_type in item_types
         }
         for item_type, items in by_type.items():
             if not items:
@@ -485,6 +556,13 @@ def main() -> int:
             track = source_track(args.source_dir, lesson_id, item_type)
             if item_type in {"vocabulary", "pattern"}:
                 groups = structured_utterance_groups(track)
+                # Newly audited lessons must never silently shift because a PDF
+                # row is missing or a grammar heading became a study item.
+                if lesson_id >= 31 and len(groups) != len(items):
+                    raise ValueError(
+                        f"Audio structure mismatch in {track.name}: "
+                        f"{len(items)} study items, {len(groups)} audio groups"
+                    )
                 for item_index, item in enumerate(items):
                     # Lesson 13's source track includes 中国語, which is not a
                     # standalone item in the extracted question bank.
@@ -497,6 +575,10 @@ def main() -> int:
                             f"item {item_index + 1}, {len(groups)} groups"
                         )
                     start, end = groups[group_index][-1]
+                    if item["id"] in MANUAL_CUES:
+                        filename, start, end = MANUAL_CUES[item["id"]]
+                        if filename != track.name:
+                            raise ValueError(f"Unexpected structured override track: {filename}")
                     destination = (
                         args.output_dir / f"lesson-{lesson_id:02d}" / f"{item['id']}.mp3"
                     )
@@ -535,7 +617,7 @@ def main() -> int:
                         else:
                             candidate = best_candidate(
                                 words,
-                                item["japanese"],
+                                alignment_text(item),
                                 cursor,
                                 prefer_nearby=item_type == "conversation",
                                 max_start=None if item_index == 0 else cursor + max_gap,
@@ -566,7 +648,7 @@ def main() -> int:
                         try:
                             recovery_candidate = best_candidate(
                                 transcript_by_track[recovery_track],
-                                item["japanese"],
+                                alignment_text(item),
                                 0.0,
                             )
                         except ValueError:
@@ -597,6 +679,10 @@ def main() -> int:
                     )
                     continue
                 confidence = confidence_for(candidate.score)
+                if lesson_id >= 31 and item_type == "conversation" and not manual:
+                    candidate = snap_dialogue_boundaries(
+                        candidate_track, candidate, cursor - .01 if cursor and matched_in_sequence else None,
+                    )
                 destination = args.output_dir / f"lesson-{lesson_id:02d}" / f"{item['id']}.mp3"
                 if not args.dry_run:
                     export_clip(candidate_track, destination, candidate.start, candidate.end)
@@ -631,6 +717,14 @@ def main() -> int:
         "cues": cues,
         "review": reviews,
     }
+    if args.merge and args.manifest.exists():
+        previous = json.loads(args.manifest.read_text(encoding="utf-8"))
+        replaced_prefixes = tuple(f"l{lesson_id:02d}-{kind[0]}-" for lesson_id in lesson_ids for kind in item_types)
+        # Also discard obsolete IDs in the rebuilt range (e.g. removed headings).
+        manifest["cues"] = [cue for cue in previous["cues"] if not cue["sourceItemId"].startswith(replaced_prefixes)] + cues
+        manifest["review"] = [entry for entry in previous.get("review", []) if not entry["sourceItemId"].startswith(replaced_prefixes)] + reviews
+        manifest["lessons"] = sorted(set(previous["lessons"]) | set(lesson_ids))
+        manifest["cues"].sort(key=lambda cue: cue["sourceItemId"])
     if args.dry_run:
         print(json.dumps(manifest, ensure_ascii=False, indent=2))
     else:

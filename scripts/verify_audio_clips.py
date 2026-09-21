@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import sys
 import unicodedata
@@ -12,6 +13,7 @@ from pathlib import Path
 
 from faster_whisper import WhisperModel
 from pykakasi import kakasi
+from build_audio_cues import alignment_text
 
 
 KAKASI = kakasi()
@@ -32,6 +34,7 @@ def main() -> int:
     parser.add_argument("--lessons", default="25-30")
     parser.add_argument("--model", default="large-v3-turbo")
     parser.add_argument("--item-ids", default="")
+    parser.add_argument("--cache-dir", type=Path, default=Path("/private/tmp/japanese-clip-verification"))
     args = parser.parse_args()
 
     first_lesson, last_lesson = (int(value) for value in args.lessons.split("-", 1))
@@ -53,9 +56,17 @@ def main() -> int:
     model = WhisperModel(args.model, device="cpu", compute_type="int8", cpu_threads=8)
 
     results = []
+    args.cache_dir.mkdir(parents=True, exist_ok=True)
     for index, cue in enumerate(cues, 1):
         item = items[cue["sourceItemId"]]
         audio_path = args.root / "public" / cue["src"].lstrip("/")
+        signature = hashlib.sha256(audio_path.read_bytes() + item["japanese"].encode() + args.model.encode()).hexdigest()
+        cached = args.cache_dir / f"{signature}.json"
+        if cached.exists():
+            result = json.loads(cached.read_text(encoding="utf-8"))
+            result["score"] = round(SequenceMatcher(None, normalize(alignment_text(item)), normalize(result["heard"])).ratio(), 3)
+            results.append(result)
+            continue
         segments, _ = model.transcribe(
             str(audio_path),
             language="ja",
@@ -67,7 +78,7 @@ def main() -> int:
         segment_list = list(segments)
         heard = "".join(segment.text.strip() for segment in segment_list)
         words = [word for segment in segment_list for word in (segment.words or [])]
-        score = SequenceMatcher(None, normalize(item["japanese"]), normalize(heard)).ratio()
+        score = SequenceMatcher(None, normalize(alignment_text(item)), normalize(heard)).ratio()
         results.append(
             {
                 "lesson": item["lessonId"],
@@ -81,6 +92,8 @@ def main() -> int:
                 "clipDuration": round(cue["end"] - cue["start"], 3),
             }
         )
+        cached.write_text(json.dumps(results[-1], ensure_ascii=False), encoding="utf-8")
+        args.output.write_text(json.dumps(results, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         if index % 20 == 0 or index == len(cues):
             print(f"verified {index}/{len(cues)}", flush=True)
 
