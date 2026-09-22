@@ -65,7 +65,7 @@ export function useAudioPlayback(src: string | undefined, playbackKey = src) {
     else void play();
   };
 
-  return { isPlaying, failed, play, togglePlayback };
+  return { isPlaying, failed, play, stop, togglePlayback };
 }
 
 export function AudioButton({ src }: AudioButtonProps) {

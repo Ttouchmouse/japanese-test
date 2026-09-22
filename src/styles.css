@@ -753,7 +753,10 @@ button:disabled {
 .prompt-audio {
   display: flex;
   margin-top: 18px;
+  align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .audio-button {
@@ -1038,8 +1041,23 @@ button:disabled {
   line-height: 1.45;
 }
 
-.answer-reveal > .audio-button {
+.answer-reveal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.answer-reveal-actions > .audio-button {
   flex: 0 0 auto;
+}
+
+.undo-answer-button {
+  min-height: 44px;
+  padding: 8px 12px;
+  align-self: center;
+  justify-self: center;
 }
 
 .quiz-actions,

@@ -5,6 +5,7 @@ import { LessonSelection } from "./components/LessonSelection";
 import { Quiz } from "./components/Quiz";
 import { Result } from "./components/Result";
 import { updateLearningProgress } from "./lib/progress";
+import { undoCurrentAnswer } from "./lib/session";
 import { availableQuestionCount, generateQuiz, QuizGenerationError } from "./lib/quiz";
 import {
   clearSession,
@@ -359,7 +360,8 @@ export default function App() {
   };
 
   const finishQuiz = () => {
-    if (!session) return;
+    if (!session || session.status !== "quiz" ||
+      session.questions.some((question) => session.answers[question.id] === undefined)) return;
     const nextProgress = updateLearningProgress(
       learningProgress,
       session.questions,
@@ -460,6 +462,7 @@ export default function App() {
           confusedSourceItemIds={session.confusedSourceItemIds}
           currentIndex={session.currentIndex}
           onAnswer={answerQuestion}
+          onUndoAnswer={() => setSession(undoCurrentAnswer)}
           onToggleConfusion={toggleQuestionConfusion}
           onNavigate={navigateQuestion}
           onFinish={finishQuiz}

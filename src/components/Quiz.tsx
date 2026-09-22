@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { AudioButton, AudioPlaybackButton, useAudioPlayback } from "./AudioButton";
+import { AudioPlaybackButton, useAudioPlayback } from "./AudioButton";
 import { isAnswerCorrect, RECALL_REMEMBERED } from "../lib/answer";
 import { audioCueFor } from "../lib/audio";
 import type { QuizAnswers, QuizQuestion } from "../types";
@@ -10,6 +10,7 @@ interface QuizProps {
   confusedSourceItemIds: string[];
   currentIndex: number;
   onAnswer: (answer: string) => void;
+  onUndoAnswer: () => void;
   onToggleConfusion: (sourceItemId: string) => void;
   onNavigate: (index: number) => void;
   onFinish: () => void;
@@ -48,6 +49,7 @@ export function Quiz({
   confusedSourceItemIds,
   currentIndex,
   onAnswer,
+  onUndoAnswer,
   onToggleConfusion,
   onNavigate,
   onFinish,
@@ -57,6 +59,9 @@ export function Quiz({
   const selectedAnswer = answers[question.id];
   const [draftAnswer, setDraftAnswer] = useState(selectedAnswer ?? "");
   const feedbackRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const promptRef = useRef<HTMLHeadingElement>(null);
+  const returnToQuestionRef = useRef(false);
   const answered = selectedAnswer !== undefined;
   const isCorrect = isAnswerCorrect(question, selectedAnswer);
   const isConfused = confusedSourceItemIds.includes(question.sourceItemId);
@@ -69,6 +74,14 @@ export function Quiz({
   useEffect(() => {
     setDraftAnswer(answers[question.id] ?? "");
   }, [answers, question.id]);
+
+  useEffect(() => {
+    if (answered || !returnToQuestionRef.current) return;
+    returnToQuestionRef.current = false;
+    const target = question.answerKind === "text" ? inputRef.current : promptRef.current;
+    target?.focus({ preventScroll: true });
+    target?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }, [answered, question.id, question.answerKind]);
 
   useEffect(() => {
     if (!answered) return;
@@ -100,6 +113,21 @@ export function Quiz({
     revealAnswer(answer);
   };
 
+  const undoAnswer = () => {
+    if (!answered) return;
+    answerAudio.stop();
+    revealedQuestionRef.current = null;
+    returnToQuestionRef.current = true;
+    setDraftAnswer("");
+    onUndoAnswer();
+  };
+
+  const undoButton = answered ? (
+    <button className="text-button undo-answer-button" type="button" onClick={undoAnswer}>
+      잘 못 눌렀어요
+    </button>
+  ) : null;
+
   return (
     <main className="quiz-page">
       <section className="quiz-shell" aria-labelledby="question-prompt">
@@ -122,7 +150,7 @@ export function Quiz({
                 ? "뜻이 맞는 것을 고르세요."
                 : "일본어 표현을 고르세요."}
           </p>
-          <h1 id="question-prompt" lang={question.direction === "ja-ko" ? "ja" : "ko"}>
+          <h1 id="question-prompt" ref={promptRef} tabIndex={-1} lang={question.direction === "ja-ko" ? "ja" : "ko"}>
             {question.prompt}
           </h1>
           {question.direction === "ja-ko" && question.reading && question.reading !== question.prompt && (
@@ -130,7 +158,8 @@ export function Quiz({
           )}
           {question.direction === "ja-ko" && audioCue && (
             <div className="prompt-audio">
-              <AudioButton src={audioCue.src} />
+              <AudioPlaybackButton playback={answerAudio} />
+              {question.answerKind === "choice" && undoButton}
             </div>
           )}
         </div>
@@ -143,7 +172,10 @@ export function Quiz({
                 <span lang="ja">{question.reading}</span>
               )}
             </div>
-            {audioCue && <AudioPlaybackButton playback={answerAudio} />}
+            <div className="answer-reveal-actions">
+              {audioCue && <AudioPlaybackButton playback={answerAudio} />}
+              {undoButton}
+            </div>
           </div>
         )}
 
@@ -166,12 +198,14 @@ export function Quiz({
                 )}
               </button>
             ))}
+            {!(question.direction === "ja-ko" && audioCue) && undoButton}
           </div>
         ) : question.answerKind === "text" ? (
           <form className="text-answer-stage" onSubmit={submitTextAnswer}>
             <label htmlFor="text-answer">일본어 답</label>
             <input
               id="text-answer"
+              ref={inputRef}
               lang="ja"
               type="text"
               inputMode="text"

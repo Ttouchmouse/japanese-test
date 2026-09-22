@@ -37,6 +37,16 @@ beforeEach(() => {
 afterEach(() => vi.unstubAllGlobals());
 
 describe("answer audio playback", () => {
+  it("stops on answer undo and allows a fresh playback on resubmission", async () => {
+    const playback = useAudioPlayback("/answer.mp3");
+    await playback.play();
+    playback.stop();
+    expect(FakeAudio.instances[0].pause).toHaveBeenCalledOnce();
+    expect(FakeAudio.instances[0].onended).toBeNull();
+    await playback.play();
+    expect(FakeAudio.instances).toHaveLength(2);
+    expect(FakeAudio.instances[1].play).toHaveBeenCalledOnce();
+  });
   it("does not play on mount or when no audio exists", async () => {
     const playback = useAudioPlayback(undefined, "question-1");
     hooks.effects[0]();
